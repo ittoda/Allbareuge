@@ -103,3 +103,5 @@ DRAW:[
  ['Stories','👨‍👩‍👧','My family\'s faces'],['Stories','🦖','A town where dinosaurs live'],['Stories','🧚','A fairy in a flower garden'],['Stories','🚌','A bus trip with friends'],['Stories','🎄','A twinkly Christmas tree']
 ]
 };
+
+CT.en.W3=["Bang the table with a spoon", "Knock loudly on the toilet door", "Just rinse quickly with water", "Put my bag on the seat next to me", "Talk loudly on the phone", "Press all the buttons", "Stand right in front of the door", "Pull out lots of books and pile them up", "Open the doctor’s door to peek", "Hold a friend’s hand and run across", "Climb up the slide the wrong way", "Say “I don’t like this”", "Leave the dishes and go play", "Tell my little sibling to clean up", "Say “You did it first!”", "Leave it on the bench", "Sing along loudly with a friend", "Cover with my hand, then hold a friend’s hand"];

@@ -268,11 +268,11 @@ function drawCard(){var tp=topic(),im=new Image();im.onload=function(){var W=108
 /* ---------- 아름다운 어린이 되기 (예절 퀴즈) ---------- */
 var MQ=null;
 function mannerStart(){var M=C('MANNERS'),idx=M.map(function(_,i){return i}).sort(function(){return Math.random()-.5}).slice(0,5);
-  MQ={q:idx.map(function(i){var m=M[i],sw=Math.random()<.5;return {m:m,opts:sw?[[m[3],1],[m[4],0]]:[[m[4],0],[m[3],1]]}}),i:0,ok:0,ans:null};go('manner')}
+  var W=C('W3');MQ={q:idx.map(function(i){var m=M[i],o=[[m[3],1],[m[4],0]];if(W&&W[i])o.push([[W[i],W3E[i]],0]);return {m:m,opts:o.sort(function(){return Math.random()-.5})}}),i:0,ok:0,ans:null};go('manner')}
 function mannerView(){if(!MQ)return hdr('🐣 '+t('아름다운 어린이 되기'))+greet(t('에헴~ 예절 공부 시간이구먼!'),t('5문제 맞히면 꼰둥이 배지를 줄게~'))+
   '<div class="box"><h2>🏅 '+t('모은 꼰둥이 배지: {0}개',ls('mq')||0)+'</h2><p class="mut" style="margin:0">'+t('식당·화장실·버스·엘리베이터·도서관… 여러 곳의 예절을 배워요')+'</p></div><button class="btn p" onclick="mannerStart()">'+t('시작하기')+' ▶</button>';
   var Q=MQ.q[MQ.i];if(!Q)return mannerEnd();var m=Q.m;
-  var h=hdr('🤔 '+(MQ.i+1)+' / '+MQ.q.length)+'<div class="mscene"><span class="pl">'+esc(m[1])+'</span><div class="pe">'+m[0]+'</div><h2>'+esc(m[2])+'</h2></div>';
+  var h=hdr('🐣 '+(MQ.i+1)+' / '+MQ.q.length)+'<div class="mscene"><span class="pl">'+esc(m[1])+'</span><div class="pe">'+m[0]+'</div><h2>'+esc(m[2])+'</h2></div>';
   if(MQ.ans===null){h+=Q.opts.map(function(o,k){return '<button class="opt" onclick="mannerPick('+k+')"><span>'+o[0][1]+'</span>'+esc(o[0][0])+'</button>'}).join('')}
   else{var right=Q.opts[MQ.ans][1]===1;h+='<div class="react '+(right?'ok':'no')+'"><img src="'+(right?IMG.ks_f:IMG.kd_f)+'" alt=""><div><b>'+(right?t('옳지옳지~! 정답이야')+' ⭕':t('에헴~ 그건 아니지!')+' ❌')+'</b><p>'+t('정답')+': '+esc(m[3][0])+' '+m[3][1]+'</p><p>'+esc(m[5])+'</p></div></div>'+
     '<button class="btn" onclick="mannerNext()">'+(MQ.i<MQ.q.length-1?t('다음 문제')+' ▶':t('결과 보기')+' 🏅')+'</button>'}

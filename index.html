@@ -408,6 +408,9 @@ function expandPack(z){var o={};
   o.MANNERS=MANNERS.map(function(m,i){var s=z.MANNERS[i];return [m[0],s[0],s[1],[s[2],m[3][1]],[s[3],m[4][1]],s[4]]});
   o.DRAW=DRAW.map(function(d,i){return [z.DRAWCAT[d[0]],d[1],z.DRAW[i]]});
   return o}
+
+var W3=["숟가락으로 식탁을 두드려요", "화장실 문을 쾅쾅 두드려요", "물로만 살짝 헹궈요", "옆자리에 가방을 올려 둬요", "전화로 크게 통화해요", "버튼을 전부 눌러 봐요", "문 앞에 딱 서서 기다려요", "책을 마구 꺼내 쌓아 놓아요", "진료실 문을 열어 봐요", "친구 손을 잡고 같이 뛰어 건너요", "미끄럼틀을 거꾸로 올라가요", "\"이거 별로야\" 하고 말해요", "그릇을 그대로 두고 놀러 가요", "동생한테 치우라고 해요", "\"네가 먼저 그랬잖아!\" 해요", "벤치 위에 두고 가요", "친구랑 크게 따라 불러요", "손바닥으로 막고 친구 손을 잡아요"];
+var W3E=["🥄", "🚪", "💧", "🎒", "📞", "🔘", "🧱", "📚", "🚪", "🏃", "⬆️", "😒", "🍽️", "👉", "😤", "🪑", "🎤", "🤲"];
 </script>
 <script>/* All 바르게 — English */
 var TR=window.TR||{};var CT=window.CT||{};
@@ -515,6 +518,8 @@ DRAW:[
 ]
 };
 
+CT.en.W3=["Bang the table with a spoon", "Knock loudly on the toilet door", "Just rinse quickly with water", "Put my bag on the seat next to me", "Talk loudly on the phone", "Press all the buttons", "Stand right in front of the door", "Pull out lots of books and pile them up", "Open the doctor’s door to peek", "Hold a friend’s hand and run across", "Climb up the slide the wrong way", "Say “I don’t like this”", "Leave the dishes and go play", "Tell my little sibling to clean up", "Say “You did it first!”", "Leave it on the bench", "Sing along loudly with a friend", "Cover with my hand, then hold a friend’s hand"];
+
 /* All 바르게 — हिन्दी */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.hi={
@@ -616,6 +621,8 @@ DRAW:['पूँछ हिलाता पिल्ला','सोती हु�
 'आसमान में गुब्बारे','मेरा घर','साइकिल','चमकता मुकुट','तीन स्कूप आइसक्रीम','इंद्रधनुष के नीचे पिकनिक','स्नोमैन बनाना','समुद्र तट पर रेत का महल','रात में चाँद-तारे','मज़ेदार सर्कस',
 'मेरे परिवार के चेहरे','डायनासोर का शहर','फूलों के बगीचे में परी','दोस्तों के साथ बस से पिकनिक','चमकता क्रिसमस ट्री']
 });
+
+CT.hi.W3=["चम्मच से मेज़ बजाना", "शौचालय का दरवाज़ा ज़ोर से खटखटाना", "बस पानी से जल्दी धो लेना", "बगल वाली सीट पर बैग रख देना", "फ़ोन पर ज़ोर से बात करना", "सारे बटन दबा देना", "दरवाज़े के ठीक सामने खड़े रहना", "ढेर सारी किताबें निकालकर ढेर लगाना", "डॉक्टर का दरवाज़ा खोलकर झाँकना", "दोस्त का हाथ पकड़कर भागकर पार करना", "फिसलपट्टी पर उल्टा चढ़ना", "कहना “यह अच्छा नहीं है”", "बर्तन वहीं छोड़कर खेलने चले जाना", "छोटे भाई-बहन से समेटने को कहना", "कहना “पहले तुमने किया था!”", "बेंच पर छोड़ देना", "दोस्त के साथ ज़ोर से गाना", "हथेली से ढकना और फिर दोस्त का हाथ पकड़ना"];
 
 /* All 바르게 — Bahasa Indonesia */
 var TR=window.TR||{};var CT=window.CT||{};
@@ -719,6 +726,8 @@ DRAW:['Anak anjing mengibas ekor','Kucing tidur siang','Kelinci makan wortel','G
 'Wajah keluargaku','Kota dinosaurus','Peri di taman bunga','Naik bus piknik bersama teman','Pohon Natal berkilau']
 });
 
+CT.id.W3=["Memukul meja dengan sendok", "Mengetuk pintu toilet keras-keras", "Cuma dibilas air sebentar", "Menaruh tas di kursi sebelah", "Menelepon dengan suara keras", "Menekan semua tombol", "Berdiri tepat di depan pintu", "Mengeluarkan banyak buku dan menumpuknya", "Membuka pintu ruang dokter untuk mengintip", "Bergandengan tangan dengan teman lalu lari menyeberang", "Memanjat perosotan dari bawah", "Bilang “Aku nggak suka ini”", "Meninggalkan piring lalu pergi main", "Menyuruh adik membereskan", "Bilang “Kamu duluan yang mulai!”", "Meninggalkannya di bangku", "Ikut bernyanyi keras bersama teman", "Menutup dengan telapak tangan lalu memegang tangan teman"];
+
 /* All 바르게 — 日本語 */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.ja={
@@ -820,6 +829,8 @@ DRAW:['しっぽを ふる こいぬ','おひるねする ねこ','にんじん�
 'そらの ふうせん','わたしの いえ','じてんしゃ','キラキラの おうかん','3だんの アイスクリーム','にじの したで ピクニック','ゆきだるま づくり','うみの すなの おしろ','よるの つきと ほし','たのしい サーカス',
 'かぞくの かお','きょうりゅうの まち','おはなばたけの ようせい','ともだちと バスで ピクニック','キラキラの クリスマスツリー']
 });
+
+CT.ja.W3=["スプーンで テーブルを たたく", "トイレの ドアを ドンドン たたく", "水で さっと ながすだけ", "となりの せきに カバンを おく", "でんわで 大きな こえで はなす", "ボタンを ぜんぶ おしてみる", "ドアの まえに ずっと たつ", "本を どんどん だして つみあげる", "しんさつしつの ドアを あけて のぞく", "ともだちと 手を つないで はしって わたる", "すべりだいを さかさまに のぼる", "「これ いらない」と いう", "おさらを そのままに して あそびに いく", "おとうとや いもうとに かたづけさせる", "「さきに やったのは そっちだ!」と いう", "ベンチの うえに おいていく", "ともだちと 大きな こえで うたう", "手のひらで おさえて ともだちと 手を つなぐ"];
 
 /* All 바르게 — Tiếng Việt */
 var TR=window.TR||{};var CT=window.CT||{};
@@ -923,6 +934,8 @@ DRAW:['Cún con vẫy đuôi','Mèo đang ngủ trưa','Thỏ ăn cà rốt','Vo
 'Khuôn mặt gia đình em','Thị trấn khủng long','Nàng tiên trong vườn hoa','Đi xe buýt dã ngoại cùng bạn','Cây thông Noel lấp lánh']
 });
 
+CT.vi.W3=["Gõ thìa xuống bàn", "Đập cửa nhà vệ sinh thật to", "Chỉ tráng nước qua loa", "Để cặp lên ghế bên cạnh", "Gọi điện thoại thật to", "Bấm hết các nút", "Đứng chắn ngay trước cửa", "Lấy thật nhiều sách ra chất đống", "Mở cửa phòng khám ra xem", "Nắm tay bạn chạy qua đường", "Leo ngược lên cầu trượt", "Nói “Cái này chán quá”", "Để nguyên bát đĩa rồi đi chơi", "Bảo em dọn giùm", "Nói “Bạn làm trước mà!”", "Để lại trên ghế đá", "Cùng bạn hát theo thật to", "Che bằng bàn tay rồi nắm tay bạn"];
+
 /* All 바르게 — 中文 */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.zh={
@@ -1024,6 +1037,8 @@ DRAW:['摇尾巴的小狗','午睡的小猫','吃胡萝卜的兔子','喷水的�
 '天上的气球','我的家','自行车','闪亮的王冠','三球冰淇淋','彩虹下的野餐','堆雪人','海边的沙堡','夜晚的月亮和星星','欢乐的马戏团',
 '我家人的脸','恐龙小镇','花园里的小仙子','和朋友坐巴士去野餐','闪闪的圣诞树']
 });
+
+CT.zh.W3=["用勺子敲桌子", "使劲敲洗手间的门", "只用水随便冲一下", "把书包放在旁边的座位上", "大声打电话", "把按钮全按一遍", "就站在门口挡着", "把书一本本抽出来堆着", "推开诊室的门偷看", "拉着朋友的手跑过去", "从滑梯下面倒着爬上去", "说「这个不好」", "把碗放着就去玩", "叫弟弟妹妹去收拾", "说「是你先弄的！」", "放在长椅上就走", "跟朋友一起大声唱", "用手掌挡住再去牵朋友的手"];
 </script>
 <script>/* 앞표지 · 앱 소개 · 개인정보처리방침 · 이용약관 (7개 언어) */
 var APP_VER='1.0.0';
@@ -1339,11 +1354,11 @@ function drawCard(){var tp=topic(),im=new Image();im.onload=function(){var W=108
 /* ---------- 아름다운 어린이 되기 (예절 퀴즈) ---------- */
 var MQ=null;
 function mannerStart(){var M=C('MANNERS'),idx=M.map(function(_,i){return i}).sort(function(){return Math.random()-.5}).slice(0,5);
-  MQ={q:idx.map(function(i){var m=M[i],sw=Math.random()<.5;return {m:m,opts:sw?[[m[3],1],[m[4],0]]:[[m[4],0],[m[3],1]]}}),i:0,ok:0,ans:null};go('manner')}
+  var W=C('W3');MQ={q:idx.map(function(i){var m=M[i],o=[[m[3],1],[m[4],0]];if(W&&W[i])o.push([[W[i],W3E[i]],0]);return {m:m,opts:o.sort(function(){return Math.random()-.5})}}),i:0,ok:0,ans:null};go('manner')}
 function mannerView(){if(!MQ)return hdr('🐣 '+t('아름다운 어린이 되기'))+greet(t('에헴~ 예절 공부 시간이구먼!'),t('5문제 맞히면 꼰둥이 배지를 줄게~'))+
   '<div class="box"><h2>🏅 '+t('모은 꼰둥이 배지: {0}개',ls('mq')||0)+'</h2><p class="mut" style="margin:0">'+t('식당·화장실·버스·엘리베이터·도서관… 여러 곳의 예절을 배워요')+'</p></div><button class="btn p" onclick="mannerStart()">'+t('시작하기')+' ▶</button>';
   var Q=MQ.q[MQ.i];if(!Q)return mannerEnd();var m=Q.m;
-  var h=hdr('🤔 '+(MQ.i+1)+' / '+MQ.q.length)+'<div class="mscene"><span class="pl">'+esc(m[1])+'</span><div class="pe">'+m[0]+'</div><h2>'+esc(m[2])+'</h2></div>';
+  var h=hdr('🐣 '+(MQ.i+1)+' / '+MQ.q.length)+'<div class="mscene"><span class="pl">'+esc(m[1])+'</span><div class="pe">'+m[0]+'</div><h2>'+esc(m[2])+'</h2></div>';
   if(MQ.ans===null){h+=Q.opts.map(function(o,k){return '<button class="opt" onclick="mannerPick('+k+')"><span>'+o[0][1]+'</span>'+esc(o[0][0])+'</button>'}).join('')}
   else{var right=Q.opts[MQ.ans][1]===1;h+='<div class="react '+(right?'ok':'no')+'"><img src="'+(right?IMG.ks_f:IMG.kd_f)+'" alt=""><div><b>'+(right?t('옳지옳지~! 정답이야')+' ⭕':t('에헴~ 그건 아니지!')+' ❌')+'</b><p>'+t('정답')+': '+esc(m[3][0])+' '+m[3][1]+'</p><p>'+esc(m[5])+'</p></div></div>'+
     '<button class="btn" onclick="mannerNext()">'+(MQ.i<MQ.q.length-1?t('다음 문제')+' ▶':t('결과 보기')+' 🏅')+'</button>'}

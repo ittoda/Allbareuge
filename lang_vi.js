@@ -99,3 +99,5 @@ DRAW:['Cún con vẫy đuôi','Mèo đang ngủ trưa','Thỏ ăn cà rốt','Vo
 'Bóng bay trên trời','Ngôi nhà của em','Xe đạp','Vương miện lấp lánh','Kem ba tầng','Dã ngoại dưới cầu vồng','Làm người tuyết','Lâu đài cát trên bãi biển','Trăng sao ban đêm','Rạp xiếc vui nhộn',
 'Khuôn mặt gia đình em','Thị trấn khủng long','Nàng tiên trong vườn hoa','Đi xe buýt dã ngoại cùng bạn','Cây thông Noel lấp lánh']
 });
+
+CT.vi.W3=["Gõ thìa xuống bàn", "Đập cửa nhà vệ sinh thật to", "Chỉ tráng nước qua loa", "Để cặp lên ghế bên cạnh", "Gọi điện thoại thật to", "Bấm hết các nút", "Đứng chắn ngay trước cửa", "Lấy thật nhiều sách ra chất đống", "Mở cửa phòng khám ra xem", "Nắm tay bạn chạy qua đường", "Leo ngược lên cầu trượt", "Nói “Cái này chán quá”", "Để nguyên bát đĩa rồi đi chơi", "Bảo em dọn giùm", "Nói “Bạn làm trước mà!”", "Để lại trên ghế đá", "Cùng bạn hát theo thật to", "Che bằng bàn tay rồi nắm tay bạn"];

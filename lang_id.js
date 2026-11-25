@@ -99,3 +99,5 @@ DRAW:['Anak anjing mengibas ekor','Kucing tidur siang','Kelinci makan wortel','G
 'Balon di langit','Rumahku','Sepeda','Mahkota berkilau','Es krim tiga tingkat','Piknik di bawah pelangi','Membuat manusia salju','Istana pasir di pantai','Bulan dan bintang di malam hari','Sirkus yang seru',
 'Wajah keluargaku','Kota dinosaurus','Peri di taman bunga','Naik bus piknik bersama teman','Pohon Natal berkilau']
 });
+
+CT.id.W3=["Memukul meja dengan sendok", "Mengetuk pintu toilet keras-keras", "Cuma dibilas air sebentar", "Menaruh tas di kursi sebelah", "Menelepon dengan suara keras", "Menekan semua tombol", "Berdiri tepat di depan pintu", "Mengeluarkan banyak buku dan menumpuknya", "Membuka pintu ruang dokter untuk mengintip", "Bergandengan tangan dengan teman lalu lari menyeberang", "Memanjat perosotan dari bawah", "Bilang “Aku nggak suka ini”", "Meninggalkan piring lalu pergi main", "Menyuruh adik membereskan", "Bilang “Kamu duluan yang mulai!”", "Meninggalkannya di bangku", "Ikut bernyanyi keras bersama teman", "Menutup dengan telapak tangan lalu memegang tangan teman"];
