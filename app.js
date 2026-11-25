@@ -92,7 +92,7 @@ function saveKid(){var n=$('#kn').value.trim().replace(/[<>{}\[\]]/g,'');if(!n){
 function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayToonIdx();
   return logo()+greet(t('에헴~ {0}, 오늘도 바르게!',esc(voc(KID.name))),t('잘하면 내가 "옳지옳지~" 해 줄게!'))+
   '<div class="kid"><div class="av">'+avHTML()+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+
-  '<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="ic">🐣</div><h3>'+t('에헴! 라떼는 말야~ 예절 배우기 gogogo!').replace('~ ','~<br>')+'</h3><p>'+t('식당·화장실·버스 예절 퀴즈')+'<br>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
+  '<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="icrow"><span class="ic">🐣</span><span class="icsay">'+t('에헴! 라떼는 말야~')+'</span></div><h3>'+t('1교시 예절학교')+'</h3><p>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
   growCard()+'<div class="grid">'+
    '<button class="card g" onclick="go(\'stamp\')"><span class="bdg">'+cnt+'/'+goal+'</span><div class="ic">🏅</div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
    '<button class="card p" onclick="go(\'story\')"><div class="ic">📖</div><h3>'+t('내 이름 동화')+'</h3><p>'+t('{0}[이/가] 주인공인',esc(KID.name))+'<br>'+t('5분 동화')+'</p></button>'+
@@ -265,11 +265,11 @@ function drawCard(){var tp=topic(),im=new Image();im.onload=function(){var W=108
   c.fillStyle='#7d8a76';c.font='800 40px '+F;c.fillText(KID.name+' · '+today().replace(/-/g,'.')+' · All '+t('바르게'),W/2,180+dh+280);
   saveImg(cv,'drawing')};im.src=DR.img}
 
-/* ---------- 에헴! 라떼는 말야~ 예절 배우기 gogogo! (예절 퀴즈) ---------- */
+/* ---------- 1교시 예절학교 (예절 퀴즈) ---------- */
 var MQ=null;
 function mannerStart(){var M=C('MANNERS'),idx=M.map(function(_,i){return i}).sort(function(){return Math.random()-.5}).slice(0,5);
   MQ={q:idx.map(function(i){var m=M[i],sw=Math.random()<.5;return {m:m,opts:sw?[[m[3],1],[m[4],0]]:[[m[4],0],[m[3],1]]}}),i:0,ok:0,ans:null};go('manner')}
-function mannerView(){if(!MQ)return hdr('🐣 '+t('에헴! 라떼는 말야~ 예절 배우기 gogogo!'))+greet(t('에헴~ 예절 공부 시간이구먼!'),t('5문제 맞히면 꼰둥이 배지를 줄게~'))+
+function mannerView(){if(!MQ)return hdr('🐣 '+t('1교시 예절학교'))+greet(t('에헴~ 예절 공부 시간이구먼!'),t('5문제 맞히면 꼰둥이 배지를 줄게~'))+
   '<div class="box"><h2>🏅 '+t('모은 꼰둥이 배지: {0}개',ls('mq')||0)+'</h2><p class="mut" style="margin:0">'+t('식당·화장실·버스·엘리베이터·도서관… 여러 곳의 예절을 배워요')+'</p></div><button class="btn p" onclick="mannerStart()">'+t('시작하기')+' ▶</button>';
   var Q=MQ.q[MQ.i];if(!Q)return mannerEnd();var m=Q.m;
   var h=hdr('🤔 '+(MQ.i+1)+' / '+MQ.q.length)+'<div class="mscene"><span class="pl">'+esc(m[1])+'</span><div class="pe">'+m[0]+'</div><h2>'+esc(m[2])+'</h2></div>';
