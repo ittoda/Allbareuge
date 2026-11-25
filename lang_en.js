@@ -1,7 +1,7 @@
 /* All 바르게 — English */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.en={
-'에헴! 라떼는 말야~':'Ahem! Back in my day~','1교시 예절학교':'Period 1: Manners School',
+'에헴! 라떼는 말야~':'Ahem! Back in my day~','아름다운 어린이 되기':'Becoming a Wonderful Kid',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Home','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Good habits, growing up with the Kondung twins',
 '에헴~ 반갑구먼!':'Ahem~ nice to meet you!','이름이 뭐니? 알려 주렴~':'What\'s your name? Tell us, dear~',
 '우리 아이를 소개해 주세요':'Tell us about your child','아이 이름 (또는 애칭)':'Child\'s name (or nickname)','예) 지우':'e.g. Mia','좋아하는 캐릭터':'Favorite character',

@@ -1,7 +1,7 @@
 /* All 바르게 — Tiếng Việt */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.vi={
-'에헴! 라떼는 말야~':'E hèm! Thời của ta~','1교시 예절학교':'Tiết 1: Trường học lễ phép',
+'에헴! 라떼는 말야~':'E hèm! Thời của ta~','아름다운 어린이 되기':'Trở thành em bé ngoan',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Trang chủ','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Lớn lên cùng thói quen tốt với cặp song sinh Kondung',
 '에헴~ 반갑구먼!':'E hèm~ rất vui được gặp cháu!','이름이 뭐니? 알려 주렴~':'Cháu tên là gì? Nói cho tụi ta nghe nào~',
 '우리 아이를 소개해 주세요':'Giới thiệu về bé nhà bạn','아이 이름 (또는 애칭)':'Tên bé (hoặc biệt danh)','예) 지우':'VD: Bông','좋아하는 캐릭터':'Nhân vật yêu thích',
