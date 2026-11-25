@@ -1,0 +1,11 @@
+{
+  "name": "allbareuge",
+  "version": "1.0.0",
+  "description": "All 바르게 · 꼰둥이와 함께 자라는 바른 습관 (Pi 앱)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": { "pi-backend": "^0.1.3" }
+}

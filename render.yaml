@@ -1,0 +1,17 @@
+services:
+  # All 바르게 메인넷
+  - type: web
+    name: allbareuge
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+  # All 바르게 테스트넷 (TESTNET=1)
+  - type: web
+    name: allbareuge-testnet
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz

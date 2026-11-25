@@ -1,0 +1,2 @@
+sh=open('shell.html').read()
+open('index.html','w').write(sh.replace('%IMG%',open('img.js').read()).replace('%DATA%',open('data.js').read()).replace('%LANG%','\n'.join(open(f).read() for f in sorted(__import__('glob').glob('lang_*.js')))).replace('%MAIN%',open('legal.js').read()+'\n'+open('app.js').read()+'\n'+open('grow.js').read()+'\n'+open('cloud.js').read()))
