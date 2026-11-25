@@ -6,7 +6,7 @@ TR.en={
 '우리 아이를 소개해 주세요':'Tell us about your child','아이 이름 (또는 애칭)':'Child\'s name (or nickname)','예) 지우':'e.g. Mia','좋아하는 캐릭터':'Favorite character',
 '실명 대신 애칭만 넣어 주세요.':'No real names needed. A nickname is enough.','시작하기':'Start','아이 이름을 넣어 주세요':'Please enter a name',
 '에헴~ {0}, 오늘도 바르게!':'Ahem~ {0}, be good today too!','잘하면 내가 "옳지옳지~" 해 줄게!':'Do well and I\'ll say "Good job, good job~!"','오늘도 바르게, 즐겁게!':'Be good and have fun today!','고치기':'Edit',
-'이럴 땐 어떻게 할까?':'What should I do?','식당·화장실·버스 예절 퀴즈':'Manners quiz: restaurant, restroom, bus','꼰둥이 배지 {0}개':'{0} Kondung badges',
+'이럴 땐 어떻게 해야 할까?':'What should I do?','식당·화장실·버스 예절 퀴즈':'Manners quiz: restaurant, restroom, bus','꼰둥이 배지 {0}개':'{0} Kondung badges',
 '칭찬 도장판':'Praise Stamp Board','약속을 지키면 도장 쾅!':'Keep a promise, get a stamp!','다 모으면 상장 카드':'Fill it up for a certificate',
 '내 이름 동화':'My Name Story','{0}[이/가] 주인공인':'Starring {0}','5분 동화':'a 5-minute tale','오늘':'Today',
 '꼰둥이 웹툰':'Kondung Comics','꼰댕이·꼰순이의':'Kondaengi & Konsuni','하루 한 편 4컷':'a new 4-panel comic daily',
