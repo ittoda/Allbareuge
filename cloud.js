@@ -1,5 +1,5 @@
 /* ---------- Pi 로그인 · 클라우드 저장 · Pi 결제 ---------- */
-var SYNC_KEYS=['kid','sb','grow','grows','gcur','gearn','mq','gtok','gprem','gdeco','story','gp_plants','gp_animals','gp_sea','gp_space'];
+var SYNC_KEYS=['kid','sb','grow','grows','gcur','gearn','mq','gtok','gprem','gdeco','story','gp_plants','gp_animals','gp_sea','gp_space','math'];
 function piTok(){return window.PI_SESSION&&window.PI_SESSION.token}
 function api(u,d){return fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d||{})}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
 var _cdT=null,_pulling=false;

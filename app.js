@@ -39,14 +39,14 @@ function fill(tpl,o){return josa(tpl.replace(/\{X\}/g,o.X||'').replace(/\{N\}/g,
 var KID=ls('kid')||null;       // {name, av}
 var SB=ls('sb')||null;         // 도장판
 var VIEW='cover',SUB={};
-function go(v,o){VIEW=v;SUB=o||{};render();window.scrollTo(0,0)}
+function go(v,o){if(VIEW==='diary'&&v!=='diary'&&window.dyStop)dyStop();VIEW=v;SUB=o||{};render();window.scrollTo(0,0)}
 function hdr(x){return '<div class="top"><button class="back" onclick="go(\'home\')">← '+t('처음')+'</button><b>'+x+'</b></div>'}
 var AV=['🐣','🐰','🐻','🦊','🐼','🐯','🦄','🐬','🐶','🐱','🦖','🐧'];
 
 function render(){var h='';
   if(!KID&&VIEW!=='kid'&&VIEW!=='cover')VIEW='kid';
   if(VIEW==='cover')h=coverView();else if(VIEW==='kid')h=kidView();else if(VIEW==='home')h=homeView();else if(VIEW==='stamp')h=stampView();
-  else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();
+  else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();else if(VIEW==='diary')h=diaryView();else if(VIEW==='math')h=mathView();
   $('#app').innerHTML=h;if(VIEW==='draw'&&SUB.step==='time')tick();}
 function logo(center){return '<div class="logo"'+(center?' style="justify-content:center;margin:18px 0 6px"':'')+'>'+twinsLogo()+'<div><h1>all <span>'+t('바르게')+'</span></h1><small>'+t('꼰둥이와 함께 자라는 바른 습관')+'</small></div>'+(center?'':'<div style="margin-left:auto">'+langSel()+'</div>')+'</div>'}
 
@@ -98,6 +98,8 @@ function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayTo
    '<button class="card p" onclick="go(\'story\')"><div class="ic">📖</div><h3>'+t('내가 만드는 동화')+'</h3><p>'+t('{0}[이/가] 주인공인',esc(KID.name))+'<br>'+t('5분 동화')+'</p></button>'+
    '<button class="card s" onclick="go(\'toon\',{i:'+ti+'})"><div class="ic"><span class="cmc">📝<i>!</i></span></div><h3>'+t('꼰댕이와 꼰순이의 오늘의 웹툰')+'</h3><p>'+t('눈으로 보는 4컷 만화')+'</p></button>'+
    '<button class="card y" onclick="go(\'draw\')"><div class="ic">🎨</div><h3>'+t('그림 퀴즈')+'</h3><p>'+t('주제 뽑고 10분 그리기')+'<br>'+t('찰칵 찍으면 점수!')+'</p></button>'+
+   '<button class="card p" onclick="DY=null;go(\'diary\')"><div class="ic">📔</div><h3>'+t('나의 비밀 일기장')+'</h3><p>'+t('말하면 글씨로 써지는')+'<br>'+t('오늘의 일기')+'</p></button>'+
+   '<button class="card g" onclick="MG=null;go(\'math\')"><div class="ic">🧮</div><h3>'+t('엉아들의 시간')+'</h3><p>'+t('덧셈·뺄셈·곱셈 빈칸 채우기')+'<br>'+t('다 하면 졸업장!')+'</p></button>'+
   '</div>'+
   '<div class="box" style="margin-top:12px;padding:12px 14px"><h2 style="font-size:15px;margin:0 0 4px">👨‍👩‍👧 '+t('부모님께')+'</h2><p class="mut" style="margin:0;line-height:1.5;font-size:12px;word-break:keep-all">'+t('도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊')+'<br>'+t('그림 퀴즈는 집중력을 높이기 위해 꼭 시간을 정해 놓고 그려 보세요 ⏱️')+'<br>'+t('광고 없이 안심하고 쓰는 앱이에요.')+'</p></div>'+footLinks()}
 
