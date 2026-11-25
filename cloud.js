@@ -4,10 +4,10 @@ function piTok(){return window.PI_SESSION&&window.PI_SESSION.token}
 function api(u,d){return fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d||{})}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
 var _cdT=null,_pulling=false;
 function cloudDirty(){if(_pulling||!piTok())return;try{localStorage.setItem('ab_t',JSON.stringify(Date.now()))}catch(e){}clearTimeout(_cdT);_cdT=setTimeout(cloudPush,1500)}
-function cloudPush(){var tk=piTok();if(!tk)return;var d={_t:ls('t')||Date.now()};SYNC_KEYS.forEach(function(k){var v=ls(k);if(v!==null)d[k]=v});api('/me',{token:tk,data:d})}
+function cloudPush(){var tk=piTok();if(!tk)return;var ids=kidIds(),d={_t:ls('t')||Date.now(),kids:ids};SYNC_KEYS.forEach(function(k){(KSH[k]?['']:ids).forEach(function(id){var v=lsOf(k,id);if(v!==null)d[k+(KSH[k]?'':id)]=v})});api('/me',{token:tk,data:d})}
 async function cloudPull(){var tk=piTok();if(!tk)return;var r=await api('/me',{token:tk});
-  if(r&&r.ok&&r.data&&(r.data._t||0)>(ls('t')||0)){_pulling=true;SYNC_KEYS.forEach(function(k){if(k in r.data)ls(k,r.data[k])});ls('t',r.data._t);_pulling=false;
-    KID=ls('kid')||KID;SB=ls('sb')||SB;GRS=ls('grows')||GRS||{};if(!Object.keys(GRS).length){var o1=ls('grow');if(o1&&o1.pet)GRS[o1.pet]=o1}GR=GRS[ls('gcur')]||GRS[Object.keys(GRS)[0]]||GR}
+  if(r&&r.ok&&r.data&&(r.data._t||0)>(ls('t')||0)){_pulling=true;Object.keys(r.data).forEach(function(k){if(k==='_t')return;try{localStorage.setItem('ab_'+k,JSON.stringify(r.data[k]))}catch(e){}});ls('t',r.data._t);_pulling=false;
+    if(kidIds().indexOf(KSFX)<0){KSFX='';try{localStorage.setItem('ab_kcur','""')}catch(e){}}kidLoad();if(KID&&VIEW==='kid')VIEW='home'}
   await claim();if(!(r&&r.data))cloudPush()}
 async function claim(){var tk=piTok();if(!tk)return;var g=await api('/claim',{token:tk});if(!g||!g.ok)return;var ch=false;
   if(g.tok>0){if(GR){GR.tok+=g.tok;grSave()}else ls('gtok',(ls('gtok')||0)+g.tok);ch=true;toast('☀️ '+GU(33,g.tok))}

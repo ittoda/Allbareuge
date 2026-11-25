@@ -20,7 +20,7 @@ function diaryView(){if(!DY||(SUB.d&&SUB.d!==DY.d))dyLoad(SUB.d||today());
   (keys.length?'<div class="box" style="margin-top:14px"><h2>📚 '+t('지난 일기')+'</h2><div class="tlist">'+keys.slice(0,60).map(function(k){var e=all[k];return '<button class="'+(k===DY.d?'on':'')+'" onclick="dyStop();go(\'diary\',{d:\''+k+'\'})">'+(e.w||'📔')+' '+k.slice(5).replace('-','/')+' · '+esc(e.t||t('제목 없음'))+'</button>'}).join('')+'</div></div>':'')+
   '<p class="mut" style="text-align:center;font-size:12px">🔒 '+t('일기는 이 폰에만 저장되고 어디에도 보내지 않아요')+'</p>'}
 function dySet(k,v){DY[k]=v;dySave()}
-function dySave(show){if(!DY)return;var a=dyAll();if(DY.t||DY.x||DY.w){a[DY.d]={w:DY.w,t:DY.t,x:DY.x}}else delete a[DY.d];try{localStorage.setItem('ab_diary',JSON.stringify(a))}catch(e){}if(show){buzz();praise(t('에헴~ 일기를 쓰다니 훌륭하구먼!'),'K')}}
+function dySave(show){if(!DY)return;var a=dyAll();if(DY.t||DY.x||DY.w){a[DY.d]={w:DY.w,t:DY.t,x:DY.x}}else delete a[DY.d];try{localStorage.setItem(lk('diary'),JSON.stringify(a))}catch(e){}if(show){buzz();praise(t('에헴~ 일기를 쓰다니 훌륭하구먼!'),'K')}}
 /* 음성 → 글씨 */
 function dyNoMic(why){dyStop();if(VIEW==='diary')render();
   sheet('<h2>🎤 '+t('이 폰에서는 앱 마이크가 안 돼요')+'</h2><p style="line-height:1.7">'+t('대신 이렇게 해 보세요!')+'<br>① '+t('일기 쓰는 칸을 눌러요')+'<br>② '+t('키보드에 있는 <b>🎤 마이크 버튼</b>을 눌러요')+'<br>③ '+t('말하면 글씨로 써져요!')+'</p>'+(why?'<p class="mut" style="font-size:11px">('+esc(why)+')</p>':'')+'<button class="btn" onclick="closeSheet();var x=$(\'#dyX\');x&&x.focus()">'+t('알겠어요')+'</button>')}
