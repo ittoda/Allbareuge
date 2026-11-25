@@ -1,6 +1,7 @@
 /* All 바르게 — Bahasa Indonesia */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.id={
+'기타 약속 (직접 입력)':'Janji lain (ketik sendiri)','도장':'Stempel','약속을 적어 주세요':'Tulis janjinya dulu',
 '에헴! 라떼는 말야~':'Ehem! Zamanku dulu~','아름다운 어린이 되기':'Menjadi Anak yang Baik',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Beranda','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Tumbuh dengan kebiasaan baik bersama si kembar Kondung',
 '에헴~ 반갑구먼!':'Ehem~ senang bertemu denganmu!','이름이 뭐니? 알려 주렴~':'Siapa namamu? Beri tahu kami~',

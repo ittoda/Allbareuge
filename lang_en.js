@@ -1,6 +1,7 @@
 /* All 바르게 — English */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.en={
+'기타 약속 (직접 입력)':'Other promise (type it)','도장':'Stamp','약속을 적어 주세요':'Please write the promise',
 '에헴! 라떼는 말야~':'Ahem! Back in my day~','아름다운 어린이 되기':'Becoming a Wonderful Kid',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Home','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Good habits, growing up with the Kondung twins',
 '에헴~ 반갑구먼!':'Ahem~ nice to meet you!','이름이 뭐니? 알려 주렴~':'What\'s your name? Tell us, dear~',

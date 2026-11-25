@@ -113,6 +113,7 @@ function stampView(){if(!SB||SUB.setup)return stampSetup();var s=SB,n=s.stamps.l
   (s.promise?'<div class="promise">🎁 <b>'+t('{0}의 약속',esc(s.parent))+'</b><br>'+t('다 모으면 <b>{0}</b>!',esc(s.promise))+'</div>':'<div class="promise">🎁 '+t('<b>부모님 약속</b>을 아직 안 정했어요. ⚙️ 설정에서 정해 주세요!')+'</div>')+'</div>'+
   (full?'<button class="btn p" onclick="makeCert()">🏆 '+t('상장 받기')+'</button><button class="btn w" onclick="restartSB()">'+t('새 도장판 시작하기')+'</button>':
   '<div class="box"><h2>'+t('오늘 지킨 약속을 눌러요')+'</h2>'+s.missions.map(function(m,i){var c=s.stamps.filter(function(x){return x.m===m}).length;return '<button class="mbtn" onclick="stamp('+i+')">'+esc(m)+'<small>'+t('{0}번',c)+' ✓</small></button>'}).join('')+
+  [0,1].map(function(j){var v=(s.extra&&s.extra[j])||'',c=v?s.stamps.filter(function(x){return x.m==='✏️ '+v}).length:0;return '<div class="mx"><input id="mx'+j+'" class="inp" maxlength="20" placeholder="✏️ '+t('기타 약속 (직접 입력)')+'" value="'+esc(v)+'"><button class="chip" onclick="stampX('+j+')">'+(c?t('{0}번',c)+' ✓':'👍 '+t('도장'))+'</button></div>'}).join('')+
   '<p class="mut" style="margin:10px 0 0">👆 '+t('부모님이 확인하고 함께 눌러 주세요')+'</p>'+(n?'<button class="chip" style="margin-top:10px" onclick="undoStamp()">↩︎ '+t('방금 도장 취소')+'</button>':'')+'</div>')}
 function stampSetup(){var s=SB||newSB(),M=C('MISS');var sel=s.missions.slice();window._sel=sel;
   return hdr('⚙️ '+t('도장판 설정'))+'<div class="box"><h2>'+t('어떤 약속을 지킬까요?')+'</h2><div class="chips" id="msel">'+
@@ -131,6 +132,8 @@ function saveSB(){if(!_sel.length){toast(t('약속을 하나 이상 골라 주�
   if(SB){SB.missions=o.missions;SB.goal=Math.max(o.goal,SB.stamps.length);SB.promise=o.promise;SB.parent=o.parent}else SB=newSB(o);
   _goal=null;ls('sb',SB);go('stamp')}
 function stamp(i){var s=SB;if(s.stamps.length>=s.goal)return;s.stamps.push({m:s.missions[i],d:today(),s:rnd(STAMPS)});ls('sb',s);buzz();
+  go('stamp',{pop:s.stamps.length-1});praise(rnd([t('옳지옳지~! 참 잘했어요'),t('에헴~ 약속을 지켰구먼!'),t('옳지! 라떼보다 낫구먼~')]),rnd(['K','S']));if(s.stamps.length>=s.goal)setTimeout(function(){confetti(40);toast('🎉 '+t('다 모았어요! 상장을 받아요!'))},500)}
+function stampX(j){var s=SB,v=($('#mx'+j).value||'').trim().replace(/[<>{}\[\]]/g,'');if(!v){toast(t('약속을 적어 주세요'));$('#mx'+j).focus();return}if(s.stamps.length>=s.goal)return;s.extra=s.extra||['',''];s.extra[j]=v;s.stamps.push({m:'✏️ '+v,d:today(),s:rnd(STAMPS)});ls('sb',s);buzz();
   go('stamp',{pop:s.stamps.length-1});praise(rnd([t('옳지옳지~! 참 잘했어요'),t('에헴~ 약속을 지켰구먼!'),t('옳지! 라떼보다 낫구먼~')]),rnd(['K','S']));if(s.stamps.length>=s.goal)setTimeout(function(){confetti(40);toast('🎉 '+t('다 모았어요! 상장을 받아요!'))},500)}
 function ask(msg,fn){sheet('<h2>'+msg+'</h2><div class="row"><button class="btn w" onclick="closeSheet()">'+t('아니요')+'</button><button class="btn" id="askY">'+t('네')+'</button></div>');$('#askY').onclick=function(){closeSheet();fn()}}
 function undoStamp(){if(!SB.stamps.length)return;ask(t('방금 찍은 도장을 취소할까요?'),function(){SB.stamps.pop();ls('sb',SB);go('stamp')})}
