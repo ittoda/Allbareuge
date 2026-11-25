@@ -18,7 +18,7 @@ TR.en={
 '에헴! 라떼는 말야~':'Ahem! Back in my day~','아름다운 어린이 되기':'Becoming a Wonderful Kid',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Home','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Good habits, growing up with the Kondung twins',
 '에헴~ 반갑구먼!':'Ahem~ nice to meet you!','이름이 뭐니? 알려 주렴~':'What\'s your name? Tell us, dear~',
-'우리 아이를 소개해 주세요':'Tell us about your child','아이 이름 (또는 애칭)':'Child\'s name (or nickname)','예) 지우':'e.g. Mia','좋아하는 캐릭터':'Favorite character',
+'우리 아이를 소개해 주세요':'Tell us about your child','아이 이름 (또는 애칭)':'Child\'s name (or nickname)','예) 소영':'e.g. Mia','좋아하는 캐릭터':'Favorite character',
 '실명 대신 애칭만 넣어 주세요.':'No real names needed. A nickname is enough.','시작하기':'Start','아이 이름을 넣어 주세요':'Please enter a name',
 '에헴~ {0}, 오늘도 바르게!':'Ahem~ {0}, be good today too!','잘하면 내가 "옳지옳지~" 해 줄게!':'Do well and I\'ll say "Good job, good job~!"','오늘도 바르게, 즐겁게!':'Be good and have fun today!','고치기':'Edit',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'Ahem! Back in my day~ Manners, go go go!','식당·화장실·버스 예절 퀴즈':'Manners quiz: restaurant, restroom, bus','꼰둥이 배지 {0}개':'{0} Kondung badges',

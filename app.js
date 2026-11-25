@@ -80,7 +80,7 @@ function footLinks(){return '<div class="cv-foot in"><a href="#" onclick="go(\'c
 /* ---------- 아이 정보 ---------- */
 function kidView(){var k=KID||{name:'',av:'🐣'};
   return '<div style="text-align:right">'+langSel()+'</div>'+logo(1)+greet(t('에헴~ 반갑구먼!'),t('이름이 뭐니? 알려 주렴~'))+
-  '<div class="box"><h2>👋 '+t('우리 아이를 소개해 주세요')+'</h2><label class="f">'+t('아이 이름 (또는 애칭)')+'</label><input id="kn" class="inp" maxlength="12" placeholder="'+t('예) 지우')+'" value="'+esc(_kn!=null?_kn:k.name)+'">'+
+  '<div class="box"><h2>👋 '+t('우리 아이를 소개해 주세요')+'</h2><label class="f">'+t('아이 이름 (또는 애칭)')+'</label><input id="kn" class="inp" maxlength="12" placeholder="'+t('예) 소영')+'" value="'+esc(_kn!=null?_kn:k.name)+'">'+
   '<label class="f">🎂 '+t('생일')+' <small class="mut" style="font-weight:600">('+t('선택 · 생일날 깜짝 선물이 있어요')+')</small></label><input id="kb" class="inp" type="date" max="'+today()+'" min="2010-01-01" value="'+esc(_kb!=null?_kb:(k.bd||''))+'">'+
   '<label class="f">'+t('좋아하는 캐릭터')+'</label><div class="chips" id="kav">'+AV.map(function(a){return '<button class="chip'+(a===(_av||k.av)?' on':'')+'" style="font-size:24px" onclick="pickAv(this,\''+a+'\')">'+a+'</button>'}).join('')+'</div>'+
   (function(){var p=ls('photo'),sel=(_av||k.av)==='📷';return '<div class="kph">'+(p?'<button class="chip kpc'+(sel?' on':'')+'" onclick="pickAv(this,\'📷\')"><img class="kphoto" src="'+p+'" alt=""></button><button class="btn w" style="flex:1" onclick="pickPhoto()">'+esc(LU(17))+'</button><button class="kdel" onclick="delPhoto()">'+esc(LU(19))+'</button>':'<button class="btn w" style="flex:1" onclick="pickPhoto()">'+esc(LU(17))+'</button>')+'</div><p class="mut" style="margin:6px 0 0;font-size:12.5px">🔒 '+esc(LU(18))+'</p>'})()+

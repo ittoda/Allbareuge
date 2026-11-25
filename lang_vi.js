@@ -18,7 +18,7 @@ TR.vi={
 '에헴! 라떼는 말야~':'E hèm! Thời của ta~','아름다운 어린이 되기':'Trở thành em bé ngoan',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Trang chủ','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Lớn lên cùng thói quen tốt với cặp song sinh Kondung',
 '에헴~ 반갑구먼!':'E hèm~ rất vui được gặp cháu!','이름이 뭐니? 알려 주렴~':'Cháu tên là gì? Nói cho tụi ta nghe nào~',
-'우리 아이를 소개해 주세요':'Giới thiệu về bé nhà bạn','아이 이름 (또는 애칭)':'Tên bé (hoặc biệt danh)','예) 지우':'VD: Bông','좋아하는 캐릭터':'Nhân vật yêu thích',
+'우리 아이를 소개해 주세요':'Giới thiệu về bé nhà bạn','아이 이름 (또는 애칭)':'Tên bé (hoặc biệt danh)','예) 소영':'VD: Bông','좋아하는 캐릭터':'Nhân vật yêu thích',
 '실명 대신 애칭만 넣어 주세요.':'Không cần tên thật. Chỉ cần biệt danh.','시작하기':'Bắt đầu','아이 이름을 넣어 주세요':'Hãy nhập tên bé',
 '에헴~ {0}, 오늘도 바르게!':'E hèm~ {0}, hôm nay cũng ngoan nhé!','잘하면 내가 "옳지옳지~" 해 줄게!':'Làm tốt là ta khen “Giỏi lắm, giỏi lắm~!” ngay!','오늘도 바르게, 즐겁게!':'Hôm nay ngoan và vui nhé!','고치기':'Sửa',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'E hèm! Thời của ta~ Học lễ phép, go go go!','식당·화장실·버스 예절 퀴즈':'Đố vui phép lịch sự: nhà hàng, nhà vệ sinh, xe buýt','꼰둥이 배지 {0}개':'{0} huy hiệu Kondung',
