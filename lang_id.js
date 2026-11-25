@@ -6,7 +6,7 @@ TR.id={
 '우리 아이를 소개해 주세요':'Kenalkan anak Anda','아이 이름 (또는 애칭)':'Nama anak (atau nama panggilan)','예) 지우':'Contoh: Dodo','좋아하는 캐릭터':'Karakter favorit',
 '실명 대신 애칭만 넣어 주세요.':'Tidak perlu nama asli. Cukup nama panggilan.','시작하기':'Mulai','아이 이름을 넣어 주세요':'Masukkan nama anak',
 '에헴~ {0}, 오늘도 바르게!':'Ehem~ {0}, hari ini juga jadi anak baik ya!','잘하면 내가 "옳지옳지~" 해 줄게!':'Kalau berhasil, aku bilang “Pintar, pintar~!”','오늘도 바르게, 즐겁게!':'Hari ini baik dan gembira!','고치기':'Ubah',
-'이럴 땐 어떻게 해야 할까?':'Apa yang harus dilakukan?','식당·화장실·버스 예절 퀴즈':'Kuis sopan santun: restoran, toilet, bus','꼰둥이 배지 {0}개':'{0} lencana Kondung',
+'에헴! 라떼는 말야~ 예절 배우기 gogogo!':'Ehem! Zamanku dulu~ Ayo belajar sopan santun, go go go!','식당·화장실·버스 예절 퀴즈':'Kuis sopan santun: restoran, toilet, bus','꼰둥이 배지 {0}개':'{0} lencana Kondung',
 '칭찬 도장판':'Papan stempel pujian','약속을 지키면 도장 쾅!':'Tepati janji, dapat stempel!','다 모으면 상장 카드':'Penuh = piagam penghargaan',
 '내 이름 동화':'Dongeng namaku','{0}[이/가] 주인공인':'{0} jadi tokoh utama','5분 동화':'dongeng 5 menit','오늘':'Hari ini',
 '꼰둥이 웹툰':'Komik Kondung','꼰댕이·꼰순이의':'Kondaengi dan Konsuni','하루 한 편 4컷':'satu komik 4 panel tiap hari',
