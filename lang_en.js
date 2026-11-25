@@ -1,6 +1,7 @@
 /* All 바르게 — English */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.en={
+"그림 퀴즈는 집중력을 높이기 위해 꼭 시간을 정해 놓고 그려 보세요 ⏱️":"For the drawing quiz, always set a timer to help your child focus ⏱️",
 "꼰댕이와 꼰순이의 오늘의 웹툰":"Kondaengi & Konsuni's Comic of the Day",
 "3가지 그리기":"Draw 3 things","세 가지를 모두 넣어 그려 보세요!":"Put all three in one picture!","{0}가지 그림 친구 중에서 뽑았어요":"Picked from {0} drawing friends",
 "지난 이야기":"Past stories","매일 새로운 이야기가 열려요 · 모두 {0}가지":"A new story opens every day · {0} in all","어제":"Yesterday","{0}일 전":"{0} days ago",

@@ -99,7 +99,7 @@ function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayTo
    '<button class="card s" onclick="go(\'toon\',{i:'+ti+'})"><div class="ic"><span class="cmc">📝<i>!</i></span></div><h3>'+t('꼰댕이와 꼰순이의 오늘의 웹툰')+'</h3><p>'+t('눈으로 보는 4컷 만화')+'</p></button>'+
    '<button class="card y" onclick="go(\'draw\')"><div class="ic">🎨</div><h3>'+t('그림 퀴즈')+'</h3><p>'+t('주제 뽑고 10분 그리기')+'<br>'+t('찰칵 찍으면 점수!')+'</p></button>'+
   '</div>'+
-  '<div class="box" style="margin-top:14px"><h2>👨‍👩‍👧 '+t('부모님께')+'</h2><p class="mut" style="margin:0;line-height:1.6">'+t('도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊')+'<br>'+t('광고 없이 안심하고 쓰는 앱이에요.')+'</p></div>'+footLinks()}
+  '<div class="box" style="margin-top:14px"><h2>👨‍👩‍👧 '+t('부모님께')+'</h2><p class="mut" style="margin:0;line-height:1.6">'+t('도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊')+'<br>'+t('그림 퀴즈는 집중력을 높이기 위해 꼭 시간을 정해 놓고 그려 보세요 ⏱️')+'<br>'+t('광고 없이 안심하고 쓰는 앱이에요.')+'</p></div>'+footLinks()}
 
 /* ---------- 칭찬 도장판 ---------- */
 var STAMPS=['⭐','🌸','🍀','🐰','💚','🌈','🍓','🐥'];
