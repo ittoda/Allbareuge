@@ -22,7 +22,7 @@ function langSel(){return '<select class="lsel" onchange="setLang(this.value)" a
 function KN(){return t('꼰댕이')}function SN(){return t('꼰순이')}
 
 /* ---------- 꼰둥이 쌍둥이 ---------- */
-function chr(c,cls){if(c==='K')return '<img class="'+(cls||'ci')+'" src="'+IMG.kd_f+'" alt="'+KN()+'">';if(c==='S')return '<img class="'+(cls||'ci')+'" src="'+IMG.ks_f+'" alt="'+SN()+'">';return '<span class="ch">'+c+'</span>'}
+function chr(c,cls){if(c==='K')return '<img class="'+(cls||'ci')+'" src="'+IMG.kd_f+'" alt="'+KN()+'">';if(c==='S')return '<img class="'+(cls||'ci')+'" src="'+IMG.ks_f+'" alt="'+SN()+'">';return c.charAt(0)==='~'?'<span class="ch sm">'+c.slice(1)+'</span>':'<span class="ch">'+c+'</span>'}
 var PIM={};['kd_f','ks_f','kd_h','ks_h'].forEach(function(k){var i=new Image();i.src=IMG[k];PIM[k]=i});
 function twinsLogo(){return '<div class="lg2"><img src="'+IMG.kd_h+'" alt=""><img src="'+IMG.ks_h+'" alt=""></div>'}
 function greet(kLine,sLine){return '<div class="greet"><img src="'+IMG.kd_f+'" alt="'+KN()+'"><div class="gb"><b>'+KN()+'</b> '+kLine+'<br><b class="pk">'+SN()+'</b> '+sLine+'</div><img src="'+IMG.ks_f+'" alt="'+SN()+'"></div>'}
@@ -214,15 +214,15 @@ function readAloud(){try{var ss=window.speechSynthesis;if(!ss){toast(t('이 브�
 
 /* ---------- 꼰둥이 웹툰 ---------- */
 var _AT={};
-function makeEp(i,E){var m=EP_M[i],e=E[i],kid=['🧒','👧','👦'][i%3];
-  return {t:e[0],l:e[3],c:[[m[1],[kid],m[0],[[2,e[1]]]],['#ffe8ef',['K'],'☕',[[0,t('에헴~ 그건 아니지!')]]],['#e3f4ff',['S'],'💡',[[1,e[3]]]],['#e7f9dd',[kid,'S'],'✨',[[2,e[2]]]]]}}
+function makeEp(i,E){var m=EP_M[i],e=E[i],kid=['🧒','👧','👦'][i%3],sc=m[1],ob=m[3]?['~'+m[3]]:[],ot=m[2]?[m[2]]:[];
+  return {t:e[0],l:e[3],c:[[m[0],[kid].concat(ob,ot),'',[[2,e[1]]],sc],['#ffe8ef',['K'],'☕',[[0,t('에헴~ 그건 아니지!')]],sc],['#e3f4ff',['S'],'💡',[[1,e[3]]],sc],['#e7f9dd',[kid].concat(ob,ot.length?ot:['S']),'',[[2,e[2]]],sc]]}}
 function allToons(){if(_AT[LANG])return _AT[LANG];var E=C('EP')||EP;return _AT[LANG]=C('TOONS').concat(E.map(function(x,i){return makeEp(i,E)}))}
 function toonDay(){return Math.floor((Date.now()+9*3600e3)/864e5)}
 function toonIdxOf(d){var n=allToons().length;return ((d*37)%n+n)%n}
 function todayToonIdx(){return toonIdxOf(toonDay())}
 function toonView(){var T=allToons(),ti=todayToonIdx(),i=(SUB.i==null?ti:SUB.i),tn=T[i],who=[KN(),SN(),''],d=toonDay();
   var pans=tn.c.map(function(p,k){var dark=/^#[3-6]/.test(p[0]);var bb=p[3].map(function(b){return '<div class="bb">'+(b[0]<2?'<span style="color:'+(b[0]?'#e0567f':'#d99a00')+'">'+who[b[0]]+'</span> ':'')+esc(b[1])+'</div>'}).join('');
-    return '<div class="pan'+(dark?' dark':'')+'" style="background:'+p[0]+'"><span class="no">'+(k+1)+'</span><div class="bbs">'+bb+'</div><div class="who2">'+p[1].map(function(c){return chr(c)}).join('')+'</div><span class="pr">'+p[2]+'</span></div>'}).join('');
+    return '<div class="pan'+(dark?' dark':'')+'" style="background:'+p[0]+'"><span class="no">'+(k+1)+'</span>'+(p[4]?'<div class="scn">'+p[4]+'</div>':'')+'<div class="bbs">'+bb+'</div><div class="who2">'+p[1].map(function(c){return chr(c)}).join('')+'</div><span class="pr">'+p[2]+'</span></div>'}).join('');
   var past=[];for(var k=0;k<=6;k++)past.push(toonIdxOf(d-k));
   return hdr('💬 '+t('꼰댕이와 꼰순이의 웹툰'))+'<div class="box" style="padding:12px"><div style="display:flex;align-items:center;margin-bottom:8px"><h2 style="margin:0">#'+(i+1)+' '+esc(tn.t)+'</h2>'+(i===ti?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('오늘')+'</span>':'')+'</div>'+
   '<div class="toon">'+pans+'</div><div class="promise" style="background:var(--s2)">💡 <b style="color:#1d78b0">'+t('오늘의 바른 습관')+'</b><br>'+esc(tn.l)+'</div></div>'+

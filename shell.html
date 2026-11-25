@@ -83,10 +83,11 @@ label.f{display:block;font-weight:800;font-size:14px;margin:12px 0 6px}
 .pager{display:flex;align-items:center;gap:10px;margin-top:6px}.pager span{font-weight:800;color:var(--mut);min-width:60px;text-align:center}
 /* 웹툰 */
 .toon{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#fff;padding:8px;border-radius:18px;border:3px solid #2e3a2a}
-.pan{aspect-ratio:1;border-radius:10px;border:2.5px solid #2e3a2a;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:16px 6px 6px}
+.pan{aspect-ratio:4/5;border-radius:10px;border:2.5px solid #2e3a2a;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:16px 6px 6px}
 .pan .no{position:absolute;left:6px;top:4px;font-size:11px;font-weight:900;opacity:.45}
-.pan .ch{font-size:44px;line-height:1}.pan .pr{position:absolute;right:8px;bottom:8px;font-size:22px}
-.pan .bb{position:relative;background:#fff;border:2px solid #2e3a2a;border-radius:14px;padding:5px 8px;font-size:12.5px;font-weight:800;line-height:1.35;word-break:keep-all}
+.pan .ch{font-size:44px;line-height:1}.pan .pr{position:absolute;right:6px;bottom:6px;font-size:30px;z-index:1}
+.pan .scn{position:absolute;left:0;right:0;bottom:26%;text-align:center;font-size:64px;line-height:1;opacity:.3;letter-spacing:2px;white-space:nowrap;z-index:0}
+.pan .bb{position:relative;background:#fff;border:2px solid #2e3a2a;border-radius:14px;padding:6px 9px;font-size:15px;font-weight:800;line-height:1.4;word-break:keep-all;overflow-wrap:anywhere}
 .pan .bb:after{content:"";position:absolute;bottom:-8px;left:22px;border:6px solid transparent;border-top-color:#2e3a2a}
 .pan.dark .no{color:#fff}
 .tlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -119,7 +120,8 @@ label.f{display:block;font-weight:800;font-size:14px;margin:12px 0 6px}
 .greet img{height:118px;flex:0 0 auto}.greet .gb{flex:1;background:#fff;border-radius:16px;padding:10px 12px;font-size:14px;line-height:1.55;margin-bottom:12px;word-break:keep-all;box-shadow:0 2px 0 rgba(0,0,0,.05)}
 .greet b{color:#1d78b0}.greet b.pk{color:#e0567f}
 .card.wide{display:flex;align-items:flex-end;width:100%;min-height:0;margin-bottom:12px;padding:14px 10px 0 14px;background:linear-gradient(160deg,#e3f4ff,#ffe3ec)}.card.wide .wl{flex:1;padding-bottom:14px}.card.wide img{height:112px;margin-left:-6px}
-.pan .bbs{position:relative;z-index:2;display:flex;flex-direction:column;gap:9px;width:100%}.pan .who2{flex:1;min-height:0;display:flex;align-items:flex-end;justify-content:center;gap:2px;width:100%}.pan .who2 .ci{height:100%;max-height:150px;width:auto;object-fit:contain}.pan .who2 .ch{font-size:40px}
+.pan .bbs{position:relative;z-index:2;display:flex;flex-direction:column;gap:9px;width:100%}.pan .who2{position:relative;z-index:1;flex:1;min-height:0;display:flex;align-items:flex-end;justify-content:center;gap:2px;width:100%}.pan .who2 .ci{height:100%;max-height:150px;width:auto;object-fit:contain}.pan .who2 .ch{font-size:46px}
+.pan .who2 .ch.sm{font-size:30px;align-self:center;margin-top:18px}
 .praise{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);display:flex;align-items:flex-end;gap:6px;z-index:95;animation:up .25s;pointer-events:none}.praise img{height:150px}.praise .pb{background:#fff;border:3px solid #ff7fa8;border-radius:18px;padding:10px 14px;font-weight:900;font-size:17px;margin-bottom:60px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.12)}.praise.out{opacity:0;transition:opacity .4s}
 .mscene{background:linear-gradient(160deg,#e3f4ff,#e9fbe0);border-radius:24px;padding:18px 16px;text-align:center;margin-bottom:12px}.mscene .pl{display:inline-block;background:#fff;border-radius:20px;padding:4px 12px;font-weight:800;font-size:13px;color:#1d78b0}.mscene .pe{font-size:72px;line-height:1.15}.mscene h2{margin:6px 0 0;font-size:21px;word-break:keep-all}
 .opt{display:flex;align-items:center;gap:12px;width:100%;background:#fff;border-radius:18px;padding:16px;margin-bottom:10px;font-weight:800;font-size:17px;text-align:left;box-shadow:0 3px 0 rgba(0,0,0,.07);border:3px solid #eef2ea}.opt span{font-size:34px}
