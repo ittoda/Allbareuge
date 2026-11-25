@@ -1,5 +1,5 @@
 /* ---------- Pi 로그인 · 클라우드 저장 · Pi 결제 ---------- */
-var SYNC_KEYS=['kid','sb','grow','gearn','mq','gtok','gprem','gdeco','story'];
+var SYNC_KEYS=['kid','sb','grow','gearn','mq','gtok','gprem','gdeco','story','gp_plants','gp_animals','gp_sea','gp_space'];
 function piTok(){return window.PI_SESSION&&window.PI_SESSION.token}
 function api(u,d){return fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d||{})}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
 var _cdT=null,_pulling=false;
@@ -11,7 +11,7 @@ async function cloudPull(){var tk=piTok();if(!tk)return;var r=await api('/me',{t
   await claim();if(!(r&&r.data))cloudPush()}
 async function claim(){var tk=piTok();if(!tk)return;var g=await api('/claim',{token:tk});if(!g||!g.ok)return;var ch=false;
   if(g.tok>0){if(GR){GR.tok+=g.tok;grSave()}else ls('gtok',(ls('gtok')||0)+g.tok);ch=true;toast('☀️ '+GU(33,g.tok))}
-  if(g.prem&&!ls('gprem')){ls('gprem',1);ch=true}if(g.deco&&!ls('gdeco')){ls('gdeco',1);ch=true}
+  if(g.prem&&!ls('gprem')){ls('gprem',1);ch=true}['plants','animals','sea','space'].forEach(function(f){if(g[f]&&!ls('gp_'+f)){ls('gp_'+f,1);ch=true}});if(g.deco&&!ls('gdeco')){ls('gdeco',1);ch=true}
   if(ch){clearTimeout(_cdT);cloudPush();render()}}
 document.addEventListener('visibilitychange',function(){if(document.hidden&&_cdT){clearTimeout(_cdT);_cdT=null;cloudPush()}});
 function withTimeout(p,ms){return Promise.race([p,new Promise(function(r){setTimeout(function(){r(null)},ms)})])}

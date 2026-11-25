@@ -9,21 +9,49 @@ zh:['养小伙伴','签到攒阳光,养一整年','你想养谁?','选好了就�
 ja:['そだてよう','しゅっせきして ひかりを あつめ、1年 そだてよう','だれを そだてる?','えらんだら 1年 いっしょに そだてるよ!','なまえを つける','そだてはじめる','しゅっせき','きょうは しゅっせき ずみ!','ひかり','{0}にち れんぞく','7にち れんぞく ボーナス +5','みずやり','ごはん','ひなたぼっこ','おさんぽ','なでなで','ひかりが たりないよ。しゅっせきして あそぶと たまるよ!','きょうの おせわ おわり! また あしたね','いっしょの日 {0} / 365にち','つぎの だんかいまで {0}にち','Lv.{0}','ひかりの あつめかた','しゅっせき+3 · スタンプ+2 · おえかき+2 · おはなし+1 · まんが+1 · マナークイズ+1(1日1かい)','かざりの おみせ','かったよ!','1年 いっしょに そだてたね! ほんとうに すごい!','あいたかったよ~ もどってきて ありがとう!','きょうも きてくれたね! ありがとう~','ひまわり','りんごの き','ひよこ','こいぬ','あたらしい ともだちを そだてる','+{0} ひかり!','よしよし~ じょうずに そだてておるな!','えっへん~ きょうも おせわ しておくれ!','例)おひさま','いまの ともだちは おもいでアルバムに のこして、あたらしい ともだちを そだてるよ。','こんげつの しゅっせき','きょうの おせわ','リボン','ぼうし','おうかん','にじ','ちいさな いえ','ちょうちょ','きょうの おせわを ぜんぶ すると 1にち ふえるよ','おもいでアルバム','おうちの人の おみせ (Pi)','ひかり 30こ','ひかり 100こ','とくべつな ともだち','おうちの人 かくにん','せいかいを おしてください','けっさいは Pi Browser の せいしき アプリで ひらきます','うさぎ','パンダ','きょうりゅう','ユニコーン','ひらいたよ!','けっさいは おうちの人だけ。子どもは しゅっせきと あそびで ひかりを あつめます。','キラキラ かざりセット','1年の せいちょう マップ','{0}にちめ','ひかりの つかいかた','おせわ 1かいに 1こ · かざり 10〜50こ','3つの おせわを すると 1にち ふえるよ','いま ここ!']
 };
 function GU(i){var a=(GW_UI[LANG]||GW_UI.en),s=a[i]!=null?a[i]:GW_UI.ko[i];var x=arguments;return s.replace(/\{(\d)\}/g,function(m,k){return x[+k+1]})}
-var PETS={sun:{n:28,plant:1,st:['🌰','🌱','🌿','🪴','🌼','🌻'],bg:'#fff3c4'},tree:{n:29,plant:1,st:['🌰','🌱','🌿','🪴','🌳','🍎'],bg:'#e7f9dd'},chick:{n:30,st:['🥚','🥚','🐣','🐥','🐤','🐔'],bg:'#fff6d4'},pup:{n:31,st:['🧺','🐶','🐶','🐕','🐕','🐕'],bg:'#e3f4ff'}};
-var PPETS={bun:{n:55,st:['🥕','🐰','🐰','🐇','🐇','🐇'],bg:'#ffe6ee'},panda:{n:56,st:['🎋','🐼','🐼','🐼','🐼','🐼'],bg:'#eef3ea'},dino:{n:57,st:['🥚','🥚','🦎','🦖','🦕','🦖'],bg:'#e7f9dd'},uni:{n:58,st:['🥚','🐴','🐴','🦄','🦄','🦄'],bg:'#f2e8ff'}};
-Object.keys(PPETS).forEach(function(k){PETS[k]=PPETS[k];PETS[k].prem=1});
-var PAY=[{id:'sun30',u:49,e:'☀️',pi:0.1,give:{tok:30}},{id:'sun100',u:50,e:'🌞',pi:0.3,give:{tok:100}},{id:'pets',u:51,e:'🦄',pi:0.5,give:{prem:1}},{id:'deco',u:61,e:'✨',pi:0.3,give:{deco:1}}];
-function premOn(){return !!ls('gprem')}
+var CATS=[{k:'plants',e:'🌱',free:'sun'},{k:'animals',e:'🐾'},{k:'sea',e:'🐠'},{k:'space',e:'✨'}];
+var PETS={
+ sun:{c:'plants',plant:1,st:['🌰','🌱','🌿','🪴','🌼','🌻'],bg:'#fff3c4'},
+ tree:{c:'plants',plant:1,st:['🌰','🌱','🌿','🪴','🌳','🍎'],bg:'#e7f9dd'},
+ rose:{c:'plants',plant:1,st:['🌰','🌱','🌿','🪴','🌷','🌹'],bg:'#ffe6ee'},
+ cactus:{c:'plants',plant:1,st:['🌰','🌱','🌱','🪴','🌵','🌵'],bg:'#fff6d4'},
+ chick:{c:'animals',st:['🥚','🥚','🐣','🐥','🐤','🐔'],bg:'#fff6d4'},
+ pup:{c:'animals',st:['🧺','🐶','🐶','🐕','🐕','🐕'],bg:'#e3f4ff'},
+ bun:{c:'animals',st:['🥕','🐰','🐰','🐇','🐇','🐇'],bg:'#ffe6ee'},
+ panda:{c:'animals',st:['🎋','🐼','🐼','🐼','🐼','🐼'],bg:'#eef3ea'},
+ dino:{c:'animals',st:['🥚','🥚','🦎','🦖','🦕','🦖'],bg:'#e7f9dd'},
+ uni:{c:'animals',st:['🥚','🐴','🐴','🦄','🦄','🦄'],bg:'#f2e8ff'},
+ fish:{c:'sea',sea:1,st:['🫧','🐟','🐟','🐠','🐠','🐠'],bg:'#d6f0ff'},
+ dolph:{c:'sea',sea:1,st:['🫧','🐬','🐬','🐬','🐬','🐬'],bg:'#d6f0ff'},
+ turtle:{c:'sea',sea:1,st:['🥚','🐢','🐢','🐢','🐢','🐢'],bg:'#d6f0ff'},
+ octo:{c:'sea',sea:1,st:['🫧','🐙','🐙','🐙','🐙','🐙'],bg:'#d6f0ff'},
+ star:{c:'space',sky:1,st:['✨','⭐','⭐','🌟','🌟','🌠'],bg:'#2b2f6b'},
+ moon:{c:'space',sky:1,st:['🌑','🌒','🌓','🌔','🌕','🌝'],bg:'#2b2f6b'},
+ planet:{c:'space',sky:1,st:['☄️','🌑','🌍','🌏','🪐','🪐'],bg:'#2b2f6b'},
+ rocket:{c:'space',sky:1,st:['🔩','🔧','🛰️','🛸','🚀','🚀'],bg:'#2b2f6b'}};
+var PN={
+ko:{feed:'먹이 주기',swim:'헤엄치기',shine:'반짝반짝',watch:'망원경 보기',plants:'식물',animals:'동물',sea:'바다 친구',space:'별·우주',sun:'해바라기',tree:'사과나무',rose:'장미',cactus:'선인장',chick:'병아리',pup:'강아지',bun:'토끼',panda:'판다',dino:'공룡',uni:'유니콘',fish:'물고기',dolph:'돌고래',turtle:'거북이',octo:'문어',star:'별',moon:'달',planet:'행성',rocket:'로켓',free:'무료',pack:'{0} 모두 열기',open:'열림',freeNote:'해바라기는 무료예요. 다른 친구들은 부모님이 Pi로 열어 줄 수 있어요.'},
+en:{feed:'Feed',swim:'Swim',shine:'Polish',watch:'Telescope',plants:'Plants',animals:'Animals',sea:'Sea friends',space:'Stars & space',sun:'Sunflower',tree:'Apple tree',rose:'Rose',cactus:'Cactus',chick:'Chick',pup:'Puppy',bun:'Bunny',panda:'Panda',dino:'Dinosaur',uni:'Unicorn',fish:'Fish',dolph:'Dolphin',turtle:'Turtle',octo:'Octopus',star:'Star',moon:'Moon',planet:'Planet',rocket:'Rocket',free:'Free',pack:'Unlock all {0}',open:'Open',freeNote:'The sunflower is free. Parents can unlock other friends with Pi.'},
+vi:{feed:'Cho ăn',swim:'Bơi lội',shine:'Lau sáng',watch:'Kính viễn vọng',plants:'Cây cối',animals:'Động vật',sea:'Bạn biển',space:'Sao & vũ trụ',sun:'Hướng dương',tree:'Cây táo',rose:'Hoa hồng',cactus:'Xương rồng',chick:'Gà con',pup:'Cún con',bun:'Thỏ',panda:'Gấu trúc',dino:'Khủng long',uni:'Kỳ lân',fish:'Cá',dolph:'Cá heo',turtle:'Rùa',octo:'Bạch tuộc',star:'Ngôi sao',moon:'Mặt trăng',planet:'Hành tinh',rocket:'Tên lửa',free:'Miễn phí',pack:'Mở tất cả {0}',open:'Đã mở',freeNote:'Hướng dương miễn phí. Bố mẹ có thể mở các bạn khác bằng Pi.'},
+id:{feed:'Beri makan',swim:'Berenang',shine:'Kilapkan',watch:'Teropong',plants:'Tanaman',animals:'Hewan',sea:'Teman laut',space:'Bintang & angkasa',sun:'Bunga matahari',tree:'Pohon apel',rose:'Mawar',cactus:'Kaktus',chick:'Anak ayam',pup:'Anak anjing',bun:'Kelinci',panda:'Panda',dino:'Dinosaurus',uni:'Unicorn',fish:'Ikan',dolph:'Lumba-lumba',turtle:'Kura-kura',octo:'Gurita',star:'Bintang',moon:'Bulan',planet:'Planet',rocket:'Roket',free:'Gratis',pack:'Buka semua {0}',open:'Terbuka',freeNote:'Bunga matahari gratis. Orang tua bisa membuka teman lain dengan Pi.'},
+hi:{feed:'खाना दो',swim:'तैराओ',shine:'चमकाओ',watch:'दूरबीन',plants:'पौधे',animals:'जानवर',sea:'समुद्री दोस्त',space:'तारे और अंतरिक्ष',sun:'सूरजमुखी',tree:'सेब का पेड़',rose:'गुलाब',cactus:'कैक्टस',chick:'चूज़ा',pup:'पिल्ला',bun:'खरगोश',panda:'पांडा',dino:'डायनासोर',uni:'यूनिकॉर्न',fish:'मछली',dolph:'डॉल्फ़िन',turtle:'कछुआ',octo:'ऑक्टोपस',star:'तारा',moon:'चाँद',planet:'ग्रह',rocket:'रॉकेट',free:'मुफ़्त',pack:'सभी {0} खोलें',open:'खुला',freeNote:'सूरजमुखी मुफ़्त है। बाकी दोस्त माता-पिता Pi से खोल सकते हैं।'},
+zh:{feed:'喂食',swim:'游泳',shine:'擦亮',watch:'望远镜',plants:'植物',animals:'动物',sea:'海洋朋友',space:'星星·宇宙',sun:'向日葵',tree:'苹果树',rose:'玫瑰',cactus:'仙人掌',chick:'小鸡',pup:'小狗',bun:'兔子',panda:'熊猫',dino:'恐龙',uni:'独角兽',fish:'小鱼',dolph:'海豚',turtle:'乌龟',octo:'章鱼',star:'星星',moon:'月亮',planet:'行星',rocket:'火箭',free:'免费',pack:'解锁全部{0}',open:'已解锁',freeNote:'向日葵免费。其他伙伴可由家长用 Pi 解锁。'},
+ja:{feed:'えさ',swim:'およぐ',shine:'ピカピカ',watch:'ぼうえんきょう',plants:'しょくぶつ',animals:'どうぶつ',sea:'うみの ともだち',space:'ほし・うちゅう',sun:'ひまわり',tree:'りんごの き',rose:'バラ',cactus:'サボテン',chick:'ひよこ',pup:'こいぬ',bun:'うさぎ',panda:'パンダ',dino:'きょうりゅう',uni:'ユニコーン',fish:'さかな',dolph:'イルカ',turtle:'カメ',octo:'タコ',star:'ほし',moon:'つき',planet:'わくせい',rocket:'ロケット',free:'むりょう',pack:'{0}を ぜんぶ ひらく',open:'ひらいた',freeNote:'ひまわりは むりょう。ほかの ともだちは おうちの人が Pi で ひらけます。'}};
+function PNm(k,a){var s=((PN[LANG]||PN.en)[k])||PN.ko[k];return a!=null?s.replace('{0}',a):s}
+function petOpen(k){var p=PETS[k];if(!p)return false;if(k==='sun')return true;if(ls('gp_'+p.c))return true;if(p.c==='animals'&&ls('gprem'))return true;return false}
+var PACK={plants:{pi:0.3,i:2},animals:{pi:0.5,i:3},sea:{pi:0.5,i:4},space:{pi:0.5,i:5}};
+var PAY=[{id:'sun30',u:49,e:'☀️',pi:0.1,give:{tok:30}},{id:'sun100',u:50,e:'🌞',pi:0.3,give:{tok:100}},{id:'plants',pk:'plants',e:'🌹',pi:0.3,give:{flag:'plants'}},{id:'animals',pk:'animals',e:'🦄',pi:0.5,give:{flag:'animals'}},{id:'sea',pk:'sea',e:'🐬',pi:0.5,give:{flag:'sea'}},{id:'space',pk:'space',e:'🪐',pi:0.5,give:{flag:'space'}},{id:'deco',u:61,e:'✨',pi:0.3,give:{deco:1}}];
+function premOn(){return petOpen('chick')}
 function gate(fn){var a=3+Math.floor(Math.random()*6),b=4+Math.floor(Math.random()*6),r=a+b,o=[r,r+2,r-1].sort(function(){return Math.random()-.5});
   window._gfn=fn;sheet('<h2>🔒 '+GU(52)+'</h2><p class="mut">'+GU(53)+'</p><div style="font-size:40px;font-weight:900;text-align:center;margin:10px 0">'+a+' + '+b+' = ?</div><div class="row">'+o.map(function(x){return '<button class="btn '+(x===r?'':'')+'" onclick="'+(x===r?'closeSheet();_gfn()':'closeSheet()')+'">'+x+'</button>'}).join('')+'</div><p class="mut" style="margin-top:10px">'+GU(60)+'</p>')}
-function grant(it){var g=it.give;if(g.tok){if(GR){GR.tok+=g.tok;grSave()}else ls('gtok',(ls('gtok')||0)+g.tok)}if(g.prem)ls('gprem',1);if(g.deco){ls('gdeco',1)}confetti(40);toast(it.e+' '+GU(59));render()}
+function grant(it){var g=it.give;if(g.tok){if(GR){GR.tok+=g.tok;grSave()}else ls('gtok',(ls('gtok')||0)+g.tok)}if(g.flag)ls('gp_'+g.flag,1);if(g.deco){ls('gdeco',1)}confetti(40);toast(it.e+' '+GU(59));render()}
 function payPi(i){var it=PAY[i];gate(function(){
   if(!(window.Pi&&Pi.createPayment&&window.PAY_API)){toast('π '+GU(54));return}
   try{Pi.createPayment({amount:it.pi,memo:'All Bareuge '+it.id,metadata:{item:it.id}},{
     onReadyForServerApproval:function(id){fetch(PAY_API+'/approve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({paymentId:id})})},
     onReadyForServerCompletion:function(id,tx){fetch(PAY_API+'/complete',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({paymentId:id,txid:tx})}).then(function(){grant(it)})},
     onCancel:function(){},onError:function(e){toast('⚠️ '+(e&&e.message||'error'))}})}catch(e){toast('π '+GU(54))}})}
-function payBox(){return '<div class="box gpay"><h2>π '+GU(48)+'</h2><div class="gshop">'+PAY.map(function(it,i){var own=(it.give.prem&&premOn())||(it.give.deco&&ls('gdeco'));return '<button class="'+(own?'own':'')+'" '+(own?'disabled':'')+' onclick="payPi('+i+')"><span>'+it.e+'</span>'+GU(it.u)+'<i>'+(own?'✔️':it.pi+' π')+'</i></button>'}).join('')+'</div><p class="mut" style="margin:8px 0 0">👨‍👩‍👧 '+GU(60)+'</p></div>'}
+function payBox(){return '<div class="box gpay"><h2>π '+GU(48)+'</h2><div class="gshop">'+PAY.map(function(it,i){var own=(it.pk&&ls('gp_'+it.pk))||(it.pk==='animals'&&ls('gprem'))||(it.give.deco&&ls('gdeco'));return '<button class="'+(own?'own':'')+'" '+(own?'disabled':'')+' onclick="payPi('+i+')"><span>'+it.e+'</span>'+esc(it.pk?PNm('pack',PNm(it.pk)):GU(it.u))+'<i>'+(own?'✔️':it.pi+' π')+'</i></button>'}).join('')+'</div><p class="mut" style="margin:8px 0 0">👨‍👩‍👧 '+GU(60)+'</p></div>'}
 var LVD=[0,1,3,7,14,30,60,100,150,200,280,365];
 var SHOP=[['🎀',40,10],['👒',41,15],['🦋',45,20],['👑',42,30],['🏡',44,40],['🌈',43,50]];
 var EARN={ck:3,stamp:2,draw:2,story:1,toon:1,manner:1};
@@ -48,7 +76,7 @@ function buy(i){var it=SHOP[i];GR.own=GR.own||[];if(GR.own.indexOf(i)>=0){GR.wea
 var _gp=null;
 function growView(){
   if(!GR||SUB.pick){var tk=grTok();
-    return hdr('🌱 '+GU(0))+greet(GU(2),GU(3))+'<div class="box"><div class="gpick">'+Object.keys(PETS).map(function(k){var p=PETS[k],lk=p.prem&&!premOn();return '<button class="gp'+(_gp===k?' on':'')+(lk?' lk':'')+'" style="background:'+p.bg+'" onclick="'+(lk?'payPi(2)':'_gp=\''+k+'\';render()')+'">'+(lk?'<em>🔒 0.5 π</em>':'')+'<span>'+p.st[5]+'</span><b>'+GU(p.n)+'</b><i>'+p.st[0]+' → '+p.st[2]+' → '+p.st[5]+'</i></button>'}).join('')+'</div>'+
+    return hdr('🌱 '+GU(0))+greet(GU(2),GU(3))+'<div class="box">'+CATS.map(function(ct){var ks=Object.keys(PETS).filter(function(k){return PETS[k].c===ct.k}),pi=PAY.findIndex(function(x){return x.pk===ct.k}),allOpen=ks.every(petOpen);return '<h3 class="gcat">'+ct.e+' '+esc(PNm(ct.k))+(allOpen?'':' <button class="gbuy" onclick="payPi('+pi+')">🔒 '+esc(PNm('pack',PNm(ct.k)))+' · '+PAY[pi].pi+' π</button>')+'</h3><div class="gpick">'+ks.map(function(k){var p=PETS[k],lk=!petOpen(k);return '<button class="gp'+(_gp===k?' on':'')+(lk?' lk':'')+'" style="background:'+(p.sky?'#e8e9ff':p.bg)+'" onclick="'+(lk?'payPi('+pi+')':'_gp=\''+k+'\';render()')+'">'+(lk?'<em>🔒 '+PAY[pi].pi+' π</em>':(k==='sun'?'<em class="fr">'+esc(PNm('free'))+'</em>':''))+'<span>'+p.st[5]+'</span><b>'+esc(PNm(k))+'</b><i>'+p.st[0]+' → '+p.st[2]+' → '+p.st[5]+'</i></button>'}).join('')+'</div>'}).join('')+'<p class="mut" style="margin:10px 0 0">💡 '+esc(PNm('freeNote'))+'</p>'+
     '<label class="f">'+GU(4)+'</label><input id="gname" class="inp" maxlength="10" placeholder="'+GU(36)+'">'+
     (tk?'<p class="mut">☀️ '+GU(8)+' '+tk+'</p>':'')+(SUB.pick&&GR?'<p class="mut">📸 '+GU(37)+'</p>':'')+
     '<button class="btn" onclick="startGrow()">'+GU(5)+' 🌱</button></div>'+payBox()}
@@ -56,28 +84,28 @@ function growView(){
   var sz=Math.round(64+lv*9),w=GR.wear||{},acc='';
   if(ls('gdeco'))acc+='<span class="ga sp1">✨</span><span class="ga sp2">⭐</span><span class="ga sp3">✨</span>';if(w[5])acc+='<span class="ga rb">🌈</span>';if(w[4])acc+='<span class="ga hs">🏡</span>';if(w[2])acc+='<span class="ga bf">🦋</span>';
   var hat=w[3]?'👑':w[1]?'👒':'';
-  var ws=p.plant?[['w','💧',11],['s','☀️',13],['l','💗',15]]:[['w','🍚',12],['s','🐾',14],['l','💗',15]];
+  var ws=p.plant?[['w','💧',11],['s','☀️',13],['l','💗',15]]:p.sea?[['w','🍤','feed'],['s','🫧','swim'],['l','💗',15]]:p.sky?[['w','✨','shine'],['s','🔭','watch'],['l','💗',15]]:[['w','🍚',12],['s','🐾',14],['l','💗',15]];
   var fx=GR._fx?'<span class="gfx">'+(GR._fx==='w'?ws[0][1]:GR._fx==='s'?ws[1][1]:'💗')+'</span>':'';
   var all=c.w&&c.s&&c.l;
   var cal=(function(){var t0=new Date(d),y=t0.getFullYear(),m=t0.getMonth(),first=new Date(y,m,1).getDay(),dn=new Date(y,m+1,0).getDate(),h='';for(var i=0;i<first;i++)h+='<i></i>';
     for(var k=1;k<=dn;k++){var ds=y+'-'+String(m+1).padStart(2,'0')+'-'+String(k).padStart(2,'0');h+='<i class="'+(GR.ck&&GR.ck[ds]?'on':'')+(ds===d?' td':'')+'">'+(GR.ck&&GR.ck[ds]?'☀️':k)+'</i>'}return h})();
   return hdr('🌱 '+GU(0))+
   '<div class="box gtop"><div><b>'+esc(GR.name)+'</b> <span class="lv">'+GU(20,lv+1)+'</span></div><div class="tok">☀️ '+GR.tok+'</div></div>'+
-  '<div class="gstage" style="background:linear-gradient(180deg,#d6f0ff,'+p.bg+' 70%)">'+acc+'<div class="gground'+(p.plant?' pot':'')+'"></div>'+
+  '<div class="gstage'+(p.sky?' sky':p.sea?' sea':'')+'" style="background:'+(p.sky?'linear-gradient(180deg,#141850,#3a3f8f)':p.sea?'linear-gradient(180deg,#bfe9ff,#5bb8f0)':'linear-gradient(180deg,#d6f0ff,'+p.bg+' 70%)')+'">'+acc+''+(p.sky||p.sea?'':'<div class="gground'+(p.plant?' pot':'')+'"></div>')+''+
    '<div class="gpet" style="font-size:'+sz+'px">'+(hat?'<span class="ghat" style="font-size:'+Math.round(sz*.45)+'px">'+hat+'</span>':'')+(w[0]?'<span class="grib" style="font-size:'+Math.round(sz*.32)+'px">🎀</span>':'')+grEmoji()+'</div>'+fx+
    '<div class="gsay">'+esc(miss>=3?GU(26):ckd?GU(27):GU(35))+'</div></div>'+
   '<div class="box"><div class="prog"><i style="width:'+Math.min(100,GR.days/365*100)+'%"></i></div><p class="mut" style="margin:6px 0 0">🗓️ '+GU(18,GR.days)+(nx!=null&&GR.days<365?' · '+GU(19,nx-GR.days):'')+'</p>'+
    (GR.days>=365?'<p style="font-weight:800;color:#3a8f20">🏆 '+GU(25)+'</p>':'')+'</div>'+
   '<div class="box"><h2>✅ '+GU(39)+'</h2>'+
    '<button class="btn '+(ckd?'w':'y')+'" '+(ckd?'disabled':'')+' onclick="checkIn()">'+(ckd?'✔️ '+GU(7):'📅 '+GU(6)+' (+3 ☀️)')+'</button>'+
-   '<div class="gcare">'+ws.map(function(x){return '<button class="'+(c[x[0]]?'dn':'')+'" onclick="care(\''+x[0]+'\')"><span>'+(c[x[0]]?'✔️':x[1])+'</span>'+GU(x[2])+'<i>-1 ☀️</i></button>'}).join('')+'</div>'+
+   '<div class="gcare">'+ws.map(function(x){return '<button class="'+(c[x[0]]?'dn':'')+'" onclick="care(\''+x[0]+'\')"><span>'+(c[x[0]]?'✔️':x[1])+'</span>'+(typeof x[2]==='string'?esc(PNm(x[2])):GU(x[2]))+'<i>-1 ☀️</i></button>'}).join('')+'</div>'+
    '<p class="mut" style="margin:8px 0 0">'+(all?'🌙 '+GU(17):'💡 '+GU(46))+'</p></div>'+
   '<div class="box"><h2>📅 '+GU(38)+' <span class="mut" style="font-size:13px;font-weight:700">🔥 '+GU(9,streak())+'</span></h2><div class="gcal">'+cal+'</div></div>'+
   '<div class="box"><h2>🛍️ '+GU(23)+'</h2><div class="gshop">'+SHOP.map(function(it,i){var own=GR.own&&GR.own.indexOf(i)>=0,on=own&&w[i];return '<button class="'+(on?'on':own?'own':'')+'" onclick="buy('+i+')"><span>'+it[0]+'</span>'+GU(it[1])+'<i>'+(own?(on?'✔️':'—'):'☀️ '+it[2])+'</i></button>'}).join('')+'</div></div>'+
   '<div class="box"><h2>🗺️ '+GU(62)+'</h2><div class="gmap">'+LVD.map(function(d,i){var e=i===11?p.st[5]:p.st[Math.min(5,Math.floor(i/2))],cur=i===lv,done=i<lv;return '<div class="'+(cur?'cur':done?'done':'')+'"><span style="font-size:'+(18+i*1.4)+'px">'+e+'</span><b>Lv.'+(i+1)+'</b><i>'+(d===0?'🌱':GU(63,d))+'</i>'+(cur?'<em>'+GU(67)+'</em>':'')+'</div>'}).join('')+'</div><p class="mut" style="margin:8px 0 0">💡 '+GU(66)+'</p></div>'+payBox()+'<div class="box"><h2>☀️ '+GU(21)+'</h2><p class="mut" style="margin:0;line-height:1.6">'+GU(22)+'</p><h2 style="margin-top:12px">🧺 '+GU(64)+'</h2><p class="mut" style="margin:0;line-height:1.6">'+GU(65)+'</p></div>'+
   (GR.album&&GR.album.length?'<div class="box"><h2>📸 '+GU(47)+'</h2><div class="gshop">'+GR.album.map(function(a){return '<div class="own"><span>'+a.e+'</span>'+esc(a.n)+'<i>'+a.d+'</i></div>'}).join('')+'</div></div>':'')+
   (GR.days>=365?'<button class="btn s" onclick="go(\'grow\',{pick:1})">🌱 '+GU(32)+'</button>':'')}
-function startGrow(){if(!_gp){toast(GU(2));return}var nm=($('#gname').value||'').trim().replace(/[<>{}\[\]]/g,'')||GU(PETS[_gp].n);
+function startGrow(){if(!_gp||!petOpen(_gp)){toast(GU(2));return}var nm=($('#gname').value||'').trim().replace(/[<>{}\[\]]/g,'')||PNm(_gp);
   var old=GR,tok=old?old.tok:(ls('gtok')||0);GR={pet:_gp,name:nm,start:today(),days:0,tok:tok,ck:old?old.ck:{},care:{},own:[],wear:{},lv:0,album:old?(old.album||[]).concat([{e:grEmoji.call(null),n:old.name,d:old.days+'d'}]):[]};
   if(old){GR.album[GR.album.length-1].e=PETS[old.pet].st[5]}ls('gtok',0);grSave();_gp=null;confetti(30);go('grow')}
 /* 활동하면 햇살 */

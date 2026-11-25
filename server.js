@@ -41,7 +41,7 @@ async function uidOf(token) {
   stPi(me.uid); return me.uid;
 }
 // 부모님 가게 상품 (가격 π, 주는 것)
-const ITEMS = { sun30: { pi: 0.1, tok: 30 }, sun100: { pi: 0.3, tok: 100 }, pets: { pi: 0.5, flag: 'prem' }, deco: { pi: 0.3, flag: 'deco' } };
+const ITEMS = { sun30: { pi: 0.1, tok: 30 }, sun100: { pi: 0.3, tok: 100 }, pets: { pi: 0.5, flag: 'animals' }, plants: { pi: 0.3, flag: 'plants' }, animals: { pi: 0.5, flag: 'animals' }, sea: { pi: 0.5, flag: 'sea' }, space: { pi: 0.5, flag: 'space' }, deco: { pi: 0.3, flag: 'deco' } };
 async function grant(uid, item) { const it = ITEMS[item]; if (!it) return false;
   if (it.tok) await redis(['INCRBY', P + 'gt:' + uid, String(it.tok)]); if (it.flag) await redis(['HSET', P + 'gf:' + uid, it.flag, '1']); return true }
 async function finishPay(paymentId, txid) {
@@ -120,7 +120,7 @@ http.createServer(async (req, res) => {
     const days = []; for (let i = 0; i < 7; i++) days.push(new Date(Date.now() + 9 * 3600e3 - i * 864e5).toISOString().slice(0, 10));
     const row = async d => [d, await card('dev:' + d), await card('pi:' + d), await num('ck:' + d), await num('pay:' + d), Math.round(await num('payPi:' + d) * 100) / 100];
     const [rows, T, items, langs] = await Promise.all([Promise.all(days.map(row)), row('all'), hash('item'), hash('lang')]);
-    const IT = { sun30: '햇살 30', sun100: '햇살 100', pets: '특별 친구', deco: '꾸미기 세트' };
+    const IT = { sun30: '햇살 30', sun100: '햇살 100', pets: '동물(옛)', plants: '식물 모두', animals: '동물 모두', sea: '바다 친구 모두', space: '별·우주 모두', deco: '꾸미기 세트' };
     const td = rows.map(r => '<tr>' + r.map(x => '<td>' + x + '</td>').join('') + '</tr>').join('');
     res.writeHead(200, { 'Content-Type': HTML, 'Cache-Control': 'no-store' });
     return res.end(`<!doctype html><meta name=viewport content="width=device-width,initial-scale=1"><title>All 바르게 통계</title><style>body{font-family:sans-serif;background:#f3fbe9;color:#2e3a2a;padding:16px;line-height:1.6}table{border-collapse:collapse;width:100%;background:#fff;border-radius:12px;overflow:hidden}td,th{padding:7px 6px;border-bottom:1px solid #e6efdc;text-align:center;font-size:14px}th{background:#5cc93a;color:#fff}.c{background:#fff;border-radius:14px;padding:12px 14px;margin:12px 0}.n{color:#889;font-size:12px}</style>
