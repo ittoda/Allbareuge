@@ -201,6 +201,8 @@ label.f{display:block;font-weight:800;font-size:14px;margin:12px 0 6px}
 .seal{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:46px;height:46px;margin:-3px 0;border:2.5px solid #e8364b;border-radius:50%;color:#e8364b;transform:rotate(-14deg);background:#fff8;box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px #e8364b55}.seal b{font-size:10.5px;font-weight:900;line-height:1.15;letter-spacing:-.5px;white-space:nowrap}
 .mx{display:flex;gap:8px;margin-top:8px;align-items:center}.mx .inp{flex:1;margin:0;padding:12px;font-size:14px}.mx .chip{flex:0 0 84px;padding:10px 6px;font-weight:800;text-align:center}
 .card .ic{height:50px;display:flex;align-items:center}
+.cmc{position:relative;display:inline-flex;align-items:center;justify-content:center;width:50px;height:46px;font-size:30px;background:#fff radial-gradient(#cfe6ff 1.2px,transparent 1.4px) 0 0/6px 6px;border:3px solid #2e3a2a;border-radius:6px;transform:rotate(-5deg);box-shadow:3px 3px 0 #2e3a2a}
+.cmc i{position:absolute;right:-12px;top:-12px;font-style:normal;font-weight:900;font-size:14px;color:#fff;background:#ff5b7f;border:2.5px solid #2e3a2a;border-radius:50%;width:22px;height:22px;line-height:17px;text-align:center;transform:rotate(12deg)}
 </style>
 </head>
 <body>
@@ -1320,7 +1322,7 @@ function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayTo
   growCard()+'<div class="grid">'+
    '<button class="card g" onclick="go(\'stamp\')"><div class="ic"><span class="seal"><b>'+t('참 잘')+'</b><b>'+t('했어요')+'</b></span></div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
    '<button class="card p" onclick="go(\'story\')"><div class="ic">📖</div><h3>'+t('내가 만드는 동화')+'</h3><p>'+t('{0}[이/가] 주인공인',esc(KID.name))+'<br>'+t('5분 동화')+'</p></button>'+
-   '<button class="card s" onclick="go(\'toon\',{i:'+ti+'})"><div class="ic">💬</div><h3>'+t('꼰댕이와 꼰순이의 오늘의 웹툰')+'</h3><p>'+t('눈으로 보는 4컷 만화')+'</p></button>'+
+   '<button class="card s" onclick="go(\'toon\',{i:'+ti+'})"><div class="ic"><span class="cmc">📝<i>!</i></span></div><h3>'+t('꼰댕이와 꼰순이의 오늘의 웹툰')+'</h3><p>'+t('눈으로 보는 4컷 만화')+'</p></button>'+
    '<button class="card y" onclick="go(\'draw\')"><div class="ic">🎨</div><h3>'+t('그림 퀴즈')+'</h3><p>'+t('주제 뽑고 10분 그리기')+'<br>'+t('찰칵 찍으면 점수!')+'</p></button>'+
   '</div>'+
   '<div class="box" style="margin-top:14px"><h2>👨‍👩‍👧 '+t('부모님께')+'</h2><p class="mut" style="margin:0;line-height:1.6">'+t('도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊')+'<br>'+t('광고 없이 안심하고 쓰는 앱이에요.')+'</p></div>'+footLinks()}
@@ -1448,7 +1450,7 @@ function toonView(){var T=allToons(),ti=todayToonIdx(),i=(SUB.i==null?ti:SUB.i),
   var pans=tn.c.map(function(p,k){var dark=/^#[3-6]/.test(p[0]);var bb=p[3].map(function(b){return '<div class="bb">'+(b[0]<2?'<span style="color:'+(b[0]?'#e0567f':'#d99a00')+'">'+who[b[0]]+'</span> ':'')+esc(b[1])+'</div>'}).join('');
     return '<div class="pan'+(dark?' dark':'')+'" style="background:'+p[0]+'"><span class="no">'+(k+1)+'</span>'+(p[4]?'<div class="scn">'+p[4]+'</div>':'')+'<div class="bbs">'+bb+'</div><div class="who2">'+p[1].map(function(c){return chr(c)}).join('')+'</div><span class="pr">'+p[2]+'</span></div>'}).join('');
   var past=[];for(var k=0;k<=6;k++)past.push(toonIdxOf(d-k));
-  return hdr('💬 '+t('꼰댕이와 꼰순이의 웹툰'))+'<div class="box" style="padding:12px"><div style="display:flex;align-items:center;margin-bottom:8px"><h2 style="margin:0">#'+(i+1)+' '+esc(tn.t)+'</h2>'+(i===ti?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('오늘')+'</span>':'')+'</div>'+
+  return hdr('📝 '+t('꼰댕이와 꼰순이의 웹툰'))+'<div class="box" style="padding:12px"><div style="display:flex;align-items:center;margin-bottom:8px"><h2 style="margin:0">#'+(i+1)+' '+esc(tn.t)+'</h2>'+(i===ti?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('오늘')+'</span>':'')+'</div>'+
   '<div class="toon">'+pans+'</div><div class="promise" style="background:var(--s2)">💡 <b style="color:#1d78b0">'+t('오늘의 바른 습관')+'</b><br>'+esc(tn.l)+'</div></div>'+
   '<div class="box"><h2>📚 '+t('지난 이야기')+'</h2><p style="margin:-4px 0 8px;font-size:12px;color:var(--mut,#888)">'+t('매일 새로운 이야기가 열려요 · 모두 {0}가지',T.length)+'</p><div class="tlist">'+past.map(function(k,j){return '<button class="'+(k===i?'on':'')+'" onclick="go(\'toon\',{i:'+k+'})">'+(j===0?'⭐ '+t('오늘'):j===1?t('어제'):t('{0}일 전',j))+' · '+esc(T[k].t)+'</button>'}).join('')+'</div></div>'}
 
