@@ -1,6 +1,7 @@
 /* All 바르게 — Tiếng Việt */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.vi={
+"꼰댕이와 꼰순이의 웹툰":"Truyện tranh Kondaengi & Konsuni","눈으로 보는 4컷 만화":"Truyện tranh 4 khung để xem",
 "그때 {0}도 쪼르르 다가왔어요. 셋은 사이좋게 함께하기로 했어요.":"Đúng lúc đó, {0} cũng lon ton chạy tới. Ba bạn quyết định đi cùng nhau.","친구 한 명 더 (없으면 비워 두세요)":"Thêm một bạn nữa (không có thì để trống)","직접 쓰기 (예: 편식 고치기, 용기 내서 발표하기)":"Tự viết (VD: ăn rau, mạnh dạn phát biểu)","직접 쓰기 (예: 할머니 댁, 우리 유치원)":"Tự viết (VD: nhà bà, trường mẫu giáo)",
 '기타 약속 (직접 입력)':'Lời hứa khác (tự nhập)','도장':'Đóng dấu','약속을 적어 주세요':'Hãy viết lời hứa',
 '에헴! 라떼는 말야~':'E hèm! Thời của ta~','아름다운 어린이 되기':'Trở thành em bé ngoan',

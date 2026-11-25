@@ -1,6 +1,7 @@
 /* All 바르게 — Bahasa Indonesia */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.id={
+"꼰댕이와 꼰순이의 웹툰":"Komik Kondaengi & Konsuni","눈으로 보는 4컷 만화":"Komik 4 panel untuk dilihat",
 "그때 {0}도 쪼르르 다가왔어요. 셋은 사이좋게 함께하기로 했어요.":"Saat itu, {0} juga datang melompat-lompat. Mereka bertiga memutuskan untuk bersama.","친구 한 명 더 (없으면 비워 두세요)":"Satu teman lagi (kosongkan jika tidak ada)","직접 쓰기 (예: 편식 고치기, 용기 내서 발표하기)":"Tulis sendiri (mis.: mau makan sayur, berani bicara di kelas)","직접 쓰기 (예: 할머니 댁, 우리 유치원)":"Tulis sendiri (mis.: rumah nenek, TK-ku)",
 '기타 약속 (직접 입력)':'Janji lain (ketik sendiri)','도장':'Stempel','약속을 적어 주세요':'Tulis janjinya dulu',
 '에헴! 라떼는 말야~':'Ehem! Zamanku dulu~','아름다운 어린이 되기':'Menjadi Anak yang Baik',

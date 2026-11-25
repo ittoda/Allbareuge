@@ -1,6 +1,7 @@
 /* All 바르게 — English */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.en={
+"꼰댕이와 꼰순이의 웹툰":"Kondaengi & Konsuni Comics","눈으로 보는 4컷 만화":"4-panel comics to look at",
 "그때 {0}도 쪼르르 다가왔어요. 셋은 사이좋게 함께하기로 했어요.":"Just then, {0} came hopping over too. The three of them decided to stay together.","친구 한 명 더 (없으면 비워 두세요)":"One more friend (leave empty if none)","직접 쓰기 (예: 편식 고치기, 용기 내서 발표하기)":"Write your own (e.g. trying new food, speaking up in class)","직접 쓰기 (예: 할머니 댁, 우리 유치원)":"Write your own (e.g. Grandma’s house, my kindergarten)",
 '기타 약속 (직접 입력)':'Other promise (type it)','도장':'Stamp','약속을 적어 주세요':'Please write the promise',
 '에헴! 라떼는 말야~':'Ahem! Back in my day~','아름다운 어린이 되기':'Becoming a Wonderful Kid',

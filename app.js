@@ -96,7 +96,7 @@ function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayTo
   growCard()+'<div class="grid">'+
    '<button class="card g" onclick="go(\'stamp\')"><div class="ic"><span class="seal"><b>'+t('참 잘')+'</b><b>'+t('했어요')+'</b></span></div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
    '<button class="card p" onclick="go(\'story\')"><div class="ic">📖</div><h3>'+t('내가 만드는 동화')+'</h3><p>'+t('{0}[이/가] 주인공인',esc(KID.name))+'<br>'+t('5분 동화')+'</p></button>'+
-   '<button class="card s" onclick="go(\'toon\',{i:'+ti+'})"><span class="bdg">'+t('오늘')+' #'+(ti+1)+'</span><div class="ic">💬</div><h3>'+t('꼰둥이 웹툰')+'</h3><p>'+t('꼰댕이·꼰순이의')+'<br>'+t('하루 한 편 4컷')+'</p></button>'+
+   '<button class="card s" onclick="go(\'toon\',{i:'+ti+'})"><span class="bdg">'+t('오늘')+' #'+(ti+1)+'</span><div class="ic">💬</div><h3>'+t('꼰댕이와 꼰순이의 웹툰')+'</h3><p>'+t('눈으로 보는 4컷 만화')+'</p></button>'+
    '<button class="card y" onclick="go(\'draw\')"><div class="ic">🎨</div><h3>'+t('그림 퀴즈')+'</h3><p>'+t('주제 뽑고 10분 그리기')+'<br>'+t('찰칵 찍으면 점수!')+'</p></button>'+
   '</div>'+
   '<div class="box" style="margin-top:14px"><h2>👨‍👩‍👧 '+t('부모님께')+'</h2><p class="mut" style="margin:0;line-height:1.6">'+t('도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊')+'<br>'+t('광고 없이 안심하고 쓰는 앱이에요.')+'</p></div>'+footLinks()}
@@ -217,7 +217,7 @@ function todayToonIdx(){var d=Math.floor((Date.now()+9*3600e3)/864e5);return d%T
 function toonView(){var T=C('TOONS'),i=SUB.i||0,tn=T[i],ti=todayToonIdx(),who=[KN(),SN(),''];
   var pans=tn.c.map(function(p,k){var dark=/^#[3-6]/.test(p[0]);var bb=p[3].map(function(b){return '<div class="bb">'+(b[0]<2?'<span style="color:'+(b[0]?'#e0567f':'#d99a00')+'">'+who[b[0]]+'</span> ':'')+esc(b[1])+'</div>'}).join('');
     return '<div class="pan'+(dark?' dark':'')+'" style="background:'+p[0]+'"><span class="no">'+(k+1)+'</span><div class="bbs">'+bb+'</div><div class="who2">'+p[1].map(function(c){return chr(c)}).join('')+'</div><span class="pr">'+p[2]+'</span></div>'}).join('');
-  return hdr('💬 '+t('꼰둥이 웹툰'))+'<div class="box" style="padding:12px"><div style="display:flex;align-items:center;margin-bottom:8px"><h2 style="margin:0">#'+(i+1)+' '+esc(tn.t)+'</h2>'+(i===ti?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('오늘')+'</span>':'')+'</div>'+
+  return hdr('💬 '+t('꼰댕이와 꼰순이의 웹툰'))+'<div class="box" style="padding:12px"><div style="display:flex;align-items:center;margin-bottom:8px"><h2 style="margin:0">#'+(i+1)+' '+esc(tn.t)+'</h2>'+(i===ti?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('오늘')+'</span>':'')+'</div>'+
   '<div class="toon">'+pans+'</div><div class="promise" style="background:var(--s2)">💡 <b style="color:#1d78b0">'+t('오늘의 바른 습관')+'</b><br>'+esc(tn.l)+'</div></div>'+
   '<div class="box"><h2>📚 '+t('다른 이야기')+'</h2><div class="tlist">'+T.map(function(x,k){return '<button class="'+(k===i?'on':'')+'" onclick="go(\'toon\',{i:'+k+'})">#'+(k+1)+' '+esc(x.t)+(k===ti?' 🆕':'')+'</button>'}).join('')+'</div></div>'}
 
