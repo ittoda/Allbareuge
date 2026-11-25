@@ -94,7 +94,7 @@ function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayTo
   '<div class="kid"><div class="av">'+avHTML()+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+
   '<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="icrow"><span class="ic">🐣</span><span class="icsay">'+t('에헴! 라떼는 말야~')+'</span></div><h3>'+t('아름다운 어린이 되기')+'</h3><p>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
   growCard()+'<div class="grid">'+
-   '<button class="card g" onclick="go(\'stamp\')"><div class="ic">🏅</div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
+   '<button class="card g" onclick="go(\'stamp\')"><div class="ic"><span class="seal"><b>'+t('참 잘')+'</b><b>'+t('했어요')+'</b></span></div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
    '<button class="card p" onclick="go(\'story\')"><div class="ic">📖</div><h3>'+t('내 이름 동화')+'</h3><p>'+t('{0}[이/가] 주인공인',esc(KID.name))+'<br>'+t('5분 동화')+'</p></button>'+
    '<button class="card s" onclick="go(\'toon\',{i:'+ti+'})"><span class="bdg">'+t('오늘')+' #'+(ti+1)+'</span><div class="ic">💬</div><h3>'+t('꼰둥이 웹툰')+'</h3><p>'+t('꼰댕이·꼰순이의')+'<br>'+t('하루 한 편 4컷')+'</p></button>'+
    '<button class="card y" onclick="go(\'draw\')"><div class="ic">🎨</div><h3>'+t('그림 퀴즈')+'</h3><p>'+t('주제 뽑고 10분 그리기')+'<br>'+t('찰칵 찍으면 점수!')+'</p></button>'+
