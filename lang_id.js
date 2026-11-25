@@ -1,6 +1,7 @@
 /* All 바르게 — Bahasa Indonesia */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.id={
+"그때 {0}도 쪼르르 다가왔어요. 셋은 사이좋게 함께하기로 했어요.":"Saat itu, {0} juga datang melompat-lompat. Mereka bertiga memutuskan untuk bersama.","친구 한 명 더 (없으면 비워 두세요)":"Satu teman lagi (kosongkan jika tidak ada)","직접 쓰기 (예: 편식 고치기, 용기 내서 발표하기)":"Tulis sendiri (mis.: mau makan sayur, berani bicara di kelas)","직접 쓰기 (예: 할머니 댁, 우리 유치원)":"Tulis sendiri (mis.: rumah nenek, TK-ku)",
 '기타 약속 (직접 입력)':'Janji lain (ketik sendiri)','도장':'Stempel','약속을 적어 주세요':'Tulis janjinya dulu',
 '에헴! 라떼는 말야~':'Ehem! Zamanku dulu~','아름다운 어린이 되기':'Menjadi Anak yang Baik',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Beranda','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Tumbuh dengan kebiasaan baik bersama si kembar Kondung',
@@ -102,3 +103,6 @@ DRAW:['Anak anjing mengibas ekor','Kucing tidur siang','Kelinci makan wortel','G
 });
 
 CT.id.W3=["Memukul meja dengan sendok", "Mengetuk pintu toilet keras-keras", "Cuma dibilas air sebentar", "Menaruh tas di kursi sebelah", "Menelepon dengan suara keras", "Menekan semua tombol", "Berdiri tepat di depan pintu", "Mengeluarkan banyak buku dan menumpuknya", "Membuka pintu ruang dokter untuk mengintip", "Bergandengan tangan dengan teman lalu lari menyeberang", "Memanjat perosotan dari bawah", "Bilang “Aku nggak suka ini”", "Meninggalkan piring lalu pergi main", "Menyuruh adik membereskan", "Bilang “Kamu duluan yang mulai!”", "Meninggalkannya di bangku", "Ikut bernyanyi keras bersama teman", "Menutup dengan telapak tangan lalu memegang tangan teman"];
+
+CT.id.ST_FREE_T="{N} dan {F}: Tantangan “{X}”";
+CT.id.ST_FREE=["Akhir-akhir ini ada yang dipikirkan {N}: “{X}”. {N} pelan-pelan bercerita kepada {F}.", "{F} tersenyum. “Tidak apa-apa, {V}! Awalnya semua orang merasa sulit. Ayo coba bersama!”", "Mereka mulai dari langkah kecil, satu per satu. Walau salah, mereka saling bertepuk tangan.", "Satu hari, dua hari, tiga hari… {N} berubah sedikit demi sedikit, selangkah lebih maju dari kemarin.", "{F} mengacungkan jempol. “{V}, hebat sekali! Kamu berhasil — “{X}”!”", "{N} merasa bangga dan belajar bahwa dengan usaha, apa pun bisa dilakukan."];

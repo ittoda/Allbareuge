@@ -1,6 +1,7 @@
 /* All 바르게 — Tiếng Việt */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.vi={
+"그때 {0}도 쪼르르 다가왔어요. 셋은 사이좋게 함께하기로 했어요.":"Đúng lúc đó, {0} cũng lon ton chạy tới. Ba bạn quyết định đi cùng nhau.","친구 한 명 더 (없으면 비워 두세요)":"Thêm một bạn nữa (không có thì để trống)","직접 쓰기 (예: 편식 고치기, 용기 내서 발표하기)":"Tự viết (VD: ăn rau, mạnh dạn phát biểu)","직접 쓰기 (예: 할머니 댁, 우리 유치원)":"Tự viết (VD: nhà bà, trường mẫu giáo)",
 '기타 약속 (직접 입력)':'Lời hứa khác (tự nhập)','도장':'Đóng dấu','약속을 적어 주세요':'Hãy viết lời hứa',
 '에헴! 라떼는 말야~':'E hèm! Thời của ta~','아름다운 어린이 되기':'Trở thành em bé ngoan',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Trang chủ','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Lớn lên cùng thói quen tốt với cặp song sinh Kondung',
@@ -102,3 +103,6 @@ DRAW:['Cún con vẫy đuôi','Mèo đang ngủ trưa','Thỏ ăn cà rốt','Vo
 });
 
 CT.vi.W3=["Gõ thìa xuống bàn", "Đập cửa nhà vệ sinh thật to", "Chỉ tráng nước qua loa", "Để cặp lên ghế bên cạnh", "Gọi điện thoại thật to", "Bấm hết các nút", "Đứng chắn ngay trước cửa", "Lấy thật nhiều sách ra chất đống", "Mở cửa phòng khám ra xem", "Nắm tay bạn chạy qua đường", "Leo ngược lên cầu trượt", "Nói “Cái này chán quá”", "Để nguyên bát đĩa rồi đi chơi", "Bảo em dọn giùm", "Nói “Bạn làm trước mà!”", "Để lại trên ghế đá", "Cùng bạn hát theo thật to", "Che bằng bàn tay rồi nắm tay bạn"];
+
+CT.vi.ST_FREE_T="{N} và {F}: Thử thách “{X}”";
+CT.vi.ST_FREE=["Dạo này {N} có một điều cứ lo lắng: “{X}”. {N} khẽ kể cho {F} nghe.", "{F} mỉm cười: “Không sao đâu {V}! Lúc đầu ai cũng thấy khó. Mình cùng thử nhé!”", "Các bạn quyết định bắt đầu từ những việc thật nhỏ. Dù sai cũng vỗ tay cổ vũ nhau.", "Một ngày, hai ngày, ba ngày… {N} thay đổi từng chút một, hôm nay tiến thêm một bước.", "{F} giơ ngón cái: “{V} ơi, tuyệt quá! Bạn làm được “{X}” rồi!”", "{N} thấy thật tự hào và hiểu rằng cố gắng thì việc gì cũng làm được."];

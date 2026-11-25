@@ -33,7 +33,7 @@ function praise(msg,who){var o=$('#praise');if(o)o.remove();o=document.createEle
 function jong(w){w=String(w||'');var c=w.charCodeAt(w.length-1);if(c<0xAC00||c>0xD7A3)return -1;return (c-0xAC00)%28}
 function nm(n){return LANG==='ko'&&jong(n)>0?n+'이':n}             // 민준 → 민준이 (한국어만)
 function voc(n){return LANG==='ko'?n+(jong(n)>0?'아':'야'):n}        // 민준아, 지우야
-function fill(tpl,o){return josa(tpl.replace(/\{N\}/g,o.N).replace(/\{F\}/g,o.F).replace(/\{T\}/g,o.T).replace(/\{P\}/g,o.P).replace(/\{V\}/g,o.V))}
+function fill(tpl,o){return josa(tpl.replace(/\{X\}/g,o.X||'').replace(/\{N\}/g,o.N).replace(/\{F\}/g,o.F).replace(/\{T\}/g,o.T).replace(/\{P\}/g,o.P).replace(/\{V\}/g,o.V))}
 
 /* ---------- 상태 ---------- */
 var KID=ls('kid')||null;       // {name, av}
@@ -180,20 +180,28 @@ function storyView(){if(SUB.read&&STORY)return storyRead();var s=STORY&&STORY.in
   var FR=C('FRIENDS'),TH=C('THEMES'),PL=C('PLACES');
   return hdr('📖 '+t('내 이름 동화'))+'<div class="box"><h2>'+t('{0}[이/가] 주인공인 동화를 만들어요',esc(KID.name))+'</h2>'+
   '<label class="f">🧸 '+t('함께할 친구 (동물·식물·인형 무엇이든)')+'</label><input id="sf" class="inp" maxlength="16" placeholder="'+t('예) 토끼, 해바라기, 곰인형')+'" value="'+esc(s.friend)+'">'+
-  '<div class="chips" style="margin-top:8px">'+FR.slice(0,12).map(function(f){return '<button class="chip p" onclick="$(\'#sf\').value=this.dataset.v" data-v="'+esc(f[0])+'">'+f[1]+' '+esc(f[0])+'</button>'}).join('')+'</div>'+
+  '<input id="sf2" class="inp" style="margin-top:8px" maxlength="16" placeholder="✏️ '+t('친구 한 명 더 (없으면 비워 두세요)')+'" value="'+esc(s.friend2||'')+'">'+
+  '<div class="chips" style="margin-top:8px">'+FR.slice(0,12).map(function(f){return '<button class="chip p" onclick="sfPick(this.dataset.v)" data-v="'+esc(f[0])+'">'+f[1]+' '+esc(f[0])+'</button>'}).join('')+'</div>'+
   '<label class="f">💡 '+t('어떤 이야기?')+'</label><div class="chips" id="sth">'+TH.map(function(x,i){return '<button class="chip p'+(i===_th?' on':'')+'" onclick="pickT(this,'+i+')">'+x.e+' '+esc(x.k)+'</button>'}).join('')+'</div>'+
+  '<input id="sx" class="inp" style="margin-top:8px" maxlength="16" placeholder="✏️ '+t('직접 쓰기 (예: 편식 고치기, 용기 내서 발표하기)')+'" value="'+esc(s.topic||'')+'" oninput="if(this.value.trim())document.querySelectorAll(\'#sth .chip\').forEach(function(x){x.classList.remove(\'on\')})">'+
   '<label class="f">🗺️ '+t('어디에서?')+'</label><div class="chips" id="spl">'+PL.map(function(p,i){return '<button class="chip p'+(i===_pl?' on':'')+'" onclick="pickP(this,'+i+')">'+Array.from(p[2])[0]+' '+esc(p[0])+'</button>'}).join('')+'</div>'+
+  '<input id="sp" class="inp" style="margin-top:8px" maxlength="16" placeholder="✏️ '+t('직접 쓰기 (예: 할머니 댁, 우리 유치원)')+'" value="'+esc(s.place2||'')+'" oninput="if(this.value.trim())document.querySelectorAll(\'#spl .chip\').forEach(function(x){x.classList.remove(\'on\')})">'+
   '<button class="btn p" onclick="makeStory()">✨ '+t('동화 만들기')+'</button>'+(STORY?'<button class="btn w" onclick="go(\'story\',{read:1})">📖 '+t('지난 동화 다시 읽기')+'</button>':'')+'</div>'}
-function pickT(b,k){_th=k;document.querySelectorAll('#sth .chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
-function pickP(b,i){_pl=i;document.querySelectorAll('#spl .chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
-function makeStory(){var FR=C('FRIENDS'),TH=C('THEMES'),PL=C('PLACES');var fr=$('#sf').value.trim().replace(/[<>{}\[\]]/g,'')||FR[0][0];
-  var o={N:nm(KID.name),V:voc(KID.name),T:fr,F:rnd(C('FNAMES')),P:PL[_pl][0]};
-  var paras=[fill(rnd(C('ST_OPEN')),o),fill(rnd(C('ST_MEET')),o)].concat(C('ST_THEME')[TH[_th].k].map(function(x){return fill(x,o)}),[fill(rnd(C('ST_END')),o)]);
-  var title=fill(C('ST_TITLE')[_th],{N:KID.name,V:'',T:fr,F:o.F,P:''});
-  STORY={lang:LANG,title:title,paras:paras,em:friendEmoji(fr),place:_pl,inp:{friend:fr,theme:_th,place:_pl}};ls('story',STORY);go('story',{read:1,pg:0})}
+function sfPick(v){var a=$('#sf'),b=$('#sf2');if(!a.value.trim()||a.value===v){a.value=v}else{b.value=v}}
+function pickT(b,k){_th=k;var x=$('#sx');if(x)x.value='';document.querySelectorAll('#sth .chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
+function pickP(b,i){_pl=i;var x=$('#sp');if(x)x.value='';document.querySelectorAll('#spl .chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
+function makeStory(){var FR=C('FRIENDS'),TH=C('THEMES'),PL=C('PLACES'),cl=function(id){var e=$(id);return e?e.value.trim().replace(/[<>{}\[\]]/g,''):''};
+  var fr=cl('#sf')||FR[0][0],fr2=cl('#sf2'),tp=cl('#sx'),pl2=cl('#sp');
+  var o={N:nm(KID.name),V:voc(KID.name),T:fr,F:rnd(C('FNAMES')),P:pl2||PL[_pl][0],X:tp};
+  var mid=tp?C('ST_FREE'):C('ST_THEME')[TH[_th].k];
+  var paras=[fill(rnd(C('ST_OPEN')),o),fill(rnd(C('ST_MEET')),o)];
+  if(fr2)paras.push(fill(t('그때 {0}도 쪼르르 다가왔어요. 셋은 사이좋게 함께하기로 했어요.',fr2),o));
+  paras=paras.concat(mid.map(function(x){return fill(x,o)}),[fill(rnd(C('ST_END')),o)]);
+  var title=tp?fill(C('ST_FREE_T'),{N:KID.name,V:'',T:fr,F:o.F,P:'',X:tp}):fill(C('ST_TITLE')[_th],{N:KID.name,V:'',T:fr,F:o.F,P:''});
+  STORY={lang:LANG,title:title,paras:paras,em:friendEmoji(fr)+(fr2?friendEmoji(fr2):''),place:_pl,pl2:pl2,inp:{friend:fr,friend2:fr2,theme:_th,place:_pl,topic:tp,place2:pl2}};ls('story',STORY);go('story',{read:1,pg:0})}
 function friendEmoji(f){f=String(f||'').toLowerCase();var L=[C('FRIENDS'),FRIENDS];for(var j=0;j<2;j++)for(var i=0;i<L[j].length;i++)if(f.indexOf(String(L[j][i][0]).toLowerCase())>=0)return L[j][i][1];
   if(/인형|doll|teddy/.test(f))return '🧸';if(/꽃|flower/.test(f))return '🌷';if(/새|bird/.test(f))return '🐦';if(/물고기|fish/.test(f))return '🐠';if(/개구리|frog/.test(f))return '🐸';if(/사자|lion/.test(f))return '🦁';if(/거북|turtle/.test(f))return '🐢';if(/기차|train/.test(f))return '🚂';return '✨'}
-function storyRead(){var s=STORY,pg=SUB.pg||0,per=2,tot=Math.ceil(s.paras.length/per),P=C('PLACES')[s.place];
+function storyRead(){var s=STORY,pg=SUB.pg||0,per=2,tot=Math.ceil(s.paras.length/per),P=s.pl2?[s.pl2,C('PLACES')[s.place][1],'✨🌟✨']:C('PLACES')[s.place];
   var ps=s.paras.slice(pg*per,pg*per+per);
   return hdr('📖 '+esc(s.title))+'<div class="scene" style="background:'+P[1]+'"><div class="deco">'+P[2]+'</div><div class="who">'+avHTML()+'</div><div class="who">'+s.em+'</div></div>'+
   '<div class="box story">'+ps.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+'</div>'+

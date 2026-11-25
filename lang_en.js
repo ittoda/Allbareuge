@@ -1,6 +1,7 @@
 /* All 바르게 — English */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.en={
+"그때 {0}도 쪼르르 다가왔어요. 셋은 사이좋게 함께하기로 했어요.":"Just then, {0} came hopping over too. The three of them decided to stay together.","친구 한 명 더 (없으면 비워 두세요)":"One more friend (leave empty if none)","직접 쓰기 (예: 편식 고치기, 용기 내서 발표하기)":"Write your own (e.g. trying new food, speaking up in class)","직접 쓰기 (예: 할머니 댁, 우리 유치원)":"Write your own (e.g. Grandma’s house, my kindergarten)",
 '기타 약속 (직접 입력)':'Other promise (type it)','도장':'Stamp','약속을 적어 주세요':'Please write the promise',
 '에헴! 라떼는 말야~':'Ahem! Back in my day~','아름다운 어린이 되기':'Becoming a Wonderful Kid',
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Home','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Good habits, growing up with the Kondung twins',
@@ -106,3 +107,6 @@ DRAW:[
 };
 
 CT.en.W3=["Bang the table with a spoon", "Knock loudly on the toilet door", "Just rinse quickly with water", "Put my bag on the seat next to me", "Talk loudly on the phone", "Press all the buttons", "Stand right in front of the door", "Pull out lots of books and pile them up", "Open the doctor’s door to peek", "Hold a friend’s hand and run across", "Climb up the slide the wrong way", "Say “I don’t like this”", "Leave the dishes and go play", "Tell my little sibling to clean up", "Say “You did it first!”", "Leave it on the bench", "Sing along loudly with a friend", "Cover with my hand, then hold a friend’s hand"];
+
+CT.en.ST_FREE_T="{N} & {F}: The “{X}” Challenge";
+CT.en.ST_FREE=["Lately, something was on {N}’s mind: “{X}”. {N} quietly told {F} about it.", "{F} smiled. “It’s okay, {V}! Everyone finds it hard at first. Let’s try it together!”", "They decided to start with tiny steps, one at a time. Even when they made mistakes, they clapped for each other.", "One day, two days, three days… {N} changed little by little, one step further than yesterday.", "{F} gave a big thumbs-up. “{V}, that’s amazing! You did it — “{X}”!”", "{N} felt so proud, and learned that with effort you can do anything."];
