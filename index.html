@@ -141,14 +141,14 @@ label.f{display:block;font-weight:800;font-size:14px;margin:12px 0 6px}
 @keyframes bob{50%{transform:translateY(-7px)}}
 .cv-bub{position:absolute;top:0;left:-4px;background:#fff;border-radius:16px;padding:7px 11px;font-size:12.5px;font-weight:800;box-shadow:0 3px 0 rgba(0,0,0,.07);max-width:140px;line-height:1.3}
 .cv-bub:after{content:"";position:absolute;bottom:-7px;left:30px;border:7px solid transparent;border-top-color:#fff;border-bottom:0}
-.cv-t{position:relative;z-index:1;margin:6px 0 0;font-size:54px;line-height:1;letter-spacing:-1px;font-weight:900}
-.cv-t small{display:block;font-size:22px;letter-spacing:6px;color:var(--g);margin-bottom:2px}
+.cv-t{position:relative;z-index:1;margin:10px 0 0;font-size:clamp(56px,19vw,80px);line-height:1;letter-spacing:-1px;font-weight:900}
+.cv-t small{display:block;font-size:clamp(30px,10vw,40px);letter-spacing:4px;color:var(--g);margin-bottom:0;font-weight:900}
 .cv-t i{font-style:normal;text-shadow:0 3px 0 rgba(0,0,0,.08);display:inline-block}
 .cv-t i:nth-child(odd){transform:rotate(-4deg)}.cv-t i:nth-child(even){transform:rotate(3deg) translateY(2px)}
-.cv-tag{margin:12px 0 0;font-weight:800;font-size:15.5px;color:#4a5a44}
+.cv-tag{margin:16px 0 0;font-weight:800;font-size:18px;color:#4a5a44;line-height:1.4;padding:0 12px}
 .cv-fx{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:14px 0 0;max-width:400px}
 .cv-fx span{background:#fff;border-radius:20px;padding:6px 11px;font-size:12.5px;font-weight:700;box-shadow:0 2px 0 rgba(0,0,0,.06)}
-.cv-badge{margin-top:12px;background:var(--y2);color:#8a6500;border-radius:14px;padding:6px 12px;font-size:12.5px;font-weight:800}
+.cv-badge{margin-top:16px;background:var(--y2);color:#8a6500;border-radius:14px;padding:6px 12px;font-size:12.5px;font-weight:800}
 .cv-go{max-width:360px;margin-top:auto;font-size:19px;padding:17px}
 .cov .cv-go{margin-top:22px}
 .cv-foot{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:16px;font-size:12.5px}
@@ -1047,13 +1047,13 @@ ja:{cover:'3〜8さい · おうちの人と いっしょに · 広告なし',ab
  eff:'施行日:2026年11月25日'}
 };
 var LG_UI={
-ko:['개인정보처리방침','이용약관','앱 소개','버전','시작하기','칭찬 도장','내 이름 동화','4컷 웹툰','그림 퀴즈','예절 퀴즈','바른 습관 친구, 꼰둥이 쌍둥이','Pi로 시작하기','Pi 로그인 중…','로그인 없이 둘러보기','☁️ {0}님 계정에 저장돼요','결제를 마무리하지 못했어요. 잠시 후 다시 해 주세요.','결제가 취소됐어요'],
-en:['Privacy Policy','Terms of Use','About','Version','Start','Praise stamps','Name stories','4-panel comics','Drawing quiz','Manners quiz','Your good-habit buddies, the Kondung twins','Start with Pi','Signing in with Pi…','Look around without signing in','☁️ Saved to {0}’s account','Could not finish the payment. Please try again later.','Payment cancelled'],
-vi:['Chính sách quyền riêng tư','Điều khoản sử dụng','Giới thiệu','Phiên bản','Bắt đầu','Dấu khen','Truyện mang tên bé','Truyện tranh 4 khung','Đố vẽ tranh','Đố phép lịch sự','Bạn thói quen tốt — song sinh Kondung','Bắt đầu với Pi','Đang đăng nhập Pi…','Xem thử không cần đăng nhập','☁️ Đã lưu vào tài khoản {0}','Chưa hoàn tất thanh toán. Vui lòng thử lại sau.','Đã hủy thanh toán'],
-id:['Kebijakan Privasi','Syarat Penggunaan','Tentang','Versi','Mulai','Stempel pujian','Dongeng nama','Komik 4 panel','Kuis menggambar','Kuis sopan santun','Teman kebiasaan baik, si kembar Kondung','Mulai dengan Pi','Masuk dengan Pi…','Lihat-lihat tanpa login','☁️ Tersimpan di akun {0}','Pembayaran belum selesai. Coba lagi nanti.','Pembayaran dibatalkan'],
-hi:['गोपनीयता नीति','उपयोग की शर्तें','ऐप के बारे में','संस्करण','शुरू करें','शाबाशी स्टैम्प','नाम की कहानी','4-पैनल कॉमिक','ड्रॉइंग क्विज़','शिष्टाचार क्विज़','अच्छी आदतों के दोस्त, कोनदुंग जुड़वाँ','Pi से शुरू करें','Pi से लॉगिन हो रहा है…','बिना लॉगिन देखें','☁️ {0} के खाते में सेव','भुगतान पूरा नहीं हुआ। बाद में फिर कोशिश करें।','भुगतान रद्द हुआ'],
-zh:['隐私政策','使用条款','应用介绍','版本','开始','表扬印章','名字童话','四格漫画','画画挑战','礼仪问答','好习惯小伙伴——唠叨双胞胎','用 Pi 开始','正在用 Pi 登录…','不登录先看看','☁️ 已保存到 {0} 的账户','付款未完成,请稍后再试。','付款已取消'],
-ja:['プライバシーポリシー','利用規約','アプリについて','バージョン','はじめる','ほめほめスタンプ','なまえの おはなし','4コマまんが','おえかきクイズ','マナークイズ','よい習慣の ともだち、コンドゥンふたご','Pi で はじめる','Pi ログイン中…','ログインせずに みてみる','☁️ {0} さんの アカウントに ほぞん','けっさいを おえられませんでした。あとで もういちど おためしください。','けっさいが キャンセルされました']
+ko:['개인정보처리방침','이용약관','앱 소개','버전','시작하기','칭찬 도장','내 이름 동화','4컷 웹툰','그림 퀴즈','예절 퀴즈','우리들의 바른 친구 꼰댕이와 꼰순이','Pi로 시작하기','Pi 로그인 중…','로그인 없이 둘러보기','☁️ {0}님 계정에 저장돼요','결제를 마무리하지 못했어요. 잠시 후 다시 해 주세요.','결제가 취소됐어요'],
+en:['Privacy Policy','Terms of Use','About','Version','Start','Praise stamps','Name stories','4-panel comics','Drawing quiz','Manners quiz','Our good friends, Kondaengi & Konsuni','Start with Pi','Signing in with Pi…','Look around without signing in','☁️ Saved to {0}’s account','Could not finish the payment. Please try again later.','Payment cancelled'],
+vi:['Chính sách quyền riêng tư','Điều khoản sử dụng','Giới thiệu','Phiên bản','Bắt đầu','Dấu khen','Truyện mang tên bé','Truyện tranh 4 khung','Đố vẽ tranh','Đố phép lịch sự','Những người bạn ngoan của chúng ta, Kondaengi và Konsuni','Bắt đầu với Pi','Đang đăng nhập Pi…','Xem thử không cần đăng nhập','☁️ Đã lưu vào tài khoản {0}','Chưa hoàn tất thanh toán. Vui lòng thử lại sau.','Đã hủy thanh toán'],
+id:['Kebijakan Privasi','Syarat Penggunaan','Tentang','Versi','Mulai','Stempel pujian','Dongeng nama','Komik 4 panel','Kuis menggambar','Kuis sopan santun','Teman baik kita, Kondaengi dan Konsuni','Mulai dengan Pi','Masuk dengan Pi…','Lihat-lihat tanpa login','☁️ Tersimpan di akun {0}','Pembayaran belum selesai. Coba lagi nanti.','Pembayaran dibatalkan'],
+hi:['गोपनीयता नीति','उपयोग की शर्तें','ऐप के बारे में','संस्करण','शुरू करें','शाबाशी स्टैम्प','नाम की कहानी','4-पैनल कॉमिक','ड्रॉइंग क्विज़','शिष्टाचार क्विज़','हमारे अच्छे दोस्त, कोनदेंगी और कोनसूनी','Pi से शुरू करें','Pi से लॉगिन हो रहा है…','बिना लॉगिन देखें','☁️ {0} के खाते में सेव','भुगतान पूरा नहीं हुआ। बाद में फिर कोशिश करें।','भुगतान रद्द हुआ'],
+zh:['隐私政策','使用条款','应用介绍','版本','开始','表扬印章','名字童话','四格漫画','画画挑战','礼仪问答','我们的好朋友 小唠叨和小叨叨','用 Pi 开始','正在用 Pi 登录…','不登录先看看','☁️ 已保存到 {0} 的账户','付款未完成,请稍后再试。','付款已取消'],
+ja:['プライバシーポリシー','利用規約','アプリについて','バージョン','はじめる','ほめほめスタンプ','なまえの おはなし','4コマまんが','おえかきクイズ','マナークイズ','わたしたちの よい ともだち コンデンイと コンスニ','Pi で はじめる','Pi ログイン中…','ログインせずに みてみる','☁️ {0} さんの アカウントに ほぞん','けっさいを おえられませんでした。あとで もういちど おためしください。','けっさいが キャンセルされました']
 };
 function LU(i){var s=(LG_UI[LANG]||LG_UI.en)[i],a=arguments;return String(s).replace(/\{(\d)\}/g,function(m,k){return a[+k+1]})}
 function LGL(){return LEGAL[LANG]||LEGAL.en}
@@ -1120,9 +1120,8 @@ function coverView(){var nm=t('바르게'),cols=['#5cc93a','#ffb800','#4db8f5','
   '<div class="cv-top">'+langSel()+'</div>'+
   '<div class="cv-hero"><div class="cv-sun"></div><img class="cv-k" src="'+IMG.kd_f+'" alt="'+esc(KN())+'"><img class="cv-s" src="'+IMG.ks_f+'" alt="'+esc(SN())+'">'+
   '<div class="cv-bub b1">'+esc(t('에헴~ 반갑구먼!'))+'</div></div>'+
-  '<h1 class="cv-t"><small>All</small>'+title+'</h1>'+
+  '<h1 class="cv-t"><small>all</small>'+title+'</h1>'+
   '<p class="cv-tag">'+esc(LU(10))+'</p>'+
-  '<div class="cv-fx">'+F.map(function(f){return '<span>'+f[0]+' '+esc(LU(f[1]))+'</span>'}).join('')+'</div>'+
   '<div class="cv-badge">'+esc(LGL().cover)+'</div>'+
   '<button class="btn cv-go" id="piStart" onclick="piStart()">π '+esc(LU(11))+' 🌱</button>'+
   (window.PI_SESSION?acctLine():'')+

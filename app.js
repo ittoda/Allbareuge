@@ -60,9 +60,8 @@ function coverView(){var nm=t('바르게'),cols=['#5cc93a','#ffb800','#4db8f5','
   '<div class="cv-top">'+langSel()+'</div>'+
   '<div class="cv-hero"><div class="cv-sun"></div><img class="cv-k" src="'+IMG.kd_f+'" alt="'+esc(KN())+'"><img class="cv-s" src="'+IMG.ks_f+'" alt="'+esc(SN())+'">'+
   '<div class="cv-bub b1">'+esc(t('에헴~ 반갑구먼!'))+'</div></div>'+
-  '<h1 class="cv-t"><small>All</small>'+title+'</h1>'+
+  '<h1 class="cv-t"><small>all</small>'+title+'</h1>'+
   '<p class="cv-tag">'+esc(LU(10))+'</p>'+
-  '<div class="cv-fx">'+F.map(function(f){return '<span>'+f[0]+' '+esc(LU(f[1]))+'</span>'}).join('')+'</div>'+
   '<div class="cv-badge">'+esc(LGL().cover)+'</div>'+
   '<button class="btn cv-go" id="piStart" onclick="piStart()">π '+esc(LU(11))+' 🌱</button>'+
   (window.PI_SESSION?acctLine():'')+
