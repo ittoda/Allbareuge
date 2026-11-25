@@ -47,7 +47,7 @@ function render(){var h='';
   if(!KID&&VIEW!=='kid'&&VIEW!=='cover')VIEW='kid';
   if(VIEW==='cover')h=coverView();else if(VIEW==='kid')h=kidView();else if(VIEW==='home')h=homeView();else if(VIEW==='stamp')h=stampView();
   else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();else if(VIEW==='diary')h=diaryView();else if(VIEW==='math')h=mathView();
-  $('#app').innerHTML=h;if(VIEW==='draw'&&SUB.step==='time')tick();}
+  $('#app').innerHTML=h;if(VIEW==='draw'&&SUB.step==='time')tick();if(window.bdCheck)bdCheck();}
 function logo(center){return '<div class="logo"'+(center?' style="justify-content:center;margin:18px 0 6px"':'')+'>'+twinsLogo()+'<div><h1>all <span>'+t('바르게')+'</span></h1><small>'+t('꼰둥이와 함께 자라는 바른 습관')+'</small></div>'+(center?'':'<div style="margin-left:auto">'+langSel()+'</div>')+'</div>'}
 
 
@@ -77,22 +77,23 @@ function footLinks(){return '<div class="cv-foot in"><a href="#" onclick="go(\'c
 function kidView(){var k=KID||{name:'',av:'🐣'};
   return '<div style="text-align:right">'+langSel()+'</div>'+logo(1)+greet(t('에헴~ 반갑구먼!'),t('이름이 뭐니? 알려 주렴~'))+
   '<div class="box"><h2>👋 '+t('우리 아이를 소개해 주세요')+'</h2><label class="f">'+t('아이 이름 (또는 애칭)')+'</label><input id="kn" class="inp" maxlength="12" placeholder="'+t('예) 지우')+'" value="'+esc(_kn!=null?_kn:k.name)+'">'+
+  '<label class="f">🎂 '+t('생일')+' <small class="mut" style="font-weight:600">('+t('선택 · 생일날 깜짝 선물이 있어요')+')</small></label><input id="kb" class="inp" type="date" max="'+today()+'" min="2010-01-01" value="'+esc(_kb!=null?_kb:(k.bd||''))+'">'+
   '<label class="f">'+t('좋아하는 캐릭터')+'</label><div class="chips" id="kav">'+AV.map(function(a){return '<button class="chip'+(a===(_av||k.av)?' on':'')+'" style="font-size:24px" onclick="pickAv(this,\''+a+'\')">'+a+'</button>'}).join('')+'</div>'+
   (function(){var p=ls('photo'),sel=(_av||k.av)==='📷';return '<div class="kph">'+(p?'<button class="chip kpc'+(sel?' on':'')+'" onclick="pickAv(this,\'📷\')"><img class="kphoto" src="'+p+'" alt=""></button><button class="btn w" style="flex:1" onclick="pickPhoto()">'+esc(LU(17))+'</button><button class="kdel" onclick="delPhoto()">'+esc(LU(19))+'</button>':'<button class="btn w" style="flex:1" onclick="pickPhoto()">'+esc(LU(17))+'</button>')+'</div><p class="mut" style="margin:6px 0 0;font-size:12.5px">🔒 '+esc(LU(18))+'</p>'})()+
   '<p class="mut" style="margin-top:12px">🔒 '+t('실명 대신 애칭만 넣어 주세요.')+'</p>'+
   '<button class="btn" onclick="saveKid()">'+t('시작하기')+' 🌱</button></div>'}
-var _av=null,_kn=null;function pickAv(b,a){_av=a;document.querySelectorAll('#kav .chip,.kpc').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
+var _av=null,_kn=null,_kb=null;function pickAv(b,a){_av=a;document.querySelectorAll('#kav .chip,.kpc').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
 function avHTML(){var p=ls('photo');return (KID&&KID.av==='📷'&&p)?'<img class="kphoto" src="'+p+'" alt="">':esc((KID&&KID.av!=='📷'&&KID.av)||'🐣')}
-function pickPhoto(){var i=document.createElement('input');i.type='file';i.accept='image/*';i.onchange=function(){var f=i.files&&i.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var S=320,c=document.createElement('canvas');c.width=c.height=S;var m=Math.min(im.width,im.height),x=(im.width-m)/2,y=(im.height-m)/2;c.getContext('2d').drawImage(im,x,y,m,m,0,0,S,S);try{ls('photo',c.toDataURL('image/jpeg',0.82))}catch(e){}var kn=$('#kn');if(kn)_kn=kn.value;_av='📷';render()};im.src=r.result};r.readAsDataURL(f)};i.click()}
+function pickPhoto(){var i=document.createElement('input');i.type='file';i.accept='image/*';i.onchange=function(){var f=i.files&&i.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var S=320,c=document.createElement('canvas');c.width=c.height=S;var m=Math.min(im.width,im.height),x=(im.width-m)/2,y=(im.height-m)/2;c.getContext('2d').drawImage(im,x,y,m,m,0,0,S,S);try{ls('photo',c.toDataURL('image/jpeg',0.82))}catch(e){}var kn=$('#kn');if(kn)_kn=kn.value;var kb=$('#kb');if(kb)_kb=kb.value;_av='📷';render()};im.src=r.result};r.readAsDataURL(f)};i.click()}
 function delPhoto(){try{localStorage.removeItem('ab_photo')}catch(e){}if(_av==='📷')_av='🐣';if(KID&&KID.av==='📷'){KID.av='🐣';ls('kid',KID)}render()}
 function saveKid(){var n=$('#kn').value.trim().replace(/[<>{}\[\]]/g,'');if(!n){toast(t('아이 이름을 넣어 주세요'));return}
-  KID={name:n,av:_av||(KID&&KID.av)||'🐣'};_kn=null;_av=null;ls('kid',KID);go('home')}
+  var bd=($('#kb')&&$('#kb').value)||'';if(!/^\d{4}-\d\d-\d\d$/.test(bd))bd='';KID={name:n,av:_av||(KID&&KID.av)||'🐣'};if(bd)KID.bd=bd;_kn=null;_av=null;_kb=null;ls('kid',KID);go('home')}
 
 /* ---------- 홈 ---------- */
 function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayToonIdx();
   return logo()+greet(t('에헴~ {0}, 오늘도 바르게!',esc(voc(KID.name))),t('잘하면 내가 "옳지옳지~" 해 줄게!'))+
   '<div class="kid"><div class="av">'+avHTML()+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+
-  '<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="icrow"><span class="ic">🐣</span><span class="icsay">'+t('에헴! 라떼는 말야~')+'</span></div><h3>'+t('아름다운 어린이 되기')+'</h3><p>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
+  bdBanner()+'<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="icrow"><span class="ic">🐣</span><span class="icsay">'+t('에헴! 라떼는 말야~')+'</span></div><h3>'+t('아름다운 어린이 되기')+'</h3><p>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
   growCard()+'<div class="grid">'+
    '<button class="card g" onclick="go(\'stamp\')"><div class="ic"><span class="seal"><b>'+t('참 잘')+'</b><b>'+t('했어요')+'</b></span></div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
    '<button class="card p" onclick="go(\'story\')"><div class="ic" style="font-size:52px">📖</div><h3>'+t('내가 만드는 동화')+'</h3><p>'+t('{0}[이/가] 주인공인',esc(KID.name))+'<br>'+t('5분 동화')+'</p></button>'+
