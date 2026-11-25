@@ -1,6 +1,7 @@
 /* All 바르게 — Tiếng Việt */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.vi={
+"꼰댕이와 꼰순이의 오늘의 웹툰":"Truyện tranh hôm nay của Kondaengi & Konsuni",
 "3가지 그리기":"Vẽ 3 thứ","세 가지를 모두 넣어 그려 보세요!":"Hãy vẽ cả ba thứ vào một bức tranh!","{0}가지 그림 친구 중에서 뽑았어요":"Chọn từ {0} người bạn vẽ",
 "지난 이야기":"Truyện đã qua","매일 새로운 이야기가 열려요 · 모두 {0}가지":"Mỗi ngày một truyện mới · Tất cả {0} truyện","어제":"Hôm qua","{0}일 전":"{0} ngày trước",
 "꼰댕이와 꼰순이의 웹툰":"Truyện tranh Kondaengi & Konsuni","눈으로 보는 4컷 만화":"Truyện tranh 4 khung để xem",

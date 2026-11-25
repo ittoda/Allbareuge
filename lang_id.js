@@ -1,6 +1,7 @@
 /* All 바르게 — Bahasa Indonesia */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.id={
+"꼰댕이와 꼰순이의 오늘의 웹툰":"Komik hari ini Kondaengi & Konsuni",
 "3가지 그리기":"Gambar 3 hal","세 가지를 모두 넣어 그려 보세요!":"Gambar ketiganya dalam satu gambar!","{0}가지 그림 친구 중에서 뽑았어요":"Dipilih dari {0} teman gambar",
 "지난 이야기":"Cerita sebelumnya","매일 새로운 이야기가 열려요 · 모두 {0}가지":"Setiap hari cerita baru · Total {0} cerita","어제":"Kemarin","{0}일 전":"{0} hari lalu",
 "꼰댕이와 꼰순이의 웹툰":"Komik Kondaengi & Konsuni","눈으로 보는 4컷 만화":"Komik 4 panel untuk dilihat",
