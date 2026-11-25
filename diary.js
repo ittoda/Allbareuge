@@ -22,15 +22,20 @@ function diaryView(){if(!DY||(SUB.d&&SUB.d!==DY.d))dyLoad(SUB.d||today());
 function dySet(k,v){DY[k]=v;dySave()}
 function dySave(show){if(!DY)return;var a=dyAll();if(DY.t||DY.x||DY.w){a[DY.d]={w:DY.w,t:DY.t,x:DY.x}}else delete a[DY.d];try{localStorage.setItem('ab_diary',JSON.stringify(a))}catch(e){}if(show){buzz();praise(t('에헴~ 일기를 쓰다니 훌륭하구먼!'),'K')}}
 /* 음성 → 글씨 */
+function dyNoMic(why){dyStop();if(VIEW==='diary')render();
+  sheet('<h2>🎤 '+t('이 폰에서는 앱 마이크가 안 돼요')+'</h2><p style="line-height:1.7">'+t('대신 이렇게 해 보세요!')+'<br>① '+t('일기 쓰는 칸을 눌러요')+'<br>② '+t('키보드에 있는 <b>🎤 마이크 버튼</b>을 눌러요')+'<br>③ '+t('말하면 글씨로 써져요!')+'</p>'+(why?'<p class="mut" style="font-size:11px">('+esc(why)+')</p>':'')+'<button class="btn" onclick="closeSheet();var x=$(\'#dyX\');x&&x.focus()">'+t('알겠어요')+'</button>')}
 function dyMic(){if(RECON){dyStop();render();return}
   var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){sheet('<h2>🎤 '+t('이 브라우저는 음성 받아쓰기를 지원하지 않아요')+'</h2><p style="line-height:1.6">'+t('글 쓰는 칸을 누르면 나오는 <b>키보드의 🎤 마이크 버튼</b>을 눌러 말해 보세요. 말한 대로 글씨가 써져요!')+'</p><button class="btn" onclick="closeSheet();var x=$(\'#dyX\');x&&x.focus()">'+t('알겠어요')+'</button>');return}
-  try{REC=new SR();REC.lang=dyLocale();REC.continuous=true;REC.interimResults=true;var base=DY.x;
-    REC.onresult=function(e){var fin='',tmp='';for(var i=0;i<e.results.length;i++){var r=e.results[i][0].transcript;if(e.results[i].isFinal)fin+=r;else tmp+=r}
+  if(!SR){dyNoMic('no-api');return}
+  try{REC=new SR();REC.lang=dyLocale();REC.continuous=true;REC.interimResults=true;var base=DY.x,got=false,heard=false,err='',me=REC;
+    var wd=setTimeout(function(){if(REC===me&&!heard){err=err||'no-audio';try{me.abort()}catch(e){}dyNoMic(err)}},7000);
+    REC.onaudiostart=function(){heard=true};REC.onspeechstart=function(){heard=true};
+    REC.onresult=function(e){got=heard=true;var fin='',tmp='';for(var i=0;i<e.results.length;i++){var r=e.results[i][0].transcript;if(e.results[i].isFinal)fin+=r;else tmp+=r}
       var sep=base&&!/\s$/.test(base)?' ':'';var v=base+(fin||tmp?sep:'')+fin.trim()+(tmp?(fin?' ':'')+tmp.trim():'');var x=$('#dyX');if(x)x.value=v;DY.x=base+(fin?sep+fin.trim():'');if(fin)dySave()};
-    REC.onerror=function(e){if(e.error==='not-allowed'||e.error==='service-not-allowed')toast('🎤 '+t('마이크를 쓸 수 있게 허락해 주세요'));};
-    REC.onend=function(){var x=$('#dyX');if(x){DY.x=x.value;dySave()}RECON=false;REC=null;if(VIEW==='diary')render()};
-    REC.start();RECON=true;buzz();render()}catch(e){RECON=false;toast('🎤 '+t('음성 받아쓰기를 시작할 수 없어요'))}}
+    REC.onerror=function(e){err=e.error||'error'};
+    REC.onend=function(){clearTimeout(wd);if(REC!==me)return;var x=$('#dyX');if(x&&got){DY.x=x.value;dySave()}RECON=false;REC=null;
+      if(!got&&err&&err!=='no-speech'&&err!=='aborted'){dyNoMic(err);return}if(!got&&err==='no-speech')toast('🎤 '+t('잘 안 들렸어요. 다시 눌러 말해 보세요'));if(VIEW==='diary')render()};
+    REC.start();RECON=true;buzz();render()}catch(e){RECON=false;dyNoMic(String(e&&e.name||e))}}
 function dyStop(){if(REC){try{REC.stop()}catch(e){}}RECON=false}
 /* 날씨 자동: 위치 허락 시 Open-Meteo */
 function dyWeather(){if(!navigator.geolocation){toast(t('날씨를 직접 골라 주세요'));return}
