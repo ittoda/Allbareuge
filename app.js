@@ -213,13 +213,20 @@ function readAloud(){try{var ss=window.speechSynthesis;if(!ss){toast(t('이 브�
   var u=new SpeechSynthesisUtterance(STORY.paras.slice(pg*per,pg*per+per).join(' '));u.lang=VOICE[LANG]||'en-US';u.rate=.92;u.pitch=1.15;ss.speak(u)}catch(e){toast(t('이 브라우저는 읽어 주기가 안 돼요'))}}
 
 /* ---------- 꼰둥이 웹툰 ---------- */
-function todayToonIdx(){var d=Math.floor((Date.now()+9*3600e3)/864e5);return d%TOONS.length}
-function toonView(){var T=C('TOONS'),i=SUB.i||0,tn=T[i],ti=todayToonIdx(),who=[KN(),SN(),''];
+var _AT={};
+function makeEp(i,E){var m=EP_M[i],e=E[i],kid=['🧒','👧','👦'][i%3];
+  return {t:e[0],l:e[3],c:[[m[1],[kid],m[0],[[2,e[1]]]],['#ffe8ef',['K'],'☕',[[0,t('에헴~ 그건 아니지!')]]],['#e3f4ff',['S'],'💡',[[1,e[3]]]],['#e7f9dd',[kid,'S'],'✨',[[2,e[2]]]]]}}
+function allToons(){if(_AT[LANG])return _AT[LANG];var E=C('EP')||EP;return _AT[LANG]=C('TOONS').concat(E.map(function(x,i){return makeEp(i,E)}))}
+function toonDay(){return Math.floor((Date.now()+9*3600e3)/864e5)}
+function toonIdxOf(d){var n=allToons().length;return ((d*37)%n+n)%n}
+function todayToonIdx(){return toonIdxOf(toonDay())}
+function toonView(){var T=allToons(),ti=todayToonIdx(),i=(SUB.i==null?ti:SUB.i),tn=T[i],who=[KN(),SN(),''],d=toonDay();
   var pans=tn.c.map(function(p,k){var dark=/^#[3-6]/.test(p[0]);var bb=p[3].map(function(b){return '<div class="bb">'+(b[0]<2?'<span style="color:'+(b[0]?'#e0567f':'#d99a00')+'">'+who[b[0]]+'</span> ':'')+esc(b[1])+'</div>'}).join('');
     return '<div class="pan'+(dark?' dark':'')+'" style="background:'+p[0]+'"><span class="no">'+(k+1)+'</span><div class="bbs">'+bb+'</div><div class="who2">'+p[1].map(function(c){return chr(c)}).join('')+'</div><span class="pr">'+p[2]+'</span></div>'}).join('');
+  var past=[];for(var k=0;k<=6;k++)past.push(toonIdxOf(d-k));
   return hdr('💬 '+t('꼰댕이와 꼰순이의 웹툰'))+'<div class="box" style="padding:12px"><div style="display:flex;align-items:center;margin-bottom:8px"><h2 style="margin:0">#'+(i+1)+' '+esc(tn.t)+'</h2>'+(i===ti?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('오늘')+'</span>':'')+'</div>'+
   '<div class="toon">'+pans+'</div><div class="promise" style="background:var(--s2)">💡 <b style="color:#1d78b0">'+t('오늘의 바른 습관')+'</b><br>'+esc(tn.l)+'</div></div>'+
-  '<div class="box"><h2>📚 '+t('다른 이야기')+'</h2><div class="tlist">'+T.map(function(x,k){return '<button class="'+(k===i?'on':'')+'" onclick="go(\'toon\',{i:'+k+'})">#'+(k+1)+' '+esc(x.t)+(k===ti?' 🆕':'')+'</button>'}).join('')+'</div></div>'}
+  '<div class="box"><h2>📚 '+t('지난 이야기')+'</h2><p style="margin:-4px 0 8px;font-size:12px;color:var(--mut,#888)">'+t('매일 새로운 이야기가 열려요 · 모두 {0}가지',T.length)+'</p><div class="tlist">'+past.map(function(k,j){return '<button class="'+(k===i?'on':'')+'" onclick="go(\'toon\',{i:'+k+'})">'+(j===0?'⭐ '+t('오늘'):j===1?t('어제'):t('{0}일 전',j))+' · '+esc(T[k].t)+'</button>'}).join('')+'</div></div>'}
 
 /* ---------- 그림 퀴즈 ---------- */
 var DR={topic:null,min:10,end:0,start:0},TK=null;
