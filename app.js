@@ -230,10 +230,9 @@ function todayToonIdx(){return toonIdxOf(toonDay())}
 function toonView(){var T=allToons(),ti=todayToonIdx(),i=(SUB.i==null?ti:SUB.i),tn=T[i],who=[KN(),SN(),''],d=toonDay();
   var pans=tn.c.map(function(p,k){var dark=/^#[3-6]/.test(p[0]);var bb=p[3].map(function(b){return '<div class="bb">'+(b[0]<2?'<span style="color:'+(b[0]?'#e0567f':'#d99a00')+'">'+who[b[0]]+'</span> ':'')+esc(b[1])+'</div>'}).join('');
     return '<div class="pan'+(dark?' dark':'')+'" style="background:'+p[0]+'"><span class="no">'+(k+1)+'</span>'+(p[4]?'<div class="scn">'+p[4]+'</div>':'')+'<div class="bbs">'+bb+'</div><div class="who2">'+p[1].map(function(c){return chr(c)}).join('')+'</div><span class="pr">'+p[2]+'</span></div>'}).join('');
-  var past=[];for(var k=0;k<=6;k++)past.push(toonIdxOf(d-k));
-  return hdr('📝 '+t('꼰댕이와 꼰순이의 웹툰'))+'<div class="box" style="padding:12px"><div style="display:flex;align-items:center;margin-bottom:8px"><h2 style="margin:0">#'+(i+1)+' '+esc(tn.t)+'</h2>'+(i===ti?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('오늘')+'</span>':'')+'</div>'+
+    return hdr('📝 '+t('꼰댕이와 꼰순이의 웹툰'))+'<div class="box" style="padding:12px"><div style="display:flex;align-items:center;margin-bottom:8px"><h2 style="margin:0">'+esc(tn.t)+'</h2>'+(i===ti?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('오늘')+'</span>':'')+'</div>'+
   '<div class="toon">'+pans+'</div><div class="promise" style="background:var(--s2)">💡 <b style="color:#1d78b0">'+t('오늘의 바른 습관')+'</b><br>'+esc(tn.l)+'</div></div>'+
-  '<div class="box"><h2>📚 '+t('지난 이야기')+'</h2><p style="margin:-4px 0 8px;font-size:12px;color:var(--mut,#888)">'+t('매일 새로운 이야기가 열려요 · 모두 {0}가지',T.length)+'</p><div class="tlist">'+past.map(function(k,j){return '<button class="'+(k===i?'on':'')+'" onclick="go(\'toon\',{i:'+k+'})">'+(j===0?'⭐ '+t('오늘'):j===1?t('어제'):t('{0}일 전',j))+' · '+esc(T[k].t)+'</button>'}).join('')+'</div></div>'}
+  ((C('PNOTE')||PNOTE)[i]?'<div class="box pnote'+(LANG==='ja'||LANG==='zh'?' cjk':'')+'"><h2>👨‍👩‍👧 '+t('부모님이 이렇게 이야기해 주세요')+'</h2><p>'+esc((C('PNOTE')||PNOTE)[i])+'</p></div>':'')}
 
 /* ---------- 그림 퀴즈 ---------- */
 var DR={topic:null,min:10,end:0,start:0},TK=null;
