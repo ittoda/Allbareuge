@@ -51,6 +51,7 @@ input,textarea,select{font:inherit}
 .btn:disabled{opacity:.5}
 .row{display:flex;gap:8px}.row>*{flex:1}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
+#kav{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}#kav .chip{width:100%;padding:10px 0}
 .chip{background:#f3f5f0;border-radius:20px;padding:8px 12px;font-weight:700;font-size:14px}
 .chip.on{background:var(--g);color:#fff}
 .chip.p.on{background:var(--p)}.chip.s.on{background:var(--s)}.chip.y.on{background:var(--y);color:#5a4300}
@@ -410,7 +411,7 @@ TR.en={
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Home','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Good habits, growing up with the Kondung twins',
 '에헴~ 반갑구먼!':'Ahem~ nice to meet you!','이름이 뭐니? 알려 주렴~':'What\'s your name? Tell us, dear~',
 '우리 아이를 소개해 주세요':'Tell us about your child','아이 이름 (또는 애칭)':'Child\'s name (or nickname)','예) 지우':'e.g. Mia','좋아하는 캐릭터':'Favorite character',
-'이름은 이 폰에만 저장돼요. 사진·실명은 받지 않아요.':'The name stays on this phone only. We never ask for photos or real names.','시작하기':'Start','아이 이름을 넣어 주세요':'Please enter a name',
+'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'We never ask for photos or real names. A nickname is enough.','시작하기':'Start','아이 이름을 넣어 주세요':'Please enter a name',
 '에헴~ {0}, 오늘도 바르게!':'Ahem~ {0}, be good today too!','잘하면 내가 "옳지옳지~" 해 줄게!':'Do well and I\'ll say "Good job, good job~!"','오늘도 바르게, 즐겁게!':'Be good and have fun today!','고치기':'Edit',
 '이럴 땐 어떻게 할까?':'What should I do?','식당·화장실·버스 예절 퀴즈':'Manners quiz: restaurant, restroom, bus','꼰둥이 배지 {0}개':'{0} Kondung badges',
 '칭찬 도장판':'Praise Stamp Board','약속을 지키면 도장 쾅!':'Keep a promise, get a stamp!','다 모으면 상장 카드':'Fill it up for a certificate',
@@ -515,7 +516,7 @@ TR.hi={
 '꼰댕이':'कोनदेंगी','꼰순이':'कोनसूनी','처음':'होम','바르게':'बारेउगे','꼰둥이와 함께 자라는 바른 습관':'कोनदुंग जुड़वाँ के साथ अच्छी आदतें सीखें',
 '에헴~ 반갑구먼!':'अहम्~ तुमसे मिलकर ख़ुशी हुई!','이름이 뭐니? 알려 주렴~':'तुम्हारा नाम क्या है? हमें बताओ~',
 '우리 아이를 소개해 주세요':'अपने बच्चे के बारे में बताइए','아이 이름 (또는 애칭)':'बच्चे का नाम (या प्यार का नाम)','예) 지우':'जैसे: गुड्डू','좋아하는 캐릭터':'पसंदीदा किरदार',
-'이름은 이 폰에만 저장돼요. 사진·실명은 받지 않아요.':'नाम सिर्फ़ इसी फ़ोन में सेव होता है। हम फ़ोटो या असली नाम नहीं लेते।','시작하기':'शुरू करें','아이 이름을 넣어 주세요':'बच्चे का नाम लिखें',
+'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'हम फ़ोटो या असली नाम नहीं लेते। सिर्फ़ प्यार का नाम काफ़ी है।','시작하기':'शुरू करें','아이 이름을 넣어 주세요':'बच्चे का नाम लिखें',
 '에헴~ {0}, 오늘도 바르게!':'अहम्~ {0}, आज भी अच्छे बच्चे बनो!','잘하면 내가 "옳지옳지~" 해 줄게!':'अच्छा करोगे तो मैं कहूँगा “शाबाश, शाबाश~!”','오늘도 바르게, 즐겁게!':'आज भी अच्छे और ख़ुश रहो!','고치기':'बदलें',
 '이럴 땐 어떻게 할까?':'ऐसे में क्या करें?','식당·화장실·버스 예절 퀴즈':'शिष्टाचार क्विज़: रेस्टोरेंट, शौचालय, बस','꼰둥이 배지 {0}개':'कोनदुंग बैज: {0}',
 '칭찬 도장판':'शाबाशी स्टैम्प बोर्ड','약속을 지키면 도장 쾅!':'वादा निभाओ, स्टैम्प पाओ!','다 모으면 상장 카드':'पूरे हों तो प्रमाणपत्र',
@@ -616,7 +617,7 @@ TR.id={
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Beranda','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Tumbuh dengan kebiasaan baik bersama si kembar Kondung',
 '에헴~ 반갑구먼!':'Ehem~ senang bertemu denganmu!','이름이 뭐니? 알려 주렴~':'Siapa namamu? Beri tahu kami~',
 '우리 아이를 소개해 주세요':'Kenalkan anak Anda','아이 이름 (또는 애칭)':'Nama anak (atau nama panggilan)','예) 지우':'Contoh: Dodo','좋아하는 캐릭터':'Karakter favorit',
-'이름은 이 폰에만 저장돼요. 사진·실명은 받지 않아요.':'Nama hanya disimpan di ponsel ini. Kami tidak meminta foto atau nama asli.','시작하기':'Mulai','아이 이름을 넣어 주세요':'Masukkan nama anak',
+'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'Kami tidak meminta foto atau nama asli. Cukup nama panggilan.','시작하기':'Mulai','아이 이름을 넣어 주세요':'Masukkan nama anak',
 '에헴~ {0}, 오늘도 바르게!':'Ehem~ {0}, hari ini juga jadi anak baik ya!','잘하면 내가 "옳지옳지~" 해 줄게!':'Kalau berhasil, aku bilang “Pintar, pintar~!”','오늘도 바르게, 즐겁게!':'Hari ini baik dan gembira!','고치기':'Ubah',
 '이럴 땐 어떻게 할까?':'Apa yang harus dilakukan?','식당·화장실·버스 예절 퀴즈':'Kuis sopan santun: restoran, toilet, bus','꼰둥이 배지 {0}개':'{0} lencana Kondung',
 '칭찬 도장판':'Papan stempel pujian','약속을 지키면 도장 쾅!':'Tepati janji, dapat stempel!','다 모으면 상장 카드':'Penuh = piagam penghargaan',
@@ -717,7 +718,7 @@ TR.ja={
 '꼰댕이':'コンデンイ','꼰순이':'コンスニ','처음':'ホーム','바르게':'バルゲ','꼰둥이와 함께 자라는 바른 습관':'コンドゥンふたごといっしょに よい習慣',
 '에헴~ 반갑구먼!':'えっへん~ はじめましてじゃ!','이름이 뭐니? 알려 주렴~':'おなまえは? おしえておくれ~',
 '우리 아이를 소개해 주세요':'お子さまを紹介してください','아이 이름 (또는 애칭)':'お子さまの名前(またはニックネーム)','예) 지우':'例)ゆうくん','좋아하는 캐릭터':'すきなキャラクター',
-'이름은 이 폰에만 저장돼요. 사진·실명은 받지 않아요.':'名前はこのスマホだけに保存されます。写真や本名は受け取りません。','시작하기':'はじめる','아이 이름을 넣어 주세요':'お子さまの名前を入れてください',
+'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'写真や本名は受け取りません。ニックネームだけで大丈夫です。','시작하기':'はじめる','아이 이름을 넣어 주세요':'お子さまの名前を入れてください',
 '에헴~ {0}, 오늘도 바르게!':'えっへん~ {0}、きょうも いい子でな!','잘하면 내가 "옳지옳지~" 해 줄게!':'できたら「よしよし~!」って ほめてあげるぞ!','오늘도 바르게, 즐겁게!':'きょうも いい子で たのしく!','고치기':'へんこう',
 '이럴 땐 어떻게 할까?':'こんなとき どうする?','식당·화장실·버스 예절 퀴즈':'マナークイズ:レストラン・トイレ・バス','꼰둥이 배지 {0}개':'コンドゥンバッジ {0}こ',
 '칭찬 도장판':'ほめほめスタンプ','약속을 지키면 도장 쾅!':'やくそくを まもったら ポン!','다 모으면 상장 카드':'ぜんぶ たまったら 賞状',
@@ -818,7 +819,7 @@ TR.vi={
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Trang chủ','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Lớn lên cùng thói quen tốt với cặp song sinh Kondung',
 '에헴~ 반갑구먼!':'E hèm~ rất vui được gặp cháu!','이름이 뭐니? 알려 주렴~':'Cháu tên là gì? Nói cho tụi ta nghe nào~',
 '우리 아이를 소개해 주세요':'Giới thiệu về bé nhà bạn','아이 이름 (또는 애칭)':'Tên bé (hoặc biệt danh)','예) 지우':'VD: Bông','좋아하는 캐릭터':'Nhân vật yêu thích',
-'이름은 이 폰에만 저장돼요. 사진·실명은 받지 않아요.':'Tên chỉ được lưu trên điện thoại này. Chúng tôi không yêu cầu ảnh hay tên thật.','시작하기':'Bắt đầu','아이 이름을 넣어 주세요':'Hãy nhập tên bé',
+'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'Chúng tôi không yêu cầu ảnh hay tên thật. Chỉ cần biệt danh.','시작하기':'Bắt đầu','아이 이름을 넣어 주세요':'Hãy nhập tên bé',
 '에헴~ {0}, 오늘도 바르게!':'E hèm~ {0}, hôm nay cũng ngoan nhé!','잘하면 내가 "옳지옳지~" 해 줄게!':'Làm tốt là ta khen “Giỏi lắm, giỏi lắm~!” ngay!','오늘도 바르게, 즐겁게!':'Hôm nay ngoan và vui nhé!','고치기':'Sửa',
 '이럴 땐 어떻게 할까?':'Lúc này phải làm sao?','식당·화장실·버스 예절 퀴즈':'Đố vui phép lịch sự: nhà hàng, nhà vệ sinh, xe buýt','꼰둥이 배지 {0}개':'{0} huy hiệu Kondung',
 '칭찬 도장판':'Bảng đóng dấu khen','약속을 지키면 도장 쾅!':'Giữ lời hứa là được đóng dấu!','다 모으면 상장 카드':'Đủ dấu thì nhận giấy khen',
@@ -919,7 +920,7 @@ TR.zh={
 '꼰댕이':'小唠叨','꼰순이':'小叨叨','처음':'首页','바르게':'乖乖','꼰둥이와 함께 자라는 바른 습관':'和唠叨双胞胎一起养成好习惯',
 '에헴~ 반갑구먼!':'咳咳~ 很高兴见到你!','이름이 뭐니? 알려 주렴~':'你叫什么名字?告诉我们吧~',
 '우리 아이를 소개해 주세요':'介绍一下您的孩子','아이 이름 (또는 애칭)':'孩子的名字(或小名)','예) 지우':'例:豆豆','좋아하는 캐릭터':'喜欢的角色',
-'이름은 이 폰에만 저장돼요. 사진·실명은 받지 않아요.':'名字只保存在这台手机上。我们不收集照片或真实姓名。','시작하기':'开始','아이 이름을 넣어 주세요':'请输入孩子的名字',
+'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'我们不收集照片或真实姓名，填小名就可以。','시작하기':'开始','아이 이름을 넣어 주세요':'请输入孩子的名字',
 '에헴~ {0}, 오늘도 바르게!':'咳咳~ {0},今天也要乖乖的!','잘하면 내가 "옳지옳지~" 해 줄게!':'做得好,我就夸你「真棒真棒~!」','오늘도 바르게, 즐겁게!':'今天也要乖乖、开开心心!','고치기':'修改',
 '이럴 땐 어떻게 할까?':'这时候该怎么做?','식당·화장실·버스 예절 퀴즈':'礼仪问答:餐厅、洗手间、公交车','꼰둥이 배지 {0}개':'唠叨徽章 {0} 枚',
 '칭찬 도장판':'表扬印章板','약속을 지키면 도장 쾅!':'遵守约定,盖个章!','다 모으면 상장 카드':'集满得奖状',
@@ -1101,14 +1102,14 @@ var SB=ls('sb')||null;         // 도장판
 var VIEW='cover',SUB={};
 function go(v,o){VIEW=v;SUB=o||{};render();window.scrollTo(0,0)}
 function hdr(x){return '<div class="top"><button class="back" onclick="go(\'home\')">← '+t('처음')+'</button><b>'+x+'</b></div>'}
-var AV=['🐣','🐰','🐻','🦊','🐼','🐯','🦄','🐬','🐶','🐱'];
+var AV=['🐣','🐰','🐻','🦊','🐼','🐯','🦄','🐬','🐶','🐱','🦖','🐧'];
 
 function render(){var h='';
   if(!KID&&VIEW!=='kid'&&VIEW!=='cover')VIEW='kid';
   if(VIEW==='cover')h=coverView();else if(VIEW==='kid')h=kidView();else if(VIEW==='home')h=homeView();else if(VIEW==='stamp')h=stampView();
   else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();
   $('#app').innerHTML=h;if(VIEW==='draw'&&SUB.step==='time')tick();}
-function logo(center){return '<div class="logo"'+(center?' style="justify-content:center;margin:18px 0 6px"':'')+'>'+twinsLogo()+'<div><h1>All <span>'+t('바르게')+'</span></h1><small>'+t('꼰둥이와 함께 자라는 바른 습관')+'</small></div>'+(center?'':'<div style="margin-left:auto">'+langSel()+'</div>')+'</div>'}
+function logo(center){return '<div class="logo"'+(center?' style="justify-content:center;margin:18px 0 6px"':'')+'>'+twinsLogo()+'<div><h1>all <span>'+t('바르게')+'</span></h1><small>'+t('꼰둥이와 함께 자라는 바른 습관')+'</small></div>'+(center?'':'<div style="margin-left:auto">'+langSel()+'</div>')+'</div>'}
 
 
 /* ---------- 앞표지 ---------- */
@@ -1126,9 +1127,9 @@ function coverView(){var nm=t('바르게'),cols=['#5cc93a','#ffb800','#4db8f5','
   '<button class="btn cv-go" id="piStart" onclick="piStart()">π '+esc(LU(11))+' 🌱</button>'+
   (window.PI_SESSION?acctLine():'')+
   '<div class="cv-foot"><a href="#" onclick="legal(\'about\');return false">'+esc(LU(2))+'</a><span>·</span><a href="#" onclick="legal(\'privacy\');return false">'+esc(LU(0))+'</a><span>·</span><a href="#" onclick="legal(\'terms\');return false">'+esc(LU(1))+'</a></div>'+
-  '<div class="cv-ver">'+esc(LU(3))+' '+APP_VER+' · © 2026 All '+esc(t('바르게'))+'</div></div>'}
+  '<div class="cv-ver">'+esc(LU(3))+' '+APP_VER+' · © 2026 all '+esc(t('바르게'))+'</div></div>'}
 function legal(k){var L=LGL(),h;
-  if(k==='about')h='<h2 style="display:flex;align-items:center;gap:10px">'+twinsLogo()+'All '+esc(t('바르게'))+'</h2><p style="line-height:1.7">'+esc(L.about)+'</p><p class="mut">'+esc(L.cover)+'</p><p class="mut">'+esc(LU(3))+' '+APP_VER+'</p>';
+  if(k==='about')h='<h2 style="display:flex;align-items:center;gap:10px">'+twinsLogo()+'all '+esc(t('바르게'))+'</h2><p style="line-height:1.7">'+esc(L.about)+'</p><p class="mut">'+esc(L.cover)+'</p><p class="mut">'+esc(LU(3))+' '+APP_VER+'</p>';
   else h='<h2>'+esc(LU(k==='privacy'?0:1))+'</h2><ol class="lgl">'+L[k].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ol><p class="mut">'+esc(L.eff)+' · '+esc(LU(3))+' '+APP_VER+'</p>';
   sheet(h+'<button class="btn w" onclick="closeSheet()">'+t('닫기')+'</button>')}
 function footLinks(){return '<div class="cv-foot in"><a href="#" onclick="go(\'cover\');return false">🏠 All '+esc(t('바르게'))+'</a><span>·</span><a href="#" onclick="legal(\'privacy\');return false">'+esc(LU(0))+'</a><span>·</span><a href="#" onclick="legal(\'terms\');return false">'+esc(LU(1))+'</a></div><div class="cv-ver">'+esc(LU(3))+' '+APP_VER+'</div>'}
@@ -1138,7 +1139,7 @@ function kidView(){var k=KID||{name:'',av:'🐣'};
   return '<div style="text-align:right">'+langSel()+'</div>'+logo(1)+greet(t('에헴~ 반갑구먼!'),t('이름이 뭐니? 알려 주렴~'))+
   '<div class="box"><h2>👋 '+t('우리 아이를 소개해 주세요')+'</h2><label class="f">'+t('아이 이름 (또는 애칭)')+'</label><input id="kn" class="inp" maxlength="12" placeholder="'+t('예) 지우')+'" value="'+esc(k.name)+'">'+
   '<label class="f">'+t('좋아하는 캐릭터')+'</label><div class="chips" id="kav">'+AV.map(function(a){return '<button class="chip'+(a===k.av?' on':'')+'" style="font-size:24px" onclick="pickAv(this,\''+a+'\')">'+a+'</button>'}).join('')+'</div>'+
-  '<p class="mut" style="margin-top:12px">🔒 '+t('이름은 이 폰에만 저장돼요. 사진·실명은 받지 않아요.')+'</p>'+
+  '<p class="mut" style="margin-top:12px">🔒 '+t('사진·실명은 받지 않아요. 애칭만 넣어 주세요.')+'</p>'+
   '<button class="btn" onclick="saveKid()">'+t('시작하기')+' 🌱</button></div>'}
 var _av=null;function pickAv(b,a){_av=a;document.querySelectorAll('#kav .chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
 function saveKid(){var n=$('#kn').value.trim().replace(/[<>{}\[\]]/g,'');if(!n){toast(t('아이 이름을 넣어 주세요'));return}
@@ -1201,7 +1202,7 @@ function makeCert(){var W=1080,H=1440,cv=document.createElement('canvas');cv.wid
   var dots=['#ff7fa8','#4db8f5','#ffcf33','#5cc93a'];for(var i=0;i<26;i++){c.fillStyle=dots[i%4];c.beginPath();c.arc(90+i*(W-180)/25,56,9,0,7);c.fill();c.beginPath();c.arc(90+i*(W-180)/25,H-56,9,0,7);c.fill()}
   c.textAlign='center';c.font='120px '+F;c.fillText('🏆',W/2,250);
   c.fillStyle='#2e3a2a';c.font='900 '+(LANG==='ko'?104:66)+'px '+F;c.fillText(t('칭 찬 상 장'),W/2,400);
-  c.fillStyle='#5cc93a';c.font='800 46px '+F;c.fillText('All '+t('바르게'),W/2,470);
+  c.fillStyle='#5cc93a';c.font='800 46px '+F;c.fillText('all '+t('바르게'),W/2,470);
   c.fillStyle='#2e3a2a';c.font='900 84px '+F;c.fillText(KID.name,W/2,620);
   c.font='800 40px '+F;c.fillStyle='#7d8a76';c.fillText(t('어린이'),W/2,680);
   var body=t('위 어린이는 {0}부터 {1}까지 {2} 약속을 {3}번이나 멋지게 지켰기에 이 상장을 드립니다.',SB.start.replace(/-/g,'.'),today().replace(/-/g,'.'),SB.missions.map(function(m){return m.replace(/^\S+\s/,'')}).join(', '),SB.goal);

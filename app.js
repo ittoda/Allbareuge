@@ -41,14 +41,14 @@ var SB=ls('sb')||null;         // 도장판
 var VIEW='cover',SUB={};
 function go(v,o){VIEW=v;SUB=o||{};render();window.scrollTo(0,0)}
 function hdr(x){return '<div class="top"><button class="back" onclick="go(\'home\')">← '+t('처음')+'</button><b>'+x+'</b></div>'}
-var AV=['🐣','🐰','🐻','🦊','🐼','🐯','🦄','🐬','🐶','🐱'];
+var AV=['🐣','🐰','🐻','🦊','🐼','🐯','🦄','🐬','🐶','🐱','🦖','🐧'];
 
 function render(){var h='';
   if(!KID&&VIEW!=='kid'&&VIEW!=='cover')VIEW='kid';
   if(VIEW==='cover')h=coverView();else if(VIEW==='kid')h=kidView();else if(VIEW==='home')h=homeView();else if(VIEW==='stamp')h=stampView();
   else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();
   $('#app').innerHTML=h;if(VIEW==='draw'&&SUB.step==='time')tick();}
-function logo(center){return '<div class="logo"'+(center?' style="justify-content:center;margin:18px 0 6px"':'')+'>'+twinsLogo()+'<div><h1>All <span>'+t('바르게')+'</span></h1><small>'+t('꼰둥이와 함께 자라는 바른 습관')+'</small></div>'+(center?'':'<div style="margin-left:auto">'+langSel()+'</div>')+'</div>'}
+function logo(center){return '<div class="logo"'+(center?' style="justify-content:center;margin:18px 0 6px"':'')+'>'+twinsLogo()+'<div><h1>all <span>'+t('바르게')+'</span></h1><small>'+t('꼰둥이와 함께 자라는 바른 습관')+'</small></div>'+(center?'':'<div style="margin-left:auto">'+langSel()+'</div>')+'</div>'}
 
 
 /* ---------- 앞표지 ---------- */
@@ -66,9 +66,9 @@ function coverView(){var nm=t('바르게'),cols=['#5cc93a','#ffb800','#4db8f5','
   '<button class="btn cv-go" id="piStart" onclick="piStart()">π '+esc(LU(11))+' 🌱</button>'+
   (window.PI_SESSION?acctLine():'')+
   '<div class="cv-foot"><a href="#" onclick="legal(\'about\');return false">'+esc(LU(2))+'</a><span>·</span><a href="#" onclick="legal(\'privacy\');return false">'+esc(LU(0))+'</a><span>·</span><a href="#" onclick="legal(\'terms\');return false">'+esc(LU(1))+'</a></div>'+
-  '<div class="cv-ver">'+esc(LU(3))+' '+APP_VER+' · © 2026 All '+esc(t('바르게'))+'</div></div>'}
+  '<div class="cv-ver">'+esc(LU(3))+' '+APP_VER+' · © 2026 all '+esc(t('바르게'))+'</div></div>'}
 function legal(k){var L=LGL(),h;
-  if(k==='about')h='<h2 style="display:flex;align-items:center;gap:10px">'+twinsLogo()+'All '+esc(t('바르게'))+'</h2><p style="line-height:1.7">'+esc(L.about)+'</p><p class="mut">'+esc(L.cover)+'</p><p class="mut">'+esc(LU(3))+' '+APP_VER+'</p>';
+  if(k==='about')h='<h2 style="display:flex;align-items:center;gap:10px">'+twinsLogo()+'all '+esc(t('바르게'))+'</h2><p style="line-height:1.7">'+esc(L.about)+'</p><p class="mut">'+esc(L.cover)+'</p><p class="mut">'+esc(LU(3))+' '+APP_VER+'</p>';
   else h='<h2>'+esc(LU(k==='privacy'?0:1))+'</h2><ol class="lgl">'+L[k].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ol><p class="mut">'+esc(L.eff)+' · '+esc(LU(3))+' '+APP_VER+'</p>';
   sheet(h+'<button class="btn w" onclick="closeSheet()">'+t('닫기')+'</button>')}
 function footLinks(){return '<div class="cv-foot in"><a href="#" onclick="go(\'cover\');return false">🏠 All '+esc(t('바르게'))+'</a><span>·</span><a href="#" onclick="legal(\'privacy\');return false">'+esc(LU(0))+'</a><span>·</span><a href="#" onclick="legal(\'terms\');return false">'+esc(LU(1))+'</a></div><div class="cv-ver">'+esc(LU(3))+' '+APP_VER+'</div>'}
@@ -78,7 +78,7 @@ function kidView(){var k=KID||{name:'',av:'🐣'};
   return '<div style="text-align:right">'+langSel()+'</div>'+logo(1)+greet(t('에헴~ 반갑구먼!'),t('이름이 뭐니? 알려 주렴~'))+
   '<div class="box"><h2>👋 '+t('우리 아이를 소개해 주세요')+'</h2><label class="f">'+t('아이 이름 (또는 애칭)')+'</label><input id="kn" class="inp" maxlength="12" placeholder="'+t('예) 지우')+'" value="'+esc(k.name)+'">'+
   '<label class="f">'+t('좋아하는 캐릭터')+'</label><div class="chips" id="kav">'+AV.map(function(a){return '<button class="chip'+(a===k.av?' on':'')+'" style="font-size:24px" onclick="pickAv(this,\''+a+'\')">'+a+'</button>'}).join('')+'</div>'+
-  '<p class="mut" style="margin-top:12px">🔒 '+t('이름은 이 폰에만 저장돼요. 사진·실명은 받지 않아요.')+'</p>'+
+  '<p class="mut" style="margin-top:12px">🔒 '+t('사진·실명은 받지 않아요. 애칭만 넣어 주세요.')+'</p>'+
   '<button class="btn" onclick="saveKid()">'+t('시작하기')+' 🌱</button></div>'}
 var _av=null;function pickAv(b,a){_av=a;document.querySelectorAll('#kav .chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
 function saveKid(){var n=$('#kn').value.trim().replace(/[<>{}\[\]]/g,'');if(!n){toast(t('아이 이름을 넣어 주세요'));return}
@@ -141,7 +141,7 @@ function makeCert(){var W=1080,H=1440,cv=document.createElement('canvas');cv.wid
   var dots=['#ff7fa8','#4db8f5','#ffcf33','#5cc93a'];for(var i=0;i<26;i++){c.fillStyle=dots[i%4];c.beginPath();c.arc(90+i*(W-180)/25,56,9,0,7);c.fill();c.beginPath();c.arc(90+i*(W-180)/25,H-56,9,0,7);c.fill()}
   c.textAlign='center';c.font='120px '+F;c.fillText('🏆',W/2,250);
   c.fillStyle='#2e3a2a';c.font='900 '+(LANG==='ko'?104:66)+'px '+F;c.fillText(t('칭 찬 상 장'),W/2,400);
-  c.fillStyle='#5cc93a';c.font='800 46px '+F;c.fillText('All '+t('바르게'),W/2,470);
+  c.fillStyle='#5cc93a';c.font='800 46px '+F;c.fillText('all '+t('바르게'),W/2,470);
   c.fillStyle='#2e3a2a';c.font='900 84px '+F;c.fillText(KID.name,W/2,620);
   c.font='800 40px '+F;c.fillStyle='#7d8a76';c.fillText(t('어린이'),W/2,680);
   var body=t('위 어린이는 {0}부터 {1}까지 {2} 약속을 {3}번이나 멋지게 지켰기에 이 상장을 드립니다.',SB.start.replace(/-/g,'.'),today().replace(/-/g,'.'),SB.missions.map(function(m){return m.replace(/^\S+\s/,'')}).join(', '),SB.goal);
