@@ -51,6 +51,8 @@ input,textarea,select{font:inherit}
 .btn:disabled{opacity:.5}
 .row{display:flex;gap:8px}.row>*{flex:1}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
+img.kphoto{width:1.6em;height:1.6em;border-radius:50%;object-fit:cover;vertical-align:middle;display:inline-block}.kid .av{overflow:hidden}.kid .av img.kphoto{width:100%;height:100%}.who img.kphoto{width:1.2em;height:1.2em}
+.kph{display:flex;gap:8px;align-items:center;margin-top:10px}.kph .btn{margin:0;padding:12px;font-size:14px}.kpc{padding:6px 10px!important;font-size:24px}.kdel{background:none;border:0;color:var(--mut);font-size:12px;text-decoration:underline;white-space:nowrap}
 #kav{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}#kav .chip{width:100%;padding:10px 0}
 .chip{background:#f3f5f0;border-radius:20px;padding:8px 12px;font-weight:700;font-size:14px}
 .chip.on{background:var(--g);color:#fff}
@@ -411,7 +413,7 @@ TR.en={
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Home','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Good habits, growing up with the Kondung twins',
 '에헴~ 반갑구먼!':'Ahem~ nice to meet you!','이름이 뭐니? 알려 주렴~':'What\'s your name? Tell us, dear~',
 '우리 아이를 소개해 주세요':'Tell us about your child','아이 이름 (또는 애칭)':'Child\'s name (or nickname)','예) 지우':'e.g. Mia','좋아하는 캐릭터':'Favorite character',
-'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'We never ask for photos or real names. A nickname is enough.','시작하기':'Start','아이 이름을 넣어 주세요':'Please enter a name',
+'실명 대신 애칭만 넣어 주세요.':'No real names needed. A nickname is enough.','시작하기':'Start','아이 이름을 넣어 주세요':'Please enter a name',
 '에헴~ {0}, 오늘도 바르게!':'Ahem~ {0}, be good today too!','잘하면 내가 "옳지옳지~" 해 줄게!':'Do well and I\'ll say "Good job, good job~!"','오늘도 바르게, 즐겁게!':'Be good and have fun today!','고치기':'Edit',
 '이럴 땐 어떻게 할까?':'What should I do?','식당·화장실·버스 예절 퀴즈':'Manners quiz: restaurant, restroom, bus','꼰둥이 배지 {0}개':'{0} Kondung badges',
 '칭찬 도장판':'Praise Stamp Board','약속을 지키면 도장 쾅!':'Keep a promise, get a stamp!','다 모으면 상장 카드':'Fill it up for a certificate',
@@ -516,7 +518,7 @@ TR.hi={
 '꼰댕이':'कोनदेंगी','꼰순이':'कोनसूनी','처음':'होम','바르게':'बारेउगे','꼰둥이와 함께 자라는 바른 습관':'कोनदुंग जुड़वाँ के साथ अच्छी आदतें सीखें',
 '에헴~ 반갑구먼!':'अहम्~ तुमसे मिलकर ख़ुशी हुई!','이름이 뭐니? 알려 주렴~':'तुम्हारा नाम क्या है? हमें बताओ~',
 '우리 아이를 소개해 주세요':'अपने बच्चे के बारे में बताइए','아이 이름 (또는 애칭)':'बच्चे का नाम (या प्यार का नाम)','예) 지우':'जैसे: गुड्डू','좋아하는 캐릭터':'पसंदीदा किरदार',
-'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'हम फ़ोटो या असली नाम नहीं लेते। सिर्फ़ प्यार का नाम काफ़ी है।','시작하기':'शुरू करें','아이 이름을 넣어 주세요':'बच्चे का नाम लिखें',
+'실명 대신 애칭만 넣어 주세요.':'असली नाम की ज़रूरत नहीं। सिर्फ़ प्यार का नाम काफ़ी है।','시작하기':'शुरू करें','아이 이름을 넣어 주세요':'बच्चे का नाम लिखें',
 '에헴~ {0}, 오늘도 바르게!':'अहम्~ {0}, आज भी अच्छे बच्चे बनो!','잘하면 내가 "옳지옳지~" 해 줄게!':'अच्छा करोगे तो मैं कहूँगा “शाबाश, शाबाश~!”','오늘도 바르게, 즐겁게!':'आज भी अच्छे और ख़ुश रहो!','고치기':'बदलें',
 '이럴 땐 어떻게 할까?':'ऐसे में क्या करें?','식당·화장실·버스 예절 퀴즈':'शिष्टाचार क्विज़: रेस्टोरेंट, शौचालय, बस','꼰둥이 배지 {0}개':'कोनदुंग बैज: {0}',
 '칭찬 도장판':'शाबाशी स्टैम्प बोर्ड','약속을 지키면 도장 쾅!':'वादा निभाओ, स्टैम्प पाओ!','다 모으면 상장 카드':'पूरे हों तो प्रमाणपत्र',
@@ -617,7 +619,7 @@ TR.id={
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Beranda','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Tumbuh dengan kebiasaan baik bersama si kembar Kondung',
 '에헴~ 반갑구먼!':'Ehem~ senang bertemu denganmu!','이름이 뭐니? 알려 주렴~':'Siapa namamu? Beri tahu kami~',
 '우리 아이를 소개해 주세요':'Kenalkan anak Anda','아이 이름 (또는 애칭)':'Nama anak (atau nama panggilan)','예) 지우':'Contoh: Dodo','좋아하는 캐릭터':'Karakter favorit',
-'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'Kami tidak meminta foto atau nama asli. Cukup nama panggilan.','시작하기':'Mulai','아이 이름을 넣어 주세요':'Masukkan nama anak',
+'실명 대신 애칭만 넣어 주세요.':'Tidak perlu nama asli. Cukup nama panggilan.','시작하기':'Mulai','아이 이름을 넣어 주세요':'Masukkan nama anak',
 '에헴~ {0}, 오늘도 바르게!':'Ehem~ {0}, hari ini juga jadi anak baik ya!','잘하면 내가 "옳지옳지~" 해 줄게!':'Kalau berhasil, aku bilang “Pintar, pintar~!”','오늘도 바르게, 즐겁게!':'Hari ini baik dan gembira!','고치기':'Ubah',
 '이럴 땐 어떻게 할까?':'Apa yang harus dilakukan?','식당·화장실·버스 예절 퀴즈':'Kuis sopan santun: restoran, toilet, bus','꼰둥이 배지 {0}개':'{0} lencana Kondung',
 '칭찬 도장판':'Papan stempel pujian','약속을 지키면 도장 쾅!':'Tepati janji, dapat stempel!','다 모으면 상장 카드':'Penuh = piagam penghargaan',
@@ -718,7 +720,7 @@ TR.ja={
 '꼰댕이':'コンデンイ','꼰순이':'コンスニ','처음':'ホーム','바르게':'バルゲ','꼰둥이와 함께 자라는 바른 습관':'コンドゥンふたごといっしょに よい習慣',
 '에헴~ 반갑구먼!':'えっへん~ はじめましてじゃ!','이름이 뭐니? 알려 주렴~':'おなまえは? おしえておくれ~',
 '우리 아이를 소개해 주세요':'お子さまを紹介してください','아이 이름 (또는 애칭)':'お子さまの名前(またはニックネーム)','예) 지우':'例)ゆうくん','좋아하는 캐릭터':'すきなキャラクター',
-'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'写真や本名は受け取りません。ニックネームだけで大丈夫です。','시작하기':'はじめる','아이 이름을 넣어 주세요':'お子さまの名前を入れてください',
+'실명 대신 애칭만 넣어 주세요.':'本名は いりません。ニックネームだけで 大丈夫です。','시작하기':'はじめる','아이 이름을 넣어 주세요':'お子さまの名前を入れてください',
 '에헴~ {0}, 오늘도 바르게!':'えっへん~ {0}、きょうも いい子でな!','잘하면 내가 "옳지옳지~" 해 줄게!':'できたら「よしよし~!」って ほめてあげるぞ!','오늘도 바르게, 즐겁게!':'きょうも いい子で たのしく!','고치기':'へんこう',
 '이럴 땐 어떻게 할까?':'こんなとき どうする?','식당·화장실·버스 예절 퀴즈':'マナークイズ:レストラン・トイレ・バス','꼰둥이 배지 {0}개':'コンドゥンバッジ {0}こ',
 '칭찬 도장판':'ほめほめスタンプ','약속을 지키면 도장 쾅!':'やくそくを まもったら ポン!','다 모으면 상장 카드':'ぜんぶ たまったら 賞状',
@@ -819,7 +821,7 @@ TR.vi={
 '꼰댕이':'Kondaengi','꼰순이':'Konsuni','처음':'Trang chủ','바르게':'Bareuge','꼰둥이와 함께 자라는 바른 습관':'Lớn lên cùng thói quen tốt với cặp song sinh Kondung',
 '에헴~ 반갑구먼!':'E hèm~ rất vui được gặp cháu!','이름이 뭐니? 알려 주렴~':'Cháu tên là gì? Nói cho tụi ta nghe nào~',
 '우리 아이를 소개해 주세요':'Giới thiệu về bé nhà bạn','아이 이름 (또는 애칭)':'Tên bé (hoặc biệt danh)','예) 지우':'VD: Bông','좋아하는 캐릭터':'Nhân vật yêu thích',
-'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'Chúng tôi không yêu cầu ảnh hay tên thật. Chỉ cần biệt danh.','시작하기':'Bắt đầu','아이 이름을 넣어 주세요':'Hãy nhập tên bé',
+'실명 대신 애칭만 넣어 주세요.':'Không cần tên thật. Chỉ cần biệt danh.','시작하기':'Bắt đầu','아이 이름을 넣어 주세요':'Hãy nhập tên bé',
 '에헴~ {0}, 오늘도 바르게!':'E hèm~ {0}, hôm nay cũng ngoan nhé!','잘하면 내가 "옳지옳지~" 해 줄게!':'Làm tốt là ta khen “Giỏi lắm, giỏi lắm~!” ngay!','오늘도 바르게, 즐겁게!':'Hôm nay ngoan và vui nhé!','고치기':'Sửa',
 '이럴 땐 어떻게 할까?':'Lúc này phải làm sao?','식당·화장실·버스 예절 퀴즈':'Đố vui phép lịch sự: nhà hàng, nhà vệ sinh, xe buýt','꼰둥이 배지 {0}개':'{0} huy hiệu Kondung',
 '칭찬 도장판':'Bảng đóng dấu khen','약속을 지키면 도장 쾅!':'Giữ lời hứa là được đóng dấu!','다 모으면 상장 카드':'Đủ dấu thì nhận giấy khen',
@@ -920,7 +922,7 @@ TR.zh={
 '꼰댕이':'小唠叨','꼰순이':'小叨叨','처음':'首页','바르게':'乖乖','꼰둥이와 함께 자라는 바른 습관':'和唠叨双胞胎一起养成好习惯',
 '에헴~ 반갑구먼!':'咳咳~ 很高兴见到你!','이름이 뭐니? 알려 주렴~':'你叫什么名字?告诉我们吧~',
 '우리 아이를 소개해 주세요':'介绍一下您的孩子','아이 이름 (또는 애칭)':'孩子的名字(或小名)','예) 지우':'例:豆豆','좋아하는 캐릭터':'喜欢的角色',
-'사진·실명은 받지 않아요. 애칭만 넣어 주세요.':'我们不收集照片或真实姓名，填小名就可以。','시작하기':'开始','아이 이름을 넣어 주세요':'请输入孩子的名字',
+'실명 대신 애칭만 넣어 주세요.':'不需要真实姓名，填小名就可以。','시작하기':'开始','아이 이름을 넣어 주세요':'请输入孩子的名字',
 '에헴~ {0}, 오늘도 바르게!':'咳咳~ {0},今天也要乖乖的!','잘하면 내가 "옳지옳지~" 해 줄게!':'做得好,我就夸你「真棒真棒~!」','오늘도 바르게, 즐겁게!':'今天也要乖乖、开开心心!','고치기':'修改',
 '이럴 땐 어떻게 할까?':'这时候该怎么做?','식당·화장실·버스 예절 퀴즈':'礼仪问答:餐厅、洗手间、公交车','꼰둥이 배지 {0}개':'唠叨徽章 {0} 枚',
 '칭찬 도장판':'表扬印章板','약속을 지키면 도장 쾅!':'遵守约定,盖个章!','다 모으면 상장 카드':'集满得奖状',
@@ -1019,42 +1021,42 @@ DRAW:['摇尾巴的小狗','午睡的小猫','吃胡萝卜的兔子','喷水的�
 var APP_VER='1.0.0';
 var LEGAL={
 ko:{cover:'3~8세 · 부모님과 함께 · 광고 없음',about:'꼰댕이와 꼰순이는 “라떼는 말이야~”를 입에 달고 사는 애늙은이 쌍둥이예요. 잔소리는 많지만 누구보다 아이를 아끼는 두 친구가 칭찬 도장, 내 이름 동화, 4컷 웹툰, 그림 퀴즈, 예절 퀴즈로 바른 습관을 함께 알려 줘요.',
- privacy:['Pi로 로그인하면 아이 이름(애칭)과 도장·키우기·퀴즈 기록이 보호자의 Pi 계정에 연결돼 안전하게 저장돼요. 폰을 바꿔도 이어서 쓸 수 있어요. 로그인하지 않으면 이 기기에만 저장돼요.','그림 사진은 기기 안에서만 점수를 매기고, 저장하거나 어디에도 보내지 않아요.','광고, 추적 도구, 외부 분석 도구를 쓰지 않아요.','브라우저의 사이트 데이터를 지우면 앱 기록이 모두 지워져요.','Pi 결제는 보호자(Pi 계정 주인)만 할 수 있고, Pi 사용자 이름과 결제 정보는 Pi Network 규칙에 따라 처리해요. 기록을 지우고 싶으면 앱 안 문의로 알려 주세요.'],
+ privacy:['Pi로 로그인하면 아이 이름(애칭)과 도장·키우기·퀴즈 기록이 보호자의 Pi 계정에 연결돼 안전하게 저장돼요. 폰을 바꿔도 이어서 쓸 수 있어요. 로그인하지 않으면 이 기기에만 저장돼요.','그림 사진과 아이 프로필 사진은 이 기기 안에만 있고, 서버나 다른 곳으로 절대 보내지 않아요.','광고, 추적 도구, 외부 분석 도구를 쓰지 않아요.','브라우저의 사이트 데이터를 지우면 앱 기록이 모두 지워져요.','Pi 결제는 보호자(Pi 계정 주인)만 할 수 있고, Pi 사용자 이름과 결제 정보는 Pi Network 규칙에 따라 처리해요. 기록을 지우고 싶으면 앱 안 문의로 알려 주세요.'],
  terms:['이 앱은 3~8세 어린이가 보호자와 함께 쓰는 학습·놀이 앱이에요.','보호자가 아이의 사용을 함께 지켜봐 주세요.','그림 점수와 동화는 재미를 위한 것이고, 아이를 평가하는 것이 아니에요.','꼰댕이·꼰순이 캐릭터와 앱 콘텐츠의 권리는 개발자에게 있어요. 상장과 그림 카드는 가정에서 자유롭게 저장·인쇄할 수 있어요.','앱은 더 좋게 바뀔 수 있어요. 부모님 가게의 Pi 상품은 결제 전에 가격을 먼저 보여 드리고, 결제는 부모님 확인을 거쳐야 해요.'],
  eff:'시행일 2026년 11월 25일'},
 en:{cover:'Ages 3–8 · With parents · No ads',about:'Kondaengi and Konsuni are old-soul twins who always say “Back in my day~”. They nag a lot, but they care about your child more than anyone — and teach good habits through praise stamps, name stories, 4-panel comics, drawing quizzes and manners quizzes.',
- privacy:['If you sign in with Pi, your child’s nickname and stamp, growing and quiz records are linked to the guardian’s Pi account and stored securely, so you can continue on a new phone. Without sign-in, everything stays on this device only.','Drawing photos are scored on the device only. They are not saved or sent anywhere.','We use no ads, no trackers and no third-party analytics.','Clearing the site data in your browser deletes all app records.','Only the guardian (Pi account owner) can make Pi payments. The Pi username and payment info are handled under Pi Network rules. To delete your records, contact us via the app page.'],
+ privacy:['If you sign in with Pi, your child’s nickname and stamp, growing and quiz records are linked to the guardian’s Pi account and stored securely, so you can continue on a new phone. Without sign-in, everything stays on this device only.','Drawing photos and your child’s profile photo stay on this device only and are never sent to our server or anywhere else.','We use no ads, no trackers and no third-party analytics.','Clearing the site data in your browser deletes all app records.','Only the guardian (Pi account owner) can make Pi payments. The Pi username and payment info are handled under Pi Network rules. To delete your records, contact us via the app page.'],
  terms:['This is a learning-and-play app for children aged 3–8, used together with a guardian.','Please supervise your child while using the app.','Drawing scores and stories are just for fun, not an evaluation of your child.','The Kondaengi and Konsuni characters and app content belong to the developer. Certificates and drawing cards may be freely saved and printed at home.','The app may be improved over time. If paid features are added, prices are shown before payment.'],
  eff:'Effective: November 25, 2026'},
 vi:{cover:'3–8 tuổi · Cùng bố mẹ · Không quảng cáo',about:'Kondaengi và Konsuni là cặp song sinh “ông cụ non” lúc nào cũng nói “Thời của ta~”. Hay cằn nhằn nhưng thương bé hơn ai hết — hai bạn dạy thói quen tốt qua bảng dấu khen, truyện mang tên bé, truyện tranh 4 khung, đố vẽ tranh và đố phép lịch sự.',
- privacy:['Khi đăng nhập Pi, biệt danh của bé và dữ liệu dấu khen, nuôi bạn, đố vui được liên kết với tài khoản Pi của người giám hộ và lưu an toàn, đổi điện thoại vẫn dùng tiếp được. Không đăng nhập thì mọi thứ chỉ lưu trên thiết bị này.','Ảnh tranh vẽ chỉ được chấm điểm trên thiết bị, không lưu và không gửi đi đâu.','Không quảng cáo, không công cụ theo dõi, không phân tích bên thứ ba.','Xóa dữ liệu trang web trong trình duyệt sẽ xóa toàn bộ dữ liệu ứng dụng.','Chỉ người giám hộ (chủ tài khoản Pi) mới thanh toán Pi. Tên người dùng Pi và thông tin thanh toán được xử lý theo quy định của Pi Network. Muốn xóa dữ liệu, hãy liên hệ qua trang ứng dụng.'],
+ privacy:['Khi đăng nhập Pi, biệt danh của bé và dữ liệu dấu khen, nuôi bạn, đố vui được liên kết với tài khoản Pi của người giám hộ và lưu an toàn, đổi điện thoại vẫn dùng tiếp được. Không đăng nhập thì mọi thứ chỉ lưu trên thiết bị này.','Ảnh tranh vẽ và ảnh đại diện của bé chỉ nằm trên thiết bị này, không bao giờ gửi lên máy chủ hay nơi khác.','Không quảng cáo, không công cụ theo dõi, không phân tích bên thứ ba.','Xóa dữ liệu trang web trong trình duyệt sẽ xóa toàn bộ dữ liệu ứng dụng.','Chỉ người giám hộ (chủ tài khoản Pi) mới thanh toán Pi. Tên người dùng Pi và thông tin thanh toán được xử lý theo quy định của Pi Network. Muốn xóa dữ liệu, hãy liên hệ qua trang ứng dụng.'],
  terms:['Đây là ứng dụng học và chơi cho trẻ 3–8 tuổi, dùng cùng người giám hộ.','Bố mẹ vui lòng cùng theo dõi khi bé sử dụng.','Điểm tranh và truyện chỉ để vui, không phải đánh giá bé.','Nhân vật Kondaengi, Konsuni và nội dung ứng dụng thuộc về nhà phát triển. Giấy khen và thẻ tranh được tự do lưu, in tại nhà.','Ứng dụng có thể được cải tiến. Nếu có tính năng trả phí, giá sẽ được báo trước khi thanh toán.'],
  eff:'Hiệu lực: 25/11/2026'},
 id:{cover:'Usia 3–8 · Bersama orang tua · Tanpa iklan',about:'Kondaengi dan Konsuni adalah si kembar berjiwa tua yang selalu bilang “Zamanku dulu~”. Suka mengomel, tapi paling sayang anak — mereka mengajarkan kebiasaan baik lewat stempel pujian, dongeng nama, komik 4 panel, kuis menggambar dan kuis sopan santun.',
- privacy:['Jika login dengan Pi, nama panggilan anak serta catatan stempel, merawat teman dan kuis terhubung ke akun Pi wali dan disimpan dengan aman, jadi bisa dilanjutkan di ponsel baru. Tanpa login, semuanya hanya tersimpan di perangkat ini.','Foto gambar hanya dinilai di perangkat, tidak disimpan dan tidak dikirim ke mana pun.','Tanpa iklan, tanpa pelacak, tanpa analitik pihak ketiga.','Menghapus data situs di browser akan menghapus semua catatan aplikasi.','Hanya wali (pemilik akun Pi) yang bisa membayar dengan Pi. Nama pengguna Pi dan info pembayaran diproses sesuai aturan Pi Network. Untuk menghapus data, hubungi kami lewat halaman aplikasi.'],
+ privacy:['Jika login dengan Pi, nama panggilan anak serta catatan stempel, merawat teman dan kuis terhubung ke akun Pi wali dan disimpan dengan aman, jadi bisa dilanjutkan di ponsel baru. Tanpa login, semuanya hanya tersimpan di perangkat ini.','Foto gambar dan foto profil anak hanya ada di perangkat ini dan tidak pernah dikirim ke server atau ke mana pun.','Tanpa iklan, tanpa pelacak, tanpa analitik pihak ketiga.','Menghapus data situs di browser akan menghapus semua catatan aplikasi.','Hanya wali (pemilik akun Pi) yang bisa membayar dengan Pi. Nama pengguna Pi dan info pembayaran diproses sesuai aturan Pi Network. Untuk menghapus data, hubungi kami lewat halaman aplikasi.'],
  terms:['Ini aplikasi belajar dan bermain untuk anak usia 3–8 tahun, dipakai bersama wali.','Mohon dampingi anak saat menggunakan aplikasi.','Skor gambar dan dongeng hanya untuk seru-seruan, bukan penilaian anak.','Karakter Kondaengi, Konsuni dan konten aplikasi milik pengembang. Piagam dan kartu gambar bebas disimpan dan dicetak di rumah.','Aplikasi dapat diperbarui. Jika ada fitur berbayar, harga ditampilkan sebelum pembayaran.'],
  eff:'Berlaku: 25 November 2026'},
 hi:{cover:'3–8 वर्ष · माता-पिता के साथ · कोई विज्ञापन नहीं',about:'कोनदेंगी और कोनसूनी बड़ों जैसी बातें करने वाले जुड़वाँ हैं, जो हमेशा कहते हैं “हमारे ज़माने में~”। टोकते बहुत हैं, पर बच्चे को सबसे ज़्यादा प्यार करते हैं — शाबाशी स्टैम्प, नाम वाली कहानी, 4-पैनल कॉमिक, ड्रॉइंग क्विज़ और शिष्टाचार क्विज़ से अच्छी आदतें सिखाते हैं।',
- privacy:['Pi से लॉगिन करने पर बच्चे का प्यार का नाम और स्टैम्प, दोस्त पालने व क्विज़ के रिकॉर्ड अभिभावक के Pi खाते से जुड़कर सुरक्षित सेव होते हैं, ताकि नए फ़ोन पर भी जारी रख सकें। लॉगिन न करने पर सब कुछ सिर्फ़ इसी डिवाइस में रहता है।','ड्रॉइंग की फ़ोटो सिर्फ़ डिवाइस पर जाँची जाती है, न सेव होती है न कहीं भेजी जाती है।','कोई विज्ञापन, ट्रैकर या थर्ड-पार्टी एनालिटिक्स नहीं।','ब्राउज़र का साइट डेटा मिटाने से ऐप के सारे रिकॉर्ड मिट जाते हैं।','Pi भुगतान सिर्फ़ अभिभावक (Pi खाता धारक) कर सकते हैं। Pi यूज़रनेम और भुगतान जानकारी Pi Network नियमों के अनुसार उपयोग होती है। रिकॉर्ड मिटाने के लिए ऐप पेज से संपर्क करें।'],
+ privacy:['Pi से लॉगिन करने पर बच्चे का प्यार का नाम और स्टैम्प, दोस्त पालने व क्विज़ के रिकॉर्ड अभिभावक के Pi खाते से जुड़कर सुरक्षित सेव होते हैं, ताकि नए फ़ोन पर भी जारी रख सकें। लॉगिन न करने पर सब कुछ सिर्फ़ इसी डिवाइस में रहता है।','ड्रॉइंग की फ़ोटो और बच्चे की प्रोफ़ाइल फ़ोटो सिर्फ़ इसी डिवाइस में रहती हैं, सर्वर या कहीं और नहीं भेजी जातीं।','कोई विज्ञापन, ट्रैकर या थर्ड-पार्टी एनालिटिक्स नहीं।','ब्राउज़र का साइट डेटा मिटाने से ऐप के सारे रिकॉर्ड मिट जाते हैं।','Pi भुगतान सिर्फ़ अभिभावक (Pi खाता धारक) कर सकते हैं। Pi यूज़रनेम और भुगतान जानकारी Pi Network नियमों के अनुसार उपयोग होती है। रिकॉर्ड मिटाने के लिए ऐप पेज से संपर्क करें।'],
  terms:['यह 3–8 वर्ष के बच्चों के लिए अभिभावक के साथ इस्तेमाल होने वाला सीखने-खेलने का ऐप है।','कृपया बच्चे के इस्तेमाल पर नज़र रखें।','ड्रॉइंग स्कोर और कहानियाँ सिर्फ़ मज़े के लिए हैं, बच्चे का मूल्यांकन नहीं।','कोनदेंगी, कोनसूनी किरदार और ऐप सामग्री डेवलपर की है। प्रमाणपत्र और ड्रॉइंग कार्ड घर पर स्वतंत्र रूप से सेव और प्रिंट किए जा सकते हैं।','ऐप में सुधार हो सकते हैं। सशुल्क सुविधा आने पर भुगतान से पहले कीमत बताई जाएगी।'],
  eff:'प्रभावी तिथि: 25 नवंबर 2026'},
 zh:{cover:'3~8岁 · 亲子共用 · 无广告',about:'小唠叨和小叨叨是一对总把「我们那时候~」挂在嘴边的小大人双胞胎。虽然爱唠叨,却比谁都疼爱孩子——通过表扬印章、名字童话、四格漫画、画画挑战和礼仪问答,陪孩子养成好习惯。',
- privacy:['用 Pi 登录后,孩子的小名以及印章、养成、问答记录会关联到监护人的 Pi 账户并安全保存,换手机也能继续。不登录时,所有数据只保存在本设备中。','画作照片只在设备内评分,不会保存或发送到任何地方。','不使用广告、追踪工具或第三方分析工具。','清除浏览器的网站数据即可删除全部应用记录。','只有监护人(Pi 账户持有人)可以用 Pi 付款,Pi 用户名和支付信息按照 Pi Network 规则处理。如需删除记录,请通过应用页面联系我们。'],
+ privacy:['用 Pi 登录后,孩子的小名以及印章、养成、问答记录会关联到监护人的 Pi 账户并安全保存,换手机也能继续。不登录时,所有数据只保存在本设备中。','画作照片和孩子的头像照片只保存在本设备中,绝不会上传到服务器或其他地方。','不使用广告、追踪工具或第三方分析工具。','清除浏览器的网站数据即可删除全部应用记录。','只有监护人(Pi 账户持有人)可以用 Pi 付款,Pi 用户名和支付信息按照 Pi Network 规则处理。如需删除记录,请通过应用页面联系我们。'],
  terms:['本应用是供3~8岁儿童与监护人一起使用的学习游戏应用。','请家长陪同孩子使用。','画作分数和童话仅供娱乐,不是对孩子的评价。','小唠叨、小叨叨角色及应用内容归开发者所有。奖状和画作卡可在家中自由保存和打印。','应用可能会不断改进。如有付费功能,将在付款前告知价格。'],
  eff:'生效日期:2026年11月25日'},
 ja:{cover:'3〜8さい · おうちの人と いっしょに · 広告なし',about:'コンデンイとコンスニは「わしらの むかしは~」が口ぐせの、おとなびた ふたごです。おこごとは おおいけど、だれよりも 子どもが だいすき。ほめほめスタンプ、なまえの おはなし、4コマまんが、おえかきクイズ、マナークイズで よい習慣を いっしょに おしえます。',
- privacy:['Pi でログインすると、お子さまのニックネームとスタンプ・そだてる・クイズの記録が保護者の Pi アカウントにひもづいて安全に保存され、スマホを替えても続けられます。ログインしない場合は、この端末にだけ保存されます。','絵の写真は端末の中だけで採点し、保存も送信もしません。','広告、トラッキング、外部の分析ツールは使いません。','ブラウザのサイトデータを消すと、アプリの記録はすべて消えます。','Pi 決済は保護者(Pi アカウント所有者)だけができます。Pi ユーザー名と決済情報は Pi Network の規則に従って扱います。記録の削除はアプリページからお問い合わせください。'],
+ privacy:['Pi でログインすると、お子さまのニックネームとスタンプ・そだてる・クイズの記録が保護者の Pi アカウントにひもづいて安全に保存され、スマホを替えても続けられます。ログインしない場合は、この端末にだけ保存されます。','絵の写真とお子さまのプロフィール写真はこの端末の中だけにあり、サーバーなどへは送りません。','広告、トラッキング、外部の分析ツールは使いません。','ブラウザのサイトデータを消すと、アプリの記録はすべて消えます。','Pi 決済は保護者(Pi アカウント所有者)だけができます。Pi ユーザー名と決済情報は Pi Network の規則に従って扱います。記録の削除はアプリページからお問い合わせください。'],
  terms:['このアプリは3〜8歳の子どもが保護者といっしょに使う、学びと遊びのアプリです。','ご利用中は保護者の方が見守ってください。','絵の点数やおはなしは楽しむためのもので、お子さまを評価するものではありません。','コンデンイ・コンスニのキャラクターとアプリの内容の権利は開発者にあります。賞状と絵カードはご家庭で自由に保存・印刷できます。','アプリは改善のため変わることがあります。有料機能を追加する場合は、支払いの前に価格をお知らせします。'],
  eff:'施行日:2026年11月25日'}
 };
 var LG_UI={
-ko:['개인정보처리방침','이용약관','앱 소개','버전','시작하기','칭찬 도장','내 이름 동화','4컷 웹툰','그림 퀴즈','예절 퀴즈','우리들의 바른 친구 꼰댕이와 꼰순이','Pi로 시작하기','Pi 로그인 중…','로그인 없이 둘러보기','☁️ {0}님 계정에 저장돼요','결제를 마무리하지 못했어요. 잠시 후 다시 해 주세요.','결제가 취소됐어요'],
-en:['Privacy Policy','Terms of Use','About','Version','Start','Praise stamps','Name stories','4-panel comics','Drawing quiz','Manners quiz','Our good friends, Kondaengi & Konsuni','Start with Pi','Signing in with Pi…','Look around without signing in','☁️ Saved to {0}’s account','Could not finish the payment. Please try again later.','Payment cancelled'],
-vi:['Chính sách quyền riêng tư','Điều khoản sử dụng','Giới thiệu','Phiên bản','Bắt đầu','Dấu khen','Truyện mang tên bé','Truyện tranh 4 khung','Đố vẽ tranh','Đố phép lịch sự','Những người bạn ngoan của chúng ta, Kondaengi và Konsuni','Bắt đầu với Pi','Đang đăng nhập Pi…','Xem thử không cần đăng nhập','☁️ Đã lưu vào tài khoản {0}','Chưa hoàn tất thanh toán. Vui lòng thử lại sau.','Đã hủy thanh toán'],
-id:['Kebijakan Privasi','Syarat Penggunaan','Tentang','Versi','Mulai','Stempel pujian','Dongeng nama','Komik 4 panel','Kuis menggambar','Kuis sopan santun','Teman baik kita, Kondaengi dan Konsuni','Mulai dengan Pi','Masuk dengan Pi…','Lihat-lihat tanpa login','☁️ Tersimpan di akun {0}','Pembayaran belum selesai. Coba lagi nanti.','Pembayaran dibatalkan'],
-hi:['गोपनीयता नीति','उपयोग की शर्तें','ऐप के बारे में','संस्करण','शुरू करें','शाबाशी स्टैम्प','नाम की कहानी','4-पैनल कॉमिक','ड्रॉइंग क्विज़','शिष्टाचार क्विज़','हमारे अच्छे दोस्त, कोनदेंगी और कोनसूनी','Pi से शुरू करें','Pi से लॉगिन हो रहा है…','बिना लॉगिन देखें','☁️ {0} के खाते में सेव','भुगतान पूरा नहीं हुआ। बाद में फिर कोशिश करें।','भुगतान रद्द हुआ'],
-zh:['隐私政策','使用条款','应用介绍','版本','开始','表扬印章','名字童话','四格漫画','画画挑战','礼仪问答','我们的好朋友 小唠叨和小叨叨','用 Pi 开始','正在用 Pi 登录…','不登录先看看','☁️ 已保存到 {0} 的账户','付款未完成,请稍后再试。','付款已取消'],
-ja:['プライバシーポリシー','利用規約','アプリについて','バージョン','はじめる','ほめほめスタンプ','なまえの おはなし','4コマまんが','おえかきクイズ','マナークイズ','わたしたちの よい ともだち コンデンイと コンスニ','Pi で はじめる','Pi ログイン中…','ログインせずに みてみる','☁️ {0} さんの アカウントに ほぞん','けっさいを おえられませんでした。あとで もういちど おためしください。','けっさいが キャンセルされました']
+ko:['개인정보처리방침','이용약관','앱 소개','버전','시작하기','칭찬 도장','내 이름 동화','4컷 웹툰','그림 퀴즈','예절 퀴즈','우리들의 바른 친구 꼰댕이와 꼰순이','Pi로 시작하기','Pi 로그인 중…','로그인 없이 둘러보기','☁️ {0}님 계정에 저장돼요','결제를 마무리하지 못했어요. 잠시 후 다시 해 주세요.','결제가 취소됐어요','📷 우리 아이 사진 넣기','사진은 이 폰에만 저장되고 서버로 보내지 않아요','사진 지우기'],
+en:['Privacy Policy','Terms of Use','About','Version','Start','Praise stamps','Name stories','4-panel comics','Drawing quiz','Manners quiz','Our good friends, Kondaengi & Konsuni','Start with Pi','Signing in with Pi…','Look around without signing in','☁️ Saved to {0}’s account','Could not finish the payment. Please try again later.','Payment cancelled','📷 Add your child’s photo','The photo stays on this phone and is never uploaded','Remove photo'],
+vi:['Chính sách quyền riêng tư','Điều khoản sử dụng','Giới thiệu','Phiên bản','Bắt đầu','Dấu khen','Truyện mang tên bé','Truyện tranh 4 khung','Đố vẽ tranh','Đố phép lịch sự','Những người bạn ngoan của chúng ta, Kondaengi và Konsuni','Bắt đầu với Pi','Đang đăng nhập Pi…','Xem thử không cần đăng nhập','☁️ Đã lưu vào tài khoản {0}','Chưa hoàn tất thanh toán. Vui lòng thử lại sau.','Đã hủy thanh toán','📷 Thêm ảnh của bé','Ảnh chỉ lưu trên điện thoại này, không gửi lên máy chủ','Xóa ảnh'],
+id:['Kebijakan Privasi','Syarat Penggunaan','Tentang','Versi','Mulai','Stempel pujian','Dongeng nama','Komik 4 panel','Kuis menggambar','Kuis sopan santun','Teman baik kita, Kondaengi dan Konsuni','Mulai dengan Pi','Masuk dengan Pi…','Lihat-lihat tanpa login','☁️ Tersimpan di akun {0}','Pembayaran belum selesai. Coba lagi nanti.','Pembayaran dibatalkan','📷 Tambah foto anak','Foto hanya disimpan di ponsel ini dan tidak dikirim ke server','Hapus foto'],
+hi:['गोपनीयता नीति','उपयोग की शर्तें','ऐप के बारे में','संस्करण','शुरू करें','शाबाशी स्टैम्प','नाम की कहानी','4-पैनल कॉमिक','ड्रॉइंग क्विज़','शिष्टाचार क्विज़','हमारे अच्छे दोस्त, कोनदेंगी और कोनसूनी','Pi से शुरू करें','Pi से लॉगिन हो रहा है…','बिना लॉगिन देखें','☁️ {0} के खाते में सेव','भुगतान पूरा नहीं हुआ। बाद में फिर कोशिश करें।','भुगतान रद्द हुआ','📷 बच्चे की फ़ोटो जोड़ें','फ़ोटो सिर्फ़ इसी फ़ोन में रहती है, सर्वर पर नहीं भेजी जाती','फ़ोटो हटाएँ'],
+zh:['隐私政策','使用条款','应用介绍','版本','开始','表扬印章','名字童话','四格漫画','画画挑战','礼仪问答','我们的好朋友 小唠叨和小叨叨','用 Pi 开始','正在用 Pi 登录…','不登录先看看','☁️ 已保存到 {0} 的账户','付款未完成,请稍后再试。','付款已取消','📷 添加孩子的照片','照片只保存在这台手机上，不会上传到服务器','删除照片'],
+ja:['プライバシーポリシー','利用規約','アプリについて','バージョン','はじめる','ほめほめスタンプ','なまえの おはなし','4コマまんが','おえかきクイズ','マナークイズ','わたしたちの よい ともだち コンデンイと コンスニ','Pi で はじめる','Pi ログイン中…','ログインせずに みてみる','☁️ {0} さんの アカウントに ほぞん','けっさいを おえられませんでした。あとで もういちど おためしください。','けっさいが キャンセルされました','📷 お子さまの しゃしんを いれる','しゃしんは この スマホだけに ほぞんされ、サーバーには おくりません','しゃしんを けす']
 };
 function LU(i){var s=(LG_UI[LANG]||LG_UI.en)[i],a=arguments;return String(s).replace(/\{(\d)\}/g,function(m,k){return a[+k+1]})}
 function LGL(){return LEGAL[LANG]||LEGAL.en}
@@ -1137,18 +1139,22 @@ function footLinks(){return '<div class="cv-foot in"><a href="#" onclick="go(\'c
 /* ---------- 아이 정보 ---------- */
 function kidView(){var k=KID||{name:'',av:'🐣'};
   return '<div style="text-align:right">'+langSel()+'</div>'+logo(1)+greet(t('에헴~ 반갑구먼!'),t('이름이 뭐니? 알려 주렴~'))+
-  '<div class="box"><h2>👋 '+t('우리 아이를 소개해 주세요')+'</h2><label class="f">'+t('아이 이름 (또는 애칭)')+'</label><input id="kn" class="inp" maxlength="12" placeholder="'+t('예) 지우')+'" value="'+esc(k.name)+'">'+
-  '<label class="f">'+t('좋아하는 캐릭터')+'</label><div class="chips" id="kav">'+AV.map(function(a){return '<button class="chip'+(a===k.av?' on':'')+'" style="font-size:24px" onclick="pickAv(this,\''+a+'\')">'+a+'</button>'}).join('')+'</div>'+
-  '<p class="mut" style="margin-top:12px">🔒 '+t('사진·실명은 받지 않아요. 애칭만 넣어 주세요.')+'</p>'+
+  '<div class="box"><h2>👋 '+t('우리 아이를 소개해 주세요')+'</h2><label class="f">'+t('아이 이름 (또는 애칭)')+'</label><input id="kn" class="inp" maxlength="12" placeholder="'+t('예) 지우')+'" value="'+esc(_kn!=null?_kn:k.name)+'">'+
+  '<label class="f">'+t('좋아하는 캐릭터')+'</label><div class="chips" id="kav">'+AV.map(function(a){return '<button class="chip'+(a===(_av||k.av)?' on':'')+'" style="font-size:24px" onclick="pickAv(this,\''+a+'\')">'+a+'</button>'}).join('')+'</div>'+
+  (function(){var p=ls('photo'),sel=(_av||k.av)==='📷';return '<div class="kph">'+(p?'<button class="chip kpc'+(sel?' on':'')+'" onclick="pickAv(this,\'📷\')"><img class="kphoto" src="'+p+'" alt=""></button><button class="btn w" style="flex:1" onclick="pickPhoto()">'+esc(LU(17))+'</button><button class="kdel" onclick="delPhoto()">'+esc(LU(19))+'</button>':'<button class="btn w" style="flex:1" onclick="pickPhoto()">'+esc(LU(17))+'</button>')+'</div><p class="mut" style="margin:6px 0 0;font-size:12.5px">🔒 '+esc(LU(18))+'</p>'})()+
+  '<p class="mut" style="margin-top:12px">🔒 '+t('실명 대신 애칭만 넣어 주세요.')+'</p>'+
   '<button class="btn" onclick="saveKid()">'+t('시작하기')+' 🌱</button></div>'}
-var _av=null;function pickAv(b,a){_av=a;document.querySelectorAll('#kav .chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
+var _av=null,_kn=null;function pickAv(b,a){_av=a;document.querySelectorAll('#kav .chip,.kpc').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
+function avHTML(){var p=ls('photo');return (KID&&KID.av==='📷'&&p)?'<img class="kphoto" src="'+p+'" alt="">':esc((KID&&KID.av!=='📷'&&KID.av)||'🐣')}
+function pickPhoto(){var i=document.createElement('input');i.type='file';i.accept='image/*';i.onchange=function(){var f=i.files&&i.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var S=320,c=document.createElement('canvas');c.width=c.height=S;var m=Math.min(im.width,im.height),x=(im.width-m)/2,y=(im.height-m)/2;c.getContext('2d').drawImage(im,x,y,m,m,0,0,S,S);try{ls('photo',c.toDataURL('image/jpeg',0.82))}catch(e){}var kn=$('#kn');if(kn)_kn=kn.value;_av='📷';render()};im.src=r.result};r.readAsDataURL(f)};i.click()}
+function delPhoto(){try{localStorage.removeItem('ab_photo')}catch(e){}if(_av==='📷')_av='🐣';if(KID&&KID.av==='📷'){KID.av='🐣';ls('kid',KID)}render()}
 function saveKid(){var n=$('#kn').value.trim().replace(/[<>{}\[\]]/g,'');if(!n){toast(t('아이 이름을 넣어 주세요'));return}
-  KID={name:n,av:_av||(KID&&KID.av)||'🐣'};ls('kid',KID);go('home')}
+  KID={name:n,av:_av||(KID&&KID.av)||'🐣'};_kn=null;_av=null;ls('kid',KID);go('home')}
 
 /* ---------- 홈 ---------- */
 function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayToonIdx();
   return logo()+greet(t('에헴~ {0}, 오늘도 바르게!',esc(voc(KID.name))),t('잘하면 내가 "옳지옳지~" 해 줄게!'))+
-  '<div class="kid"><div class="av">'+KID.av+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+
+  '<div class="kid"><div class="av">'+avHTML()+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+
   '<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="ic">🤔</div><h3>'+t('이럴 땐 어떻게 할까?')+'</h3><p>'+t('식당·화장실·버스 예절 퀴즈')+'<br>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
   growCard()+'<div class="grid">'+
    '<button class="card g" onclick="go(\'stamp\')"><span class="bdg">'+cnt+'/'+goal+'</span><div class="ic">🏅</div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
@@ -1249,7 +1255,7 @@ function friendEmoji(f){f=String(f||'').toLowerCase();var L=[C('FRIENDS'),FRIEND
   if(/인형|doll|teddy/.test(f))return '🧸';if(/꽃|flower/.test(f))return '🌷';if(/새|bird/.test(f))return '🐦';if(/물고기|fish/.test(f))return '🐠';if(/개구리|frog/.test(f))return '🐸';if(/사자|lion/.test(f))return '🦁';if(/거북|turtle/.test(f))return '🐢';if(/기차|train/.test(f))return '🚂';return '✨'}
 function storyRead(){var s=STORY,pg=SUB.pg||0,per=2,tot=Math.ceil(s.paras.length/per),P=C('PLACES')[s.place];
   var ps=s.paras.slice(pg*per,pg*per+per);
-  return hdr('📖 '+esc(s.title))+'<div class="scene" style="background:'+P[1]+'"><div class="deco">'+P[2]+'</div><div class="who">'+KID.av+'</div><div class="who">'+s.em+'</div></div>'+
+  return hdr('📖 '+esc(s.title))+'<div class="scene" style="background:'+P[1]+'"><div class="deco">'+P[2]+'</div><div class="who">'+avHTML()+'</div><div class="who">'+s.em+'</div></div>'+
   '<div class="box story">'+ps.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+'</div>'+
   '<div class="pager"><button class="btn w" style="margin:0" '+(pg?'':'disabled')+' onclick="go(\'story\',{read:1,pg:'+(pg-1)+'})">◀ '+t('앞')+'</button><span>'+(pg+1)+' / '+tot+'</span>'+
   (pg<tot-1?'<button class="btn p" style="margin:0" onclick="go(\'story\',{read:1,pg:'+(pg+1)+'})">'+t('다음')+' ▶</button>':'<button class="btn" style="margin:0" onclick="confetti(20);go(\'story\')">'+t('끝!')+' 🌟</button>')+'</div>'+
