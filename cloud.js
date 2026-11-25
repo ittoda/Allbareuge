@@ -33,4 +33,25 @@ payPi=function(i){var it=PAY[i];gate(async function(){
 (function(){var c=window.checkIn;window.checkIn=function(){var had=GR&&GR.ck&&GR.ck[today()];var r=c.apply(this,arguments);if(!had&&piTok())api('/ev',{token:piTok(),e:'ck'});return r}})();
 /* 방문 기기 수 (이름 없음) */
 (function(){try{var d=ls('dev');if(!d){d=Math.random().toString(36).slice(2,12);ls('dev',d)}fetch('/hit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({d:d,l:LANG})}).catch(function(){})}catch(e){}})();
+/* 파이 브라우저가 아니면 열어 달라고 안내 (샌드박스·미리보기 iframe 안에서는 안 띄워요) */
+(function(){try{var ua=navigator.userAgent||'',inFrame=false;try{inFrame=window.self!==window.top}catch(_){inFrame=true}
+  if(/PiBrowser/i.test(ua)||inFrame||!/^https?:$/.test(location.protocol)||location.hostname==='localhost')return;
+  var H=location.host,an=/Android/i.test(ua),store=an?'https://play.google.com/store/apps/details?id=pi.browser':'https://apps.apple.com/app/pi-browser/id1560911608';
+  var go=an?'intent://'+H+'#Intent;scheme=pi;package=pi.browser;S.browser_fallback_url='+encodeURIComponent(store)+';end':'pi://'+H;
+  var TT={ko:['파이 브라우저에서 열어 주세요','All 바르게는 파이 로그인으로 아이 기록을 지켜요. 파이 브라우저에서 열어야 쓸 수 있어요.','π 파이 브라우저로 열기','주소 복사하기','파이 브라우저 설치하기','안 열리면: 파이 브라우저를 켜고 주소창에 '+H+' 를 입력해 주세요','복사했어요! 파이 브라우저 주소창에 붙여 넣으세요'],
+   en:['Open in Pi Browser','All Bareuge keeps your child’s records safe with Pi login. Please open it in the Pi Browser.','π Open in Pi Browser','Copy address','Get Pi Browser','If it does not open: start Pi Browser and type '+H,'Copied! Paste it in the Pi Browser address bar'],
+   vi:['Mở trong Pi Browser','All Bareuge dùng đăng nhập Pi để giữ an toàn dữ liệu của bé. Hãy mở bằng Pi Browser.','π Mở bằng Pi Browser','Sao chép địa chỉ','Cài Pi Browser','Nếu không mở được: mở Pi Browser và nhập '+H,'Đã sao chép! Dán vào thanh địa chỉ Pi Browser'],
+   id:['Buka di Pi Browser','All Bareuge menjaga catatan anak dengan login Pi. Silakan buka di Pi Browser.','π Buka di Pi Browser','Salin alamat','Pasang Pi Browser','Jika tidak terbuka: buka Pi Browser dan ketik '+H,'Tersalin! Tempel di bilah alamat Pi Browser'],
+   hi:['Pi Browser में खोलें','All Bareuge Pi लॉगिन से बच्चे के रिकॉर्ड सुरक्षित रखता है। कृपया Pi Browser में खोलें।','π Pi Browser में खोलें','पता कॉपी करें','Pi Browser इंस्टॉल करें','न खुले तो: Pi Browser खोलकर '+H+' लिखें','कॉपी हो गया! Pi Browser के पता बार में पेस्ट करें'],
+   zh:['请在 Pi 浏览器中打开','All 乖乖 通过 Pi 登录保护孩子的记录,请在 Pi 浏览器中打开。','π 用 Pi 浏览器打开','复制网址','安装 Pi 浏览器','打不开时:打开 Pi 浏览器,在地址栏输入 '+H,'已复制!请粘贴到 Pi 浏览器地址栏'],
+   ja:['Pi Browser で ひらいてね','All バルゲは Pi ログインで お子さまの きろくを まもります。Pi Browser で ひらいてください。','π Pi Browser で ひらく','アドレスを コピー','Pi Browser を インストール','ひらかないときは Pi Browser を ひらいて '+H+' と にゅうりょく','コピーしました! Pi Browser の アドレスバーに はりつけてね']};
+  var T=TT[LANG]||TT.en,d=document.createElement('div');d.id='openPi';d.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(46,90,30,.9);display:flex;align-items:center;justify-content:center;padding:20px';
+  var b='display:block;width:100%;margin-top:10px;padding:14px;border-radius:16px;font-size:16px;font-weight:800;border:0;text-decoration:none;text-align:center;box-sizing:border-box;';
+  d.innerHTML='<div style="background:#fff;border-radius:24px;max-width:360px;width:100%;padding:24px 20px;text-align:center;color:#2e3a2a">'+twinsLogo().replace('class="lg2"','class="lg2" style="margin:0 auto"')+'<h2 style="margin:10px 0 8px;font-size:21px">'+T[0]+'</h2><p style="margin:0 0 8px;color:#6b7866;font-size:14px;line-height:1.55">'+T[1]+'</p>'+
+   '<a id="opGo" href="'+go+'" style="'+b+'background:#5cc93a;color:#fff;box-shadow:0 4px 0 #3e9a22">'+T[2]+'</a><button id="opCopy" style="'+b+'background:#e7f9dd;color:#3a8f20">'+T[3]+'</button><a href="'+store+'" target="_blank" rel="noopener" style="'+b+'background:#fff;color:#3a8f20;border:2px solid #c9f0b6">'+T[4]+'</a>'+
+   '<p id="opHelp" hidden style="margin:12px 0 0;font-size:13px;color:#8a6500;background:#fff6d4;border-radius:10px;padding:10px">'+T[5]+'</p></div>';
+  document.body.appendChild(d);
+  document.getElementById('opGo').onclick=function(){setTimeout(function(){document.getElementById('opHelp').hidden=false},1800)};
+  document.getElementById('opCopy').onclick=function(){var u='https://'+H;try{navigator.clipboard.writeText(u).then(function(){toast(T[6])},function(){prompt('',u)})}catch(e){prompt('',u)}};
+}catch(e){}})();
 render();

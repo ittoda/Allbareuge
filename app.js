@@ -65,7 +65,7 @@ function coverView(){var nm=t('바르게'),cols=['#5cc93a','#ffb800','#4db8f5','
   '<div class="cv-fx">'+F.map(function(f){return '<span>'+f[0]+' '+esc(LU(f[1]))+'</span>'}).join('')+'</div>'+
   '<div class="cv-badge">'+esc(LGL().cover)+'</div>'+
   '<button class="btn cv-go" id="piStart" onclick="piStart()">π '+esc(LU(11))+' 🌱</button>'+
-  (window.PI_SESSION?acctLine():'<a href="#" class="cv-skip" onclick="go(KID?\'home\':\'kid\');return false">'+esc(LU(13))+'</a>')+
+  (window.PI_SESSION?acctLine():'')+
   '<div class="cv-foot"><a href="#" onclick="legal(\'about\');return false">'+esc(LU(2))+'</a><span>·</span><a href="#" onclick="legal(\'privacy\');return false">'+esc(LU(0))+'</a><span>·</span><a href="#" onclick="legal(\'terms\');return false">'+esc(LU(1))+'</a></div>'+
   '<div class="cv-ver">'+esc(LU(3))+' '+APP_VER+' · © 2026 All '+esc(t('바르게'))+'</div></div>'}
 function legal(k){var L=LGL(),h;
