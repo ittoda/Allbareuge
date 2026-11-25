@@ -11,7 +11,7 @@ TR.vi={
 '에헴~ {0}, 오늘도 바르게!':'E hèm~ {0}, hôm nay cũng ngoan nhé!','잘하면 내가 "옳지옳지~" 해 줄게!':'Làm tốt là ta khen “Giỏi lắm, giỏi lắm~!” ngay!','오늘도 바르게, 즐겁게!':'Hôm nay ngoan và vui nhé!','고치기':'Sửa',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'E hèm! Thời của ta~ Học lễ phép, go go go!','식당·화장실·버스 예절 퀴즈':'Đố vui phép lịch sự: nhà hàng, nhà vệ sinh, xe buýt','꼰둥이 배지 {0}개':'{0} huy hiệu Kondung',
 '칭찬 도장판':'Bảng đóng dấu khen','약속을 지키면 도장 쾅!':'Giữ lời hứa là được đóng dấu!','다 모으면 상장 카드':'Đủ dấu thì nhận giấy khen',
-'내 이름 동화':'Truyện mang tên bé','{0}[이/가] 주인공인':'{0} là nhân vật chính','5분 동화':'truyện 5 phút','오늘':'Hôm nay',
+'내가 만드는 동화':'Truyện em tự làm','{0}[이/가] 주인공인':'{0} là nhân vật chính','5분 동화':'truyện 5 phút','오늘':'Hôm nay',
 '꼰둥이 웹툰':'Truyện tranh Kondung','꼰댕이·꼰순이의':'Kondaengi và Konsuni','하루 한 편 4컷':'mỗi ngày một truyện 4 khung',
 '그림 퀴즈':'Đố vẽ tranh','주제 뽑고 10분 그리기':'Bốc chủ đề, vẽ trong 10 phút','찰칵 찍으면 점수!':'Chụp ảnh là có điểm!',
 '부모님께':'Gửi bố mẹ','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'Hãy cùng bé đóng dấu khi bé giữ lời hứa. Khi đủ dấu, hãy lưu hoặc in giấy khen và dán lên tủ lạnh nhé 😊','광고 없이 안심하고 쓰는 앱이에요.':'Không quảng cáo — ứng dụng an toàn cho bé.',

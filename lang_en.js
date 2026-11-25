@@ -11,7 +11,7 @@ TR.en={
 '에헴~ {0}, 오늘도 바르게!':'Ahem~ {0}, be good today too!','잘하면 내가 "옳지옳지~" 해 줄게!':'Do well and I\'ll say "Good job, good job~!"','오늘도 바르게, 즐겁게!':'Be good and have fun today!','고치기':'Edit',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'Ahem! Back in my day~ Manners, go go go!','식당·화장실·버스 예절 퀴즈':'Manners quiz: restaurant, restroom, bus','꼰둥이 배지 {0}개':'{0} Kondung badges',
 '칭찬 도장판':'Praise Stamp Board','약속을 지키면 도장 쾅!':'Keep a promise, get a stamp!','다 모으면 상장 카드':'Fill it up for a certificate',
-'내 이름 동화':'My Name Story','{0}[이/가] 주인공인':'Starring {0}','5분 동화':'a 5-minute tale','오늘':'Today',
+'내가 만드는 동화':'My Own Story','{0}[이/가] 주인공인':'Starring {0}','5분 동화':'a 5-minute tale','오늘':'Today',
 '꼰둥이 웹툰':'Kondung Comics','꼰댕이·꼰순이의':'Kondaengi & Konsuni','하루 한 편 4컷':'a new 4-panel comic daily',
 '그림 퀴즈':'Drawing Quiz','주제 뽑고 10분 그리기':'Pick a topic, draw for 10 min','찰칵 찍으면 점수!':'Snap a photo, get a score!',
 '부모님께':'For parents','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'Stamp together when your child keeps a promise. When the board is full, save or print the certificate and put it on the fridge 😊','광고 없이 안심하고 쓰는 앱이에요.':'No ads — a safe app for kids.',

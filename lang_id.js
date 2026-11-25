@@ -11,7 +11,7 @@ TR.id={
 '에헴~ {0}, 오늘도 바르게!':'Ehem~ {0}, hari ini juga jadi anak baik ya!','잘하면 내가 "옳지옳지~" 해 줄게!':'Kalau berhasil, aku bilang “Pintar, pintar~!”','오늘도 바르게, 즐겁게!':'Hari ini baik dan gembira!','고치기':'Ubah',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'Ehem! Zamanku dulu~ Ayo belajar sopan santun, go go go!','식당·화장실·버스 예절 퀴즈':'Kuis sopan santun: restoran, toilet, bus','꼰둥이 배지 {0}개':'{0} lencana Kondung',
 '칭찬 도장판':'Papan stempel pujian','약속을 지키면 도장 쾅!':'Tepati janji, dapat stempel!','다 모으면 상장 카드':'Penuh = piagam penghargaan',
-'내 이름 동화':'Dongeng namaku','{0}[이/가] 주인공인':'{0} jadi tokoh utama','5분 동화':'dongeng 5 menit','오늘':'Hari ini',
+'내가 만드는 동화':'Dongeng buatanku','{0}[이/가] 주인공인':'{0} jadi tokoh utama','5분 동화':'dongeng 5 menit','오늘':'Hari ini',
 '꼰둥이 웹툰':'Komik Kondung','꼰댕이·꼰순이의':'Kondaengi dan Konsuni','하루 한 편 4컷':'satu komik 4 panel tiap hari',
 '그림 퀴즈':'Kuis menggambar','주제 뽑고 10분 그리기':'Undi tema, gambar 10 menit','찰칵 찍으면 점수!':'Foto dan dapat skor!',
 '부모님께':'Untuk orang tua','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'Berikan stempel bersama anak saat ia menepati janji. Saat penuh, simpan atau cetak piagamnya dan tempel di kulkas 😊','광고 없이 안심하고 쓰는 앱이에요.':'Tanpa iklan — aplikasi aman untuk anak.',

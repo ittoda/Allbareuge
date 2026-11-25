@@ -192,6 +192,7 @@ label.f{display:block;font-weight:800;font-size:14px;margin:12px 0 6px}
 .gcard{display:flex!important;align-items:center;gap:12px;padding:14px!important;text-align:left}.gl{flex:0 0 42%}.gtile{position:relative;width:72px;height:72px;background:#fffb;border-radius:18px;display:grid;place-items:center;margin-top:8px;box-shadow:0 2px 0 rgba(0,0,0,.05)}.gtile span{font-size:40px;line-height:1}.gtile i{position:absolute;right:-6px;bottom:-6px;background:var(--g);color:#fff;font-style:normal;font-weight:800;font-size:12px;border-radius:10px;padding:2px 7px}.gtile em{position:absolute;left:-6px;top:-10px;background:#ff7fa8;color:#fff;font-style:normal;font-weight:800;font-size:10.5px;border-radius:10px;padding:2px 7px;white-space:nowrap}.gl h3{margin:10px 0 2px!important}.gl p{margin:0}.gr{flex:1;min-width:0}.gch{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.gch span{background:#fff;border-radius:12px;padding:5px 2px;text-align:center;font-size:11.5px;font-weight:800;color:#3d4a37;box-shadow:0 2px 0 rgba(0,0,0,.05);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.gch b{display:block;font-size:20px;line-height:1.2}.gearth{margin:10px 0 0!important;font-size:12px!important;font-weight:800;color:#3a8f20!important;line-height:1.4}
 .seal{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:46px;height:46px;margin:-3px 0;border:2.5px solid #e8364b;border-radius:50%;color:#e8364b;transform:rotate(-14deg);background:#fff8;box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px #e8364b55}.seal b{font-size:10.5px;font-weight:900;line-height:1.15;letter-spacing:-.5px;white-space:nowrap}
 .mx{display:flex;gap:8px;margin-top:8px;align-items:center}.mx .inp{flex:1;margin:0;padding:12px;font-size:14px}.mx .chip{flex:0 0 84px;padding:10px 6px;font-weight:800;text-align:center}
+.card .ic{height:50px;display:flex;align-items:center}
 </style>
 </head>
 <body>
@@ -436,7 +437,7 @@ TR.en={
 '에헴~ {0}, 오늘도 바르게!':'Ahem~ {0}, be good today too!','잘하면 내가 "옳지옳지~" 해 줄게!':'Do well and I\'ll say "Good job, good job~!"','오늘도 바르게, 즐겁게!':'Be good and have fun today!','고치기':'Edit',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'Ahem! Back in my day~ Manners, go go go!','식당·화장실·버스 예절 퀴즈':'Manners quiz: restaurant, restroom, bus','꼰둥이 배지 {0}개':'{0} Kondung badges',
 '칭찬 도장판':'Praise Stamp Board','약속을 지키면 도장 쾅!':'Keep a promise, get a stamp!','다 모으면 상장 카드':'Fill it up for a certificate',
-'내 이름 동화':'My Name Story','{0}[이/가] 주인공인':'Starring {0}','5분 동화':'a 5-minute tale','오늘':'Today',
+'내가 만드는 동화':'My Own Story','{0}[이/가] 주인공인':'Starring {0}','5분 동화':'a 5-minute tale','오늘':'Today',
 '꼰둥이 웹툰':'Kondung Comics','꼰댕이·꼰순이의':'Kondaengi & Konsuni','하루 한 편 4컷':'a new 4-panel comic daily',
 '그림 퀴즈':'Drawing Quiz','주제 뽑고 10분 그리기':'Pick a topic, draw for 10 min','찰칵 찍으면 점수!':'Snap a photo, get a score!',
 '부모님께':'For parents','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'Stamp together when your child keeps a promise. When the board is full, save or print the certificate and put it on the fridge 😊','광고 없이 안심하고 쓰는 앱이에요.':'No ads — a safe app for kids.',
@@ -549,7 +550,7 @@ TR.hi={
 '에헴~ {0}, 오늘도 바르게!':'अहम्~ {0}, आज भी अच्छे बच्चे बनो!','잘하면 내가 "옳지옳지~" 해 줄게!':'अच्छा करोगे तो मैं कहूँगा “शाबाश, शाबाश~!”','오늘도 바르게, 즐겁게!':'आज भी अच्छे और ख़ुश रहो!','고치기':'बदलें',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'अहम्! हमारे ज़माने में~ शिष्टाचार सीखें, गो गो गो!','식당·화장실·버스 예절 퀴즈':'शिष्टाचार क्विज़: रेस्टोरेंट, शौचालय, बस','꼰둥이 배지 {0}개':'कोनदुंग बैज: {0}',
 '칭찬 도장판':'शाबाशी स्टैम्प बोर्ड','약속을 지키면 도장 쾅!':'वादा निभाओ, स्टैम्प पाओ!','다 모으면 상장 카드':'पूरे हों तो प्रमाणपत्र',
-'내 이름 동화':'मेरे नाम की कहानी','{0}[이/가] 주인공인':'{0} बने हीरो','5분 동화':'5 मिनट की कहानी','오늘':'आज',
+'내가 만드는 동화':'मेरी बनाई कहानी','{0}[이/가] 주인공인':'{0} बने हीरो','5분 동화':'5 मिनट की कहानी','오늘':'आज',
 '꼰둥이 웹툰':'कोनदुंग कॉमिक','꼰댕이·꼰순이의':'कोनदेंगी और कोनसूनी की','하루 한 편 4컷':'रोज़ एक 4-पैनल कॉमिक',
 '그림 퀴즈':'ड्रॉइंग क्विज़','주제 뽑고 10분 그리기':'विषय चुनो, 10 मिनट में बनाओ','찰칵 찍으면 점수!':'फ़ोटो खींचो, स्कोर पाओ!',
 '부모님께':'माता-पिता के लिए','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'जब बच्चा वादा निभाए तो साथ मिलकर स्टैम्प लगाइए। बोर्ड भरने पर प्रमाणपत्र सेव या प्रिंट करके फ्रिज पर लगाइए 😊','광고 없이 안심하고 쓰는 앱이에요.':'कोई विज्ञापन नहीं — बच्चों के लिए सुरक्षित ऐप।',
@@ -658,7 +659,7 @@ TR.id={
 '에헴~ {0}, 오늘도 바르게!':'Ehem~ {0}, hari ini juga jadi anak baik ya!','잘하면 내가 "옳지옳지~" 해 줄게!':'Kalau berhasil, aku bilang “Pintar, pintar~!”','오늘도 바르게, 즐겁게!':'Hari ini baik dan gembira!','고치기':'Ubah',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'Ehem! Zamanku dulu~ Ayo belajar sopan santun, go go go!','식당·화장실·버스 예절 퀴즈':'Kuis sopan santun: restoran, toilet, bus','꼰둥이 배지 {0}개':'{0} lencana Kondung',
 '칭찬 도장판':'Papan stempel pujian','약속을 지키면 도장 쾅!':'Tepati janji, dapat stempel!','다 모으면 상장 카드':'Penuh = piagam penghargaan',
-'내 이름 동화':'Dongeng namaku','{0}[이/가] 주인공인':'{0} jadi tokoh utama','5분 동화':'dongeng 5 menit','오늘':'Hari ini',
+'내가 만드는 동화':'Dongeng buatanku','{0}[이/가] 주인공인':'{0} jadi tokoh utama','5분 동화':'dongeng 5 menit','오늘':'Hari ini',
 '꼰둥이 웹툰':'Komik Kondung','꼰댕이·꼰순이의':'Kondaengi dan Konsuni','하루 한 편 4컷':'satu komik 4 panel tiap hari',
 '그림 퀴즈':'Kuis menggambar','주제 뽑고 10분 그리기':'Undi tema, gambar 10 menit','찰칵 찍으면 점수!':'Foto dan dapat skor!',
 '부모님께':'Untuk orang tua','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'Berikan stempel bersama anak saat ia menepati janji. Saat penuh, simpan atau cetak piagamnya dan tempel di kulkas 😊','광고 없이 안심하고 쓰는 앱이에요.':'Tanpa iklan — aplikasi aman untuk anak.',
@@ -767,7 +768,7 @@ TR.ja={
 '에헴~ {0}, 오늘도 바르게!':'えっへん~ {0}、きょうも いい子でな!','잘하면 내가 "옳지옳지~" 해 줄게!':'できたら「よしよし~!」って ほめてあげるぞ!','오늘도 바르게, 즐겁게!':'きょうも いい子で たのしく!','고치기':'へんこう',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'えっへん! わしらの むかしは~ マナー学習 ゴーゴーゴー!','식당·화장실·버스 예절 퀴즈':'マナークイズ:レストラン・トイレ・バス','꼰둥이 배지 {0}개':'コンドゥンバッジ {0}こ',
 '칭찬 도장판':'ほめほめスタンプ','약속을 지키면 도장 쾅!':'やくそくを まもったら ポン!','다 모으면 상장 카드':'ぜんぶ たまったら 賞状',
-'내 이름 동화':'わたしの なまえの おはなし','{0}[이/가] 주인공인':'{0}が しゅじんこうの','5분 동화':'5分の おはなし','오늘':'きょう',
+'내가 만드는 동화':'わたしが つくる おはなし','{0}[이/가] 주인공인':'{0}が しゅじんこうの','5분 동화':'5分の おはなし','오늘':'きょう',
 '꼰둥이 웹툰':'コンドゥンまんが','꼰댕이·꼰순이의':'コンデンイとコンスニの','하루 한 편 4컷':'1日1話 4コマ',
 '그림 퀴즈':'おえかきクイズ','주제 뽑고 10분 그리기':'おだいを ひいて 10分で かこう','찰칵 찍으면 점수!':'パシャッと とったら てんすう!',
 '부모님께':'保護者の方へ','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'お子さまが約束を守ったら、いっしょにスタンプを押してください。たまったら賞状を写真に保存したり印刷して冷蔵庫に貼ってください 😊','광고 없이 안심하고 쓰는 앱이에요.':'広告なしで安心して使えるアプリです。',
@@ -876,7 +877,7 @@ TR.vi={
 '에헴~ {0}, 오늘도 바르게!':'E hèm~ {0}, hôm nay cũng ngoan nhé!','잘하면 내가 "옳지옳지~" 해 줄게!':'Làm tốt là ta khen “Giỏi lắm, giỏi lắm~!” ngay!','오늘도 바르게, 즐겁게!':'Hôm nay ngoan và vui nhé!','고치기':'Sửa',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'E hèm! Thời của ta~ Học lễ phép, go go go!','식당·화장실·버스 예절 퀴즈':'Đố vui phép lịch sự: nhà hàng, nhà vệ sinh, xe buýt','꼰둥이 배지 {0}개':'{0} huy hiệu Kondung',
 '칭찬 도장판':'Bảng đóng dấu khen','약속을 지키면 도장 쾅!':'Giữ lời hứa là được đóng dấu!','다 모으면 상장 카드':'Đủ dấu thì nhận giấy khen',
-'내 이름 동화':'Truyện mang tên bé','{0}[이/가] 주인공인':'{0} là nhân vật chính','5분 동화':'truyện 5 phút','오늘':'Hôm nay',
+'내가 만드는 동화':'Truyện em tự làm','{0}[이/가] 주인공인':'{0} là nhân vật chính','5분 동화':'truyện 5 phút','오늘':'Hôm nay',
 '꼰둥이 웹툰':'Truyện tranh Kondung','꼰댕이·꼰순이의':'Kondaengi và Konsuni','하루 한 편 4컷':'mỗi ngày một truyện 4 khung',
 '그림 퀴즈':'Đố vẽ tranh','주제 뽑고 10분 그리기':'Bốc chủ đề, vẽ trong 10 phút','찰칵 찍으면 점수!':'Chụp ảnh là có điểm!',
 '부모님께':'Gửi bố mẹ','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'Hãy cùng bé đóng dấu khi bé giữ lời hứa. Khi đủ dấu, hãy lưu hoặc in giấy khen và dán lên tủ lạnh nhé 😊','광고 없이 안심하고 쓰는 앱이에요.':'Không quảng cáo — ứng dụng an toàn cho bé.',
@@ -985,7 +986,7 @@ TR.zh={
 '에헴~ {0}, 오늘도 바르게!':'咳咳~ {0},今天也要乖乖的!','잘하면 내가 "옳지옳지~" 해 줄게!':'做得好,我就夸你「真棒真棒~!」','오늘도 바르게, 즐겁게!':'今天也要乖乖、开开心心!','고치기':'修改',
 '에헴! 라떼는 말야~ 예절 배우기 gogogo!':'咳咳！我们那时候~ 学礼仪 gogogo！','식당·화장실·버스 예절 퀴즈':'礼仪问答:餐厅、洗手间、公交车','꼰둥이 배지 {0}개':'唠叨徽章 {0} 枚',
 '칭찬 도장판':'表扬印章板','약속을 지키면 도장 쾅!':'遵守约定,盖个章!','다 모으면 상장 카드':'集满得奖状',
-'내 이름 동화':'我的名字童话','{0}[이/가] 주인공인':'{0}当主角的','5분 동화':'5分钟童话','오늘':'今天',
+'내가 만드는 동화':'我编的童话','{0}[이/가] 주인공인':'{0}当主角的','5분 동화':'5分钟童话','오늘':'今天',
 '꼰둥이 웹툰':'唠叨双胞胎漫画','꼰댕이·꼰순이의':'小唠叨和小叨叨的','하루 한 편 4컷':'每天一篇四格漫画',
 '그림 퀴즈':'画画挑战','주제 뽑고 10분 그리기':'抽题目,画10分钟','찰칵 찍으면 점수!':'拍照就有分数!',
 '부모님께':'致家长','도장은 아이가 약속을 지켰을 때 함께 찍어 주세요. 다 모으면 상장을 사진첩에 저장하거나 인쇄해서 냉장고에 붙여 주세요 😊':'孩子遵守约定时,请和孩子一起盖章。集满后可以把奖状保存到相册或打印出来贴在冰箱上 😊','광고 없이 안심하고 쓰는 앱이에요.':'无广告,孩子可以放心使用。',
@@ -1084,7 +1085,7 @@ CT.zh.ST_FREE=["最近{N}心里有一件事：「{X}」。{N}悄悄告诉了{F}�
 <script>/* 앞표지 · 앱 소개 · 개인정보처리방침 · 이용약관 (7개 언어) */
 var APP_VER='1.0.0';
 var LEGAL={
-ko:{cover:'아이들 앱 · 부모님과 함께 · 광고 없음',about:'꼰댕이와 꼰순이는 “라떼는 말이야~”를 입에 달고 사는 애늙은이 쌍둥이예요. 잔소리는 많지만 누구보다 아이를 아끼는 두 친구가 칭찬 도장, 내 이름 동화, 4컷 웹툰, 그림 퀴즈, 예절 퀴즈로 바른 습관을 함께 알려 줘요.',
+ko:{cover:'아이들 앱 · 부모님과 함께 · 광고 없음',about:'꼰댕이와 꼰순이는 “라떼는 말이야~”를 입에 달고 사는 애늙은이 쌍둥이예요. 잔소리는 많지만 누구보다 아이를 아끼는 두 친구가 칭찬 도장, 내가 만드는 동화, 4컷 웹툰, 그림 퀴즈, 예절 퀴즈로 바른 습관을 함께 알려 줘요.',
  privacy:['Pi로 로그인하면 아이 이름(애칭)과 도장·키우기·퀴즈 기록이 보호자의 Pi 계정에 연결돼 안전하게 저장돼요. 폰을 바꿔도 이어서 쓸 수 있어요. 로그인하지 않으면 이 기기에만 저장돼요.','그림 사진과 아이 프로필 사진은 이 기기 안에만 있고, 서버나 다른 곳으로 절대 보내지 않아요.','광고, 추적 도구, 외부 분석 도구를 쓰지 않아요.','브라우저의 사이트 데이터를 지우면 앱 기록이 모두 지워져요.','Pi 결제는 보호자(Pi 계정 주인)만 할 수 있고, Pi 사용자 이름과 결제 정보는 Pi Network 규칙에 따라 처리해요. 기록을 지우고 싶으면 앱 안 문의로 알려 주세요.'],
  terms:['이 앱은 3~8세 어린이가 보호자와 함께 쓰는 학습·놀이 앱이에요.','보호자가 아이의 사용을 함께 지켜봐 주세요.','그림 점수와 동화는 재미를 위한 것이고, 아이를 평가하는 것이 아니에요.','꼰댕이·꼰순이 캐릭터와 앱 콘텐츠의 권리는 개발자에게 있어요. 상장과 그림 카드는 가정에서 자유롭게 저장·인쇄할 수 있어요.','앱은 더 좋게 바뀔 수 있어요. 부모님 가게의 Pi 상품은 결제 전에 가격을 먼저 보여 드리고, 결제는 부모님 확인을 거쳐야 해요.'],
  eff:'시행일 2026년 11월 25일'},
@@ -1114,13 +1115,13 @@ ja:{cover:'こどもの アプリ · おうちの人と いっしょに · 広�
  eff:'施行日:2026年11月25日'}
 };
 var LG_UI={
-ko:['개인정보처리방침','이용약관','앱 소개','버전','시작하기','칭찬 도장','내 이름 동화','4컷 웹툰','그림 퀴즈','예절 퀴즈','우리들의 바른 친구 꼰댕이·꼰순이와 함께','Pi로 시작하기','Pi 로그인 중…','로그인 없이 둘러보기','☁️ {0}님 계정에 저장돼요','결제를 마무리하지 못했어요. 잠시 후 다시 해 주세요.','결제가 취소됐어요','📷 우리 아이 사진 넣기','사진은 이 폰에만 저장되고 서버로 보내지 않아요','사진 지우기'],
-en:['Privacy Policy','Terms of Use','About','Version','Start','Praise stamps','Name stories','4-panel comics','Drawing quiz','Manners quiz','With our good friends, Kondaengi & Konsuni','Start with Pi','Signing in with Pi…','Look around without signing in','☁️ Saved to {0}’s account','Could not finish the payment. Please try again later.','Payment cancelled','📷 Add your child’s photo','The photo stays on this phone and is never uploaded','Remove photo'],
-vi:['Chính sách quyền riêng tư','Điều khoản sử dụng','Giới thiệu','Phiên bản','Bắt đầu','Dấu khen','Truyện mang tên bé','Truyện tranh 4 khung','Đố vẽ tranh','Đố phép lịch sự','Cùng những người bạn ngoan Kondaengi và Konsuni','Bắt đầu với Pi','Đang đăng nhập Pi…','Xem thử không cần đăng nhập','☁️ Đã lưu vào tài khoản {0}','Chưa hoàn tất thanh toán. Vui lòng thử lại sau.','Đã hủy thanh toán','📷 Thêm ảnh của bé','Ảnh chỉ lưu trên điện thoại này, không gửi lên máy chủ','Xóa ảnh'],
-id:['Kebijakan Privasi','Syarat Penggunaan','Tentang','Versi','Mulai','Stempel pujian','Dongeng nama','Komik 4 panel','Kuis menggambar','Kuis sopan santun','Bersama teman baik kita, Kondaengi dan Konsuni','Mulai dengan Pi','Masuk dengan Pi…','Lihat-lihat tanpa login','☁️ Tersimpan di akun {0}','Pembayaran belum selesai. Coba lagi nanti.','Pembayaran dibatalkan','📷 Tambah foto anak','Foto hanya disimpan di ponsel ini dan tidak dikirim ke server','Hapus foto'],
-hi:['गोपनीयता नीति','उपयोग की शर्तें','ऐप के बारे में','संस्करण','शुरू करें','शाबाशी स्टैम्प','नाम की कहानी','4-पैनल कॉमिक','ड्रॉइंग क्विज़','शिष्टाचार क्विज़','हमारे अच्छे दोस्त कोनदेंगी और कोनसूनी के साथ','Pi से शुरू करें','Pi से लॉगिन हो रहा है…','बिना लॉगिन देखें','☁️ {0} के खाते में सेव','भुगतान पूरा नहीं हुआ। बाद में फिर कोशिश करें।','भुगतान रद्द हुआ','📷 बच्चे की फ़ोटो जोड़ें','फ़ोटो सिर्फ़ इसी फ़ोन में रहती है, सर्वर पर नहीं भेजी जाती','फ़ोटो हटाएँ'],
-zh:['隐私政策','使用条款','应用介绍','版本','开始','表扬印章','名字童话','四格漫画','画画挑战','礼仪问答','和我们的好朋友 小唠叨、小叨叨一起','用 Pi 开始','正在用 Pi 登录…','不登录先看看','☁️ 已保存到 {0} 的账户','付款未完成,请稍后再试。','付款已取消','📷 添加孩子的照片','照片只保存在这台手机上，不会上传到服务器','删除照片'],
-ja:['プライバシーポリシー','利用規約','アプリについて','バージョン','はじめる','ほめほめスタンプ','なまえの おはなし','4コマまんが','おえかきクイズ','マナークイズ','わたしたちの よい ともだち コンデンイ・コンスニと いっしょに','Pi で はじめる','Pi ログイン中…','ログインせずに みてみる','☁️ {0} さんの アカウントに ほぞん','けっさいを おえられませんでした。あとで もういちど おためしください。','けっさいが キャンセルされました','📷 お子さまの しゃしんを いれる','しゃしんは この スマホだけに ほぞんされ、サーバーには おくりません','しゃしんを けす']
+ko:['개인정보처리방침','이용약관','앱 소개','버전','시작하기','칭찬 도장','내가 만드는 동화','4컷 웹툰','그림 퀴즈','예절 퀴즈','우리들의 바른 친구 꼰댕이·꼰순이와 함께','Pi로 시작하기','Pi 로그인 중…','로그인 없이 둘러보기','☁️ {0}님 계정에 저장돼요','결제를 마무리하지 못했어요. 잠시 후 다시 해 주세요.','결제가 취소됐어요','📷 우리 아이 사진 넣기','사진은 이 폰에만 저장되고 서버로 보내지 않아요','사진 지우기'],
+en:['Privacy Policy','Terms of Use','About','Version','Start','Praise stamps','My own stories','4-panel comics','Drawing quiz','Manners quiz','With our good friends, Kondaengi & Konsuni','Start with Pi','Signing in with Pi…','Look around without signing in','☁️ Saved to {0}’s account','Could not finish the payment. Please try again later.','Payment cancelled','📷 Add your child’s photo','The photo stays on this phone and is never uploaded','Remove photo'],
+vi:['Chính sách quyền riêng tư','Điều khoản sử dụng','Giới thiệu','Phiên bản','Bắt đầu','Dấu khen','Truyện em tự làm','Truyện tranh 4 khung','Đố vẽ tranh','Đố phép lịch sự','Cùng những người bạn ngoan Kondaengi và Konsuni','Bắt đầu với Pi','Đang đăng nhập Pi…','Xem thử không cần đăng nhập','☁️ Đã lưu vào tài khoản {0}','Chưa hoàn tất thanh toán. Vui lòng thử lại sau.','Đã hủy thanh toán','📷 Thêm ảnh của bé','Ảnh chỉ lưu trên điện thoại này, không gửi lên máy chủ','Xóa ảnh'],
+id:['Kebijakan Privasi','Syarat Penggunaan','Tentang','Versi','Mulai','Stempel pujian','Dongeng buatanku','Komik 4 panel','Kuis menggambar','Kuis sopan santun','Bersama teman baik kita, Kondaengi dan Konsuni','Mulai dengan Pi','Masuk dengan Pi…','Lihat-lihat tanpa login','☁️ Tersimpan di akun {0}','Pembayaran belum selesai. Coba lagi nanti.','Pembayaran dibatalkan','📷 Tambah foto anak','Foto hanya disimpan di ponsel ini dan tidak dikirim ke server','Hapus foto'],
+hi:['गोपनीयता नीति','उपयोग की शर्तें','ऐप के बारे में','संस्करण','शुरू करें','शाबाशी स्टैम्प','मेरी बनाई कहानी','4-पैनल कॉमिक','ड्रॉइंग क्विज़','शिष्टाचार क्विज़','हमारे अच्छे दोस्त कोनदेंगी और कोनसूनी के साथ','Pi से शुरू करें','Pi से लॉगिन हो रहा है…','बिना लॉगिन देखें','☁️ {0} के खाते में सेव','भुगतान पूरा नहीं हुआ। बाद में फिर कोशिश करें।','भुगतान रद्द हुआ','📷 बच्चे की फ़ोटो जोड़ें','फ़ोटो सिर्फ़ इसी फ़ोन में रहती है, सर्वर पर नहीं भेजी जाती','फ़ोटो हटाएँ'],
+zh:['隐私政策','使用条款','应用介绍','版本','开始','表扬印章','我编的童话','四格漫画','画画挑战','礼仪问答','和我们的好朋友 小唠叨、小叨叨一起','用 Pi 开始','正在用 Pi 登录…','不登录先看看','☁️ 已保存到 {0} 的账户','付款未完成,请稍后再试。','付款已取消','📷 添加孩子的照片','照片只保存在这台手机上，不会上传到服务器','删除照片'],
+ja:['プライバシーポリシー','利用規約','アプリについて','バージョン','はじめる','ほめほめスタンプ','わたしが つくる おはなし','4コマまんが','おえかきクイズ','マナークイズ','わたしたちの よい ともだち コンデンイ・コンスニと いっしょに','Pi で はじめる','Pi ログイン中…','ログインせずに みてみる','☁️ {0} さんの アカウントに ほぞん','けっさいを おえられませんでした。あとで もういちど おためしください。','けっさいが キャンセルされました','📷 お子さまの しゃしんを いれる','しゃしんは この スマホだけに ほぞんされ、サーバーには おくりません','しゃしんを けす']
 };
 function LU(i){var s=(LG_UI[LANG]||LG_UI.en)[i],a=arguments;return String(s).replace(/\{(\d)\}/g,function(m,k){return a[+k+1]})}
 function LGL(){return LEGAL[LANG]||LEGAL.en}
@@ -1222,7 +1223,7 @@ function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayTo
   '<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="icrow"><span class="ic">🐣</span><span class="icsay">'+t('에헴! 라떼는 말야~')+'</span></div><h3>'+t('아름다운 어린이 되기')+'</h3><p>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
   growCard()+'<div class="grid">'+
    '<button class="card g" onclick="go(\'stamp\')"><div class="ic"><span class="seal"><b>'+t('참 잘')+'</b><b>'+t('했어요')+'</b></span></div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
-   '<button class="card p" onclick="go(\'story\')"><div class="ic">📖</div><h3>'+t('내 이름 동화')+'</h3><p>'+t('{0}[이/가] 주인공인',esc(KID.name))+'<br>'+t('5분 동화')+'</p></button>'+
+   '<button class="card p" onclick="go(\'story\')"><div class="ic">📖</div><h3>'+t('내가 만드는 동화')+'</h3><p>'+t('{0}[이/가] 주인공인',esc(KID.name))+'<br>'+t('5분 동화')+'</p></button>'+
    '<button class="card s" onclick="go(\'toon\',{i:'+ti+'})"><span class="bdg">'+t('오늘')+' #'+(ti+1)+'</span><div class="ic">💬</div><h3>'+t('꼰둥이 웹툰')+'</h3><p>'+t('꼰댕이·꼰순이의')+'<br>'+t('하루 한 편 4컷')+'</p></button>'+
    '<button class="card y" onclick="go(\'draw\')"><div class="ic">🎨</div><h3>'+t('그림 퀴즈')+'</h3><p>'+t('주제 뽑고 10분 그리기')+'<br>'+t('찰칵 찍으면 점수!')+'</p></button>'+
   '</div>'+
@@ -1300,12 +1301,12 @@ function printImg(url){$('#printArea').innerHTML='<img src="'+url+'">';setTimeou
 function sheet(h){closeSheet();var m=document.createElement('div');m.className='mask';m.id='mask';m.innerHTML='<div class="sheet">'+h+'</div>';m.onclick=function(e){if(e.target===m)closeSheet()};document.body.appendChild(m)}
 function closeSheet(){var m=$('#mask');if(m)m.remove()}
 
-/* ---------- 내 이름 동화 ---------- */
+/* ---------- 내가 만드는 동화 ---------- */
 var STORY=ls('story')||null;if(STORY&&STORY.lang&&STORY.lang!==LANG)STORY=null;
 var _th=0,_pl=0;
 function storyView(){if(SUB.read&&STORY)return storyRead();var s=STORY&&STORY.inp||{friend:'',theme:0,place:0};_th=s.theme||0;_pl=s.place||0;
   var FR=C('FRIENDS'),TH=C('THEMES'),PL=C('PLACES');
-  return hdr('📖 '+t('내 이름 동화'))+'<div class="box"><h2>'+t('{0}[이/가] 주인공인 동화를 만들어요',esc(KID.name))+'</h2>'+
+  return hdr('📖 '+t('내가 만드는 동화'))+'<div class="box"><h2>'+t('{0}[이/가] 주인공인 동화를 만들어요',esc(KID.name))+'</h2>'+
   '<label class="f">🧸 '+t('함께할 친구 (동물·식물·인형 무엇이든)')+'</label><input id="sf" class="inp" maxlength="16" placeholder="'+t('예) 토끼, 해바라기, 곰인형')+'" value="'+esc(s.friend)+'">'+
   '<input id="sf2" class="inp" style="margin-top:8px" maxlength="16" placeholder="✏️ '+t('친구 한 명 더 (없으면 비워 두세요)')+'" value="'+esc(s.friend2||'')+'">'+
   '<div class="chips" style="margin-top:8px">'+FR.slice(0,12).map(function(f){return '<button class="chip p" onclick="sfPick(this.dataset.v)" data-v="'+esc(f[0])+'">'+f[1]+' '+esc(f[0])+'</button>'}).join('')+'</div>'+
