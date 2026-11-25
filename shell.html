@@ -96,7 +96,13 @@ label.f{display:block;font-weight:800;font-size:14px;margin:12px 0 6px}
 /* 그림 퀴즈 */
 .topic{background:linear-gradient(160deg,#fff6d4,#ffe7a0);border-radius:24px;padding:22px 16px;text-align:center}
 .topic .em{font-size:76px;line-height:1.1}.topic .cat{display:inline-block;background:#fff;border-radius:20px;padding:4px 12px;font-weight:800;font-size:13px;color:#a06b00}
-.topic h2{margin:10px 0 0;font-size:24px}
+.topic h2{margin:10px 0 0;font-size:22px;word-break:keep-all}
+.topic .tri{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:10px}
+.topic .tri>div{flex:1;max-width:110px;background:#fff;border-radius:18px;padding:10px 4px;box-shadow:0 3px 8px rgba(160,107,0,.12)}
+.topic .tri .em{font-size:52px}
+.topic .tri b{display:block;font-size:15px;margin-top:4px;word-break:keep-all}
+.topic .tri .pl{font-size:22px;font-weight:900;color:#a06b00}
+.topic.sm .tri .em{font-size:38px}.topic.sm .tri b{font-size:13px}
 .timer{position:relative;width:220px;height:220px;margin:10px auto}
 .timer svg{transform:rotate(-90deg)}.timer .t{position:absolute;inset:0;display:grid;place-items:center;font-size:46px;font-weight:900}
 .shot{position:relative;border-radius:18px;overflow:hidden;background:#000}

@@ -230,15 +230,17 @@ function toonView(){var T=allToons(),ti=todayToonIdx(),i=(SUB.i==null?ti:SUB.i),
 
 /* ---------- 그림 퀴즈 ---------- */
 var DR={topic:null,min:10,end:0,start:0},TK=null;
-function topic(){var D=C('DRAW');return D[DR.topic]||D[0]}
+function dwName(i){var n=LANG!=='ko'&&window.CT&&CT[LANG]&&CT[LANG].DW;return n?n[i]:DW[i][2]}
+function topic(){var k=DR.topic||[0,30,60];return ['🎲 '+t('3가지 그리기'),k.map(function(i){return DW[i][1]}).join(''),k.map(dwName).join(' + ')]}
+function topicTri(){return '<div class="tri">'+DR.topic.map(function(i){return '<div><div class="em">'+DW[i][1]+'</div><b>'+esc(dwName(i))+'</b></div>'}).join('<span class="pl">+</span>')+'</div>'}
 function drawView(){var st=SUB.step||'pick';
   if(st==='pick'){var tp=DR.topic!=null?topic():null;
-    return hdr('🎨 '+t('그림 퀴즈'))+'<div class="topic">'+(tp?'<span class="cat">'+esc(tp[0])+'</span><div class="em">'+tp[1]+'</div><h2>'+esc(tp[2])+'</h2><p class="mut">'+t('스케치북에 그려 보세요!')+'</p>':'<div class="em">🎁</div><h2>'+t('오늘의 그림 주제는?')+'</h2><p class="mut">'+t('버튼을 눌러 뽑아요')+'</p>')+'</div>'+
+    return hdr('🎨 '+t('그림 퀴즈'))+'<div class="topic">'+(tp?'<span class="cat">'+esc(tp[0])+'</span>'+topicTri()+'<h2>'+t('세 가지를 모두 넣어 그려 보세요!')+'</h2><p class="mut">'+t('{0}가지 그림 친구 중에서 뽑았어요',DW.length)+'</p>':'<div class="em">🎁</div><h2>'+t('오늘의 그림 주제는?')+'</h2><p class="mut">'+t('버튼을 눌러 뽑아요')+'</p>')+'</div>'+
     '<button class="btn y" onclick="pickTopic()">🎲 '+(tp?t('다시 뽑기'):t('주제 뽑기'))+'</button>'+
     (tp?'<div class="box" style="margin-top:14px"><h2>⏱️ '+t('몇 분 동안 그릴까요?')+'</h2><div class="chips" id="tsel">'+[[3,t('{0}분',3)],[5,t('{0}분',5)],[10,t('{0}분',10)],[0,t('시간 없이')]].map(function(m){return '<button class="chip y'+(m[0]===DR.min?' on':'')+'" onclick="DR.min='+m[0]+';go(\'draw\')">'+m[1]+'</button>'}).join('')+'</div>'+
     '<button class="btn" onclick="startDraw()">✏️ '+t('그리기 시작!')+'</button></div>':'')}
   var tp=topic();
-  if(st==='time'){return hdr('🎨 '+t('그리는 중'))+'<div class="topic" style="padding:14px"><div class="em" style="font-size:48px">'+tp[1]+'</div><h2 style="font-size:20px">'+esc(tp[2])+'</h2></div>'+
+  if(st==='time'){return hdr('🎨 '+t('그리는 중'))+'<div class="topic sm" style="padding:12px">'+topicTri()+'</div>'+
     '<div class="timer"><svg width="220" height="220"><circle cx="110" cy="110" r="96" stroke="#fff3c4" stroke-width="18" fill="none"/><circle id="tc" cx="110" cy="110" r="96" stroke="#ffcf33" stroke-width="18" fill="none" stroke-linecap="round" stroke-dasharray="603" stroke-dashoffset="0"/></svg><div class="t" id="tt">'+(DR.min?DR.min+':00':'✏️')+'</div></div>'+
     '<button class="btn p" onclick="doneDraw()">✅ '+t('다 그렸어요!')+'</button><button class="btn w" onclick="stopTick();go(\'draw\')">'+t('그만하기')+'</button>'}
   if(st==='shot'){return hdr('📸 '+t('그림 찍기'))+'<div class="box" style="text-align:center"><div style="font-size:60px">📸</div><h2>'+t('그림을 찍어 주세요')+'</h2><p class="mut">'+t('스케치북이 화면에 꽉 차게, 밝은 곳에서 찍으면 좋아요')+'</p>'+
@@ -251,7 +253,7 @@ function drawView(){var st=SUB.step||'pick';
     '<button class="btn p" onclick="drawCard()">🖼️ '+t('그림 카드 저장하기')+'</button><button class="btn y" onclick="DR.topic=null;go(\'draw\')">🎲 '+t('새 주제 뽑기')+'</button>'+
     '<p class="mut" style="text-align:center">'+t('점수는 재미로 보는 거예요. 모든 그림은 멋져요!')+' 💛</p>'}
 }
-function pickTopic(){var n=C('DRAW').length,k;do{k=Math.floor(Math.random()*n)}while(k===DR.topic&&n>1);DR.topic=k;buzz();go('draw')}
+function pickTopic(){var gs=[0,1,2,3,4].sort(function(){return Math.random()-.5}).slice(0,3).sort();DR.topic=gs.map(function(g){var c=[];DW.forEach(function(d,i){if(d[0]===g)c.push(i)});return c[Math.floor(Math.random()*c.length)]}).sort(function(){return Math.random()-.5});buzz();go('draw')}
 function startDraw(){DR.start=Date.now();DR.end=DR.min?Date.now()+DR.min*60e3:0;go('draw',{step:'time'})}
 function tick(){stopTick();var f=function(){var tt=$('#tt'),tc=$('#tc');if(!tt){stopTick();return}
   if(!DR.end){var s=Math.floor((Date.now()-DR.start)/1000);tt.textContent=Math.floor(s/60)+':'+('0'+s%60).slice(-2);return}
@@ -276,7 +278,7 @@ function scoreDraw(cv){var w=160,h=Math.round(cv.height*160/cv.width),c=document
   return {score:score,stars:stars,badges:badges,msg:msg}}
 function drawCard(){var tp=topic(),im=new Image();im.onload=function(){var W=1080,ph=Math.round(im.height*(W-120)/im.width),H=Math.min(1900,ph+520),cv=document.createElement('canvas');cv.width=W;cv.height=H;var c=cv.getContext('2d'),F='"Apple SD Gothic Neo","Noto Sans KR",sans-serif';
   c.fillStyle='#fff6d4';c.fillRect(0,0,W,H);c.fillStyle='#fff';c.fillRect(40,40,W-80,H-80);c.strokeStyle='#ffcf33';c.lineWidth=14;c.strokeRect(40,40,W-80,H-80);
-  c.textAlign='center';c.fillStyle='#2e3a2a';c.font='900 56px '+F;c.fillText(tp[1]+' '+tp[2],W/2,140);
+  c.textAlign='center';c.fillStyle='#2e3a2a';var ttl=tp[1]+' '+tp[2],fs=56;c.font='900 '+fs+'px '+F;while(c.measureText(ttl).width>W-80&&fs>28){fs-=2;c.font='900 '+fs+'px '+F}c.fillText(ttl,W/2,140);
   var mh=H-520;var dw=W-120,dh=Math.min(ph,mh);c.drawImage(im,60,180,dw,dh);
   c.fillStyle='#ff7fa8';c.font='900 110px '+F;c.fillText(DR.res.score+t('점'),W/2,180+dh+130);
   c.font='54px '+F;c.fillText('⭐'.repeat(DR.res.stars),W/2,180+dh+210);
