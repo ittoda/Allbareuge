@@ -236,7 +236,7 @@ function topicTri(){return '<div class="tri">'+DR.topic.map(function(i){return '
 function drawView(){var st=SUB.step||'pick';
   if(st==='pick'){var tp=DR.topic!=null?topic():null;
     return hdr('🎨 '+t('그림 퀴즈'))+'<div class="topic">'+(tp?'<span class="cat">'+esc(tp[0])+'</span>'+topicTri()+'<h2>'+t('세 가지를 모두 넣어 그려 보세요!')+'</h2><p class="mut">'+t('{0}가지 그림 친구 중에서 뽑았어요',DW.length)+'</p>':'<div class="em">🎁</div><h2>'+t('오늘의 그림 주제는?')+'</h2><p class="mut">'+t('버튼을 눌러 뽑아요')+'</p>')+'</div>'+
-    '<button class="btn y" onclick="pickTopic()">🎲 '+(tp?t('다시 뽑기'):t('주제 뽑기'))+'</button>'+
+    (tp?'':'<button class="btn y" onclick="pickTopic()">🎲 '+t('주제 뽑기')+'</button>')+
     (tp?'<div class="box" style="margin-top:14px"><h2>⏱️ '+t('몇 분 동안 그릴까요?')+'</h2><div class="chips" id="tsel">'+[[3,t('{0}분',3)],[5,t('{0}분',5)],[10,t('{0}분',10)],[0,t('시간 없이')]].map(function(m){return '<button class="chip y'+(m[0]===DR.min?' on':'')+'" onclick="DR.min='+m[0]+';go(\'draw\')">'+m[1]+'</button>'}).join('')+'</div>'+
     '<button class="btn" onclick="startDraw()">✏️ '+t('그리기 시작!')+'</button></div>':'')}
   var tp=topic();
