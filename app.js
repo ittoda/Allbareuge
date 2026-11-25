@@ -50,7 +50,7 @@ var AV=['🐣','🐰','🐻','🦊','🐼','🐯','🦄','🐬','🐶','🐱','�
 function render(){var h='';
   if(!KID&&VIEW!=='kid'&&VIEW!=='cover')VIEW='kid';
   if(VIEW==='cover')h=coverView();else if(VIEW==='kid')h=kidView();else if(VIEW==='home')h=homeView();else if(VIEW==='stamp')h=stampView();
-  else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();else if(VIEW==='diary')h=diaryView();else if(VIEW==='math')h=mathView();
+  else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();else if(VIEW==='diary')h=diaryView();else if(VIEW==='att')h=attView();else if(VIEW==='math')h=mathView();
   $('#app').innerHTML=h;if(VIEW==='draw'&&SUB.step==='time')tick();if(window.bdCheck)bdCheck();}
 function logo(center){return '<div class="logo"'+(center?' style="justify-content:center;margin:18px 0 6px"':'')+'>'+twinsLogo()+'<div><h1>all <span>'+t('바르게')+'</span></h1><small>'+t('꼰둥이와 함께 자라는 바른 습관')+'</small></div>'+(center?'':'<div style="margin-left:auto">'+langSel()+'</div>')+'</div>'}
 
@@ -96,7 +96,7 @@ function saveKid(){var n=$('#kn').value.trim().replace(/[<>{}\[\]]/g,'');if(!n){
 /* ---------- 홈 ---------- */
 function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayToonIdx();
   return logo()+greet(t('에헴~ {0}, 오늘도 바르게!',esc(voc(KID.name))),t('잘하면 내가 "옳지옳지~" 해 줄게!'))+
-  '<div class="kid"><div class="av">'+avHTML()+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed ad" onclick="kidAdd()">➕ '+t('추가')+'</button><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+kidTabs()+
+  '<div class="kid"><div class="av">'+avHTML()+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed ad" onclick="kidAdd()">➕ '+t('추가')+'</button><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+kidTabs()+attCard()+
   bdBanner()+'<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="icrow"><span class="ic">🐣</span><span class="icsay">'+t('에헴! 라떼는 말야~')+'</span></div><h3>'+t('아름다운 어린이 되기')+'</h3><p>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
   growCard()+'<div class="grid">'+
    '<button class="card g" onclick="go(\'stamp\')"><div class="ic"><span class="seal"><b>'+t('참 잘')+'</b><b>'+t('했어요')+'</b></span></div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+

@@ -30,7 +30,7 @@ payPi=function(i){var it=PAY[i];gate(async function(){
     onReadyForServerCompletion:function(id,tx){api('/pay/complete',{token:tk,paymentId:id,txid:tx}).then(function(r){if(r&&r.ok){claim().then(function(){confetti(40);toast(it.e+' '+GU(59))})}else toast(LU(15))})},
     onCancel:function(){toast(LU(16))},onError:function(){toast(LU(15))}})}catch(e){toast(LU(15))}})};
 /* 출석은 통계에 세기 */
-(function(){var c=window.checkIn;window.checkIn=function(){var had=GR&&GR.ck&&GR.ck[today()];var r=c.apply(this,arguments);if(!had&&piTok())api('/ev',{token:piTok(),e:'ck'});return r}})();
+(function(){var c=window.checkIn;window.checkIn=function(){var had=!!ckMap()[today()];var r=c.apply(this,arguments);if(!had&&piTok()){api('/ev',{token:piTok(),e:'ck'});attSend()}return r}})();
 /* 방문 기기 수 (이름 없음) */
 (function(){try{var d=ls('dev');if(!d){d=Math.random().toString(36).slice(2,12);ls('dev',d)}fetch('/hit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({d:d,l:LANG})}).catch(function(){})}catch(e){}})();
 /* 파이 브라우저가 아니면 열어 달라고 안내 (샌드박스·미리보기 iframe 안에서는 안 띄워요) */

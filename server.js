@@ -77,6 +77,30 @@ http.createServer(async (req, res) => {
       const v = await redis(['GET', P + 'me:' + uid]); let data = null; try { data = v ? JSON.parse(v) : null } catch (e) {}
       return J(res, 200, { ok: true, data });
     }
+    if (url === '/att') { // 출석 기록 {token, kid, nm, av} → 이번 달 출석 일수 (아이별)
+      const q = await body(req); const uid = await uidOf(q.token); if (!uid) return J(res, 401, { ok: false });
+      const kid = /^(_k[a-z0-9]{1,8})?$/.test(String(q.kid || '')) ? String(q.kid || '') : ''; const mem = uid + ':' + kid;
+      const d = kstDay(), ym = d.slice(0, 7), K = P + 'attd:' + ym + ':' + mem;
+      await redis(['SADD', K, d]); redis(['EXPIRE', K, String(86400 * 70)]).catch(() => {});
+      const days = Number(await redis(['SCARD', K]) || 0);
+      await redis(['ZADD', P + 'att:' + ym, String(days), mem]); redis(['EXPIRE', P + 'att:' + ym, String(86400 * 400)]).catch(() => {});
+      const nm = String(q.nm || '').replace(/[<>{}\[\]"'&]/g, '').slice(0, 12), av = String(q.av || '🐣').slice(0, 4);
+      redis(['HSET', P + 'attn', mem, JSON.stringify({ n: nm, a: av === '📷' ? '🐣' : av })]).catch(() => {});
+      return J(res, 200, { ok: true, days });
+    }
+    if (url === '/attrank') { // 이번 달 출석 순위 상위 20 + 내 순위 (이름은 일부 가림)
+      const q = await body(req); const uid = await uidOf(q.token).catch(() => null);
+      const ym = kstDay().slice(0, 7), Z = P + 'att:' + ym, today = +kstDay().slice(8, 10);
+      const mem = uid ? uid + ':' + (/^(_k[a-z0-9]{1,8})?$/.test(String(q.kid || '')) ? String(q.kid || '') : '') : null;
+      const z = await redis(['ZREVRANGE', Z, '0', '19', 'WITHSCORES']) || []; const ids = [], top = [];
+      for (let i = 0; i < z.length; i += 2) { ids.push(z[i]); top.push({ s: +z[i + 1] }) }
+      const nm = ids.length ? (await redis(['HMGET', P + 'attn', ...ids]) || []) : [];
+      const mask = n => { const a = Array.from(String(n || '?')); return a.length <= 1 ? a[0] + '*' : a.length === 2 ? a[0] + '*' : a[0] + '*'.repeat(Math.min(3, a.length - 2)) + a[a.length - 1] };
+      top.forEach((x, i) => { let o = {}; try { o = JSON.parse(nm[i] || '{}') } catch (e) {} x.n = mask(o.n); x.a = o.a || '🐣'; x.me = ids[i] === mem; x.full = x.s >= today });
+      let me = null; if (mem) { const rk = await redis(['ZREVRANK', Z, mem]); const sc = await redis(['ZSCORE', Z, mem]); if (rk !== null && rk !== undefined) me = { r: +rk + 1, s: +sc } }
+      const n = Number(await redis(['ZCARD', Z]) || 0);
+      return J(res, 200, { ok: true, top, me, n, day: today, ym });
+    }
     if (url === '/claim') { // 결제로 받은 햇살·특별친구·꾸미기 받아 가기
       const q = await body(req); const uid = await uidOf(q.token); if (!uid) return J(res, 401, { ok: false });
       const tok = Number(await redis(['GETDEL', P + 'gt:' + uid]) || 0); const f = await redis(['HGETALL', P + 'gf:' + uid]) || [];

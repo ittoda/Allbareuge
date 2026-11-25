@@ -238,6 +238,18 @@ label.f{display:block;font-weight:800;font-size:14px;margin:12px 0 6px}
 .ktabs button{display:flex;align-items:center;gap:6px;flex:0 0 auto;background:#fff;border:2px solid #eee;border-radius:24px;padding:5px 12px 5px 5px;font-weight:800;font-size:14px;color:#556}
 .ktabs button.on{border-color:#5cc93a;background:#e9fbe0;color:#2e3a2a}
 .ktabs .kav{width:30px;height:30px;border-radius:50%;background:var(--y2);display:grid;place-items:center;font-size:18px;overflow:hidden}.ktabs .kav img{width:100%;height:100%;object-fit:cover}
+.attc{display:flex;align-items:center;gap:8px;background:linear-gradient(100deg,#fff6d4,#ffe9f0);border-radius:var(--r);padding:10px 10px 10px 12px;margin:-4px 0 16px;box-shadow:0 3px 0 rgba(0,0,0,.05)}
+.attl{display:flex;align-items:center;gap:8px;flex:1;min-width:0;background:none;text-align:left;padding:0}.attl b{display:block;font-size:16px}.attl small{display:block;font-size:12px;color:#7d6a3a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.attic{font-size:30px}.attb{flex:0 0 auto;background:#ffcf33;color:#5a3d00;font-weight:900;font-size:14px;border-radius:14px;padding:10px 12px;box-shadow:0 3px 0 #e0a800}.attb.done{background:#e9fbe0;color:#3e9a22;box-shadow:0 3px 0 #bfe6ac}
+.attr{flex:0 0 auto;background:#fff;font-weight:800;font-size:13px;border-radius:14px;padding:10px 9px;color:#a06b00}
+.attst{display:flex;text-align:center;margin-bottom:10px}.attst div{flex:1}.attst b{display:block;font-size:30px;font-weight:900;color:#e0567f}.attst small{font-size:12px;color:var(--mut)}
+.attcal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px;text-align:center}.attcal u{text-decoration:none;font-size:11px;font-weight:800;color:var(--mut)}
+.attcal i{font-style:normal;aspect-ratio:1;display:grid;place-items:center;border-radius:10px;background:#f6f7f3;font-size:12px;font-weight:700;color:#99a}.attcal i:empty{background:none}
+.attcal i.on{background:#ffe3ec}.attcal i.td{outline:2.5px solid #ffcf33}.attcal i.fu{opacity:.5}
+.ckst{width:26px;height:26px;font-size:13px;border-width:2px;display:grid;place-items:center;border-radius:50%;border:2px solid #e8364b;color:#e8364b;font-weight:900;transform:rotate(-12deg)}
+.rk .rkr{display:flex;align-items:center;gap:8px;padding:9px 6px;border-bottom:1px solid #f0f2ec}.rk .rkr.me{background:#fff6d4;border-radius:12px}
+.rkn{width:30px;text-align:center;font-weight:900;font-size:16px}.rka{font-size:22px}.rku{flex:1;font-weight:800;font-size:15px}.rku em{font-style:normal;font-size:11px;background:#fff3c4;color:#a06b00;border-radius:10px;padding:2px 6px;margin-left:4px}.rkr b{color:#e0567f}
+.attnote{margin-top:12px;background:#f3f0ff;border-radius:16px;padding:12px 14px;font-size:12.5px;line-height:1.6;color:#556;word-break:keep-all}.attnote b{color:#2e3a6e;font-size:14px}
 </style>
 </head>
 <body>
@@ -482,6 +494,7 @@ var DW=[[0, "👨", "아빠"], [0, "👩", "엄마"], [0, "👵", "할머니"], 
 <script>/* All 바르게 — English */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.en={
+"출석 체크":"Check-in","이번 달 {0}일":"{0} days this month","연속 {0}일":"{0}-day streak","개근 중":"perfect so far","출석 완료":"Checked in","출석하기":"Check in","랭킹":"Ranking","아직 순위가 없어요. 첫 번째 주인공이 되어 보세요!":"No ranking yet. Be the first!","개근":"Perfect","{0}일":"{0} days","에헴~ 오늘도 출석했구먼! 옳지옳지~":"Ahem~ checked in again today! Good job~","에헴! 오늘 출석 도장 찍으러 왔니?":"Ahem! Here for today's check-in stamp?","하루도 안 빠지면 개근상이야!":"Don't miss a day for the perfect attendance award!","이번 달 출석":"This month","연속 출석":"Streak","오늘 출석 완료!":"Checked in today!","7일 연속 출석하면 햇살 +5 보너스!":"Check in 7 days in a row for +5 bonus sunshine!","{0}월 출석 랭킹":"{0} Check-in Ranking","나의 순위":"My rank","{0}위":"#{0}","친구 {0}명이 함께 출석하고 있어요":"{0} friends are checking in together","Pi로 로그인하면 랭킹에 이름이 올라가요":"Log in with Pi to get on the ranking","개근상을 탄 친구들에게 학용품을 드립니다!":"Kids who win the perfect attendance award get school supplies!","한 달 동안 하루도 빠짐없이 출석하면 개근상이에요. 학용품 선물은 Pi 정책에 따라 바뀌거나 빠질 수 있어요.":"Check in every single day for a month to win the perfect attendance award. The school-supplies gift may change or end depending on Pi policy.","일":"Sun","월":"Mon","화":"Tue","수":"Wed","목":"Thu","금":"Fri","토":"Sat",
 "취소":"Cancel","이 아이 프로필 지우기":"Delete this child's profile","아이는 {0}명까지 넣을 수 있어요":"You can add up to {0} children","{0} 프로필을 지울까요?":"Delete {0}'s profile?","도장판, 친구 키우기, 일기 등 이 아이의 기록이 모두 지워져요.":"All of this child's records — stamps, grow friends, diary — will be deleted.","지우기":"Delete",
 "생일":"Birthday","선택 · 생일날 깜짝 선물이 있어요":"optional · a surprise on the birthday","생일 축하합니다":"Happy birthday to you","사랑하는 {0}의":"Happy birthday dear {0}","오늘은 {0}의 {1}번째 생일!":"It's {0}'s birthday — {1} years old!","오늘은 {0}의 생일!":"It's {0}'s birthday!","생일 노래 듣기":"Play the birthday song","생일 선물은 이미 받았어요":"Birthday gift already received","생일 선물로 햇살 ☀️ {0}개를 줄게!":"A birthday gift: {0} ☀️ sunshine!","선물 받기!":"Open my gift!","에헴~ 생일 축하하구먼! 한 살 더 멋져졌네!":"Ahem~ happy birthday! A year older and even cooler!","햇살 {0}개를 받았어요! 나의 친구에게 써 보세요":"You got {0} sunshine! Use it for your friend","이 폰에서는 소리를 낼 수 없어요":"This phone can't play sound","한 번 더 부르기":"Sing it again","오늘은 {0}의 생일이에요!":"Today is {0}'s birthday!","노래 듣기":"Play song",
 "이 폰에서는 앱 마이크가 안 돼요":"The app mic doesn't work on this phone","대신 이렇게 해 보세요!":"Try this instead!","일기 쓰는 칸을 눌러요":"Tap the diary writing box","키보드에 있는 <b>🎤 마이크 버튼</b>을 눌러요":"Press the <b>🎤 mic button</b> on the keyboard","말하면 글씨로 써져요!":"Talk and it turns into writing!","잘 안 들렸어요. 다시 눌러 말해 보세요":"I couldn't hear you. Tap and try again",
@@ -613,6 +626,7 @@ CT.en.DW=["Dad", "Mom", "Grandma", "Grandpa", "a baby", "me", "a friend", "big b
 /* All 바르게 — हिन्दी */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.hi={
+"출석 체크":"हाज़िरी","이번 달 {0}일":"इस महीने {0} दिन","연속 {0}일":"लगातार {0} दिन","개근 중":"अब तक पूरी हाज़िरी","출석 완료":"हाज़िरी लगी","출석하기":"हाज़िरी लगाएँ","랭킹":"रैंकिंग","아직 순위가 없어요. 첫 번째 주인공이 되어 보세요!":"अभी कोई रैंक नहीं। पहले बनो!","개근":"पूरी हाज़िरी","{0}일":"{0} दिन","에헴~ 오늘도 출석했구먼! 옳지옳지~":"अहम~ आज भी हाज़िरी लगा दी! शाबाश~","에헴! 오늘 출석 도장 찍으러 왔니?":"अहम! आज का हाज़िरी स्टैम्प लगाने आए हो?","하루도 안 빠지면 개근상이야!":"एक दिन भी न छोड़ो तो पूरी हाज़िरी का इनाम!","이번 달 출석":"इस महीने","연속 출석":"लगातार","오늘 출석 완료!":"आज की हाज़िरी लग गई!","7일 연속 출석하면 햇살 +5 보너스!":"7 दिन लगातार हाज़िरी पर +5 धूप बोनस!","{0}월 출석 랭킹":"{0} महीने की हाज़िरी रैंकिंग","나의 순위":"मेरा रैंक","{0}위":"{0}वाँ","친구 {0}명이 함께 출석하고 있어요":"{0} दोस्त साथ में हाज़िरी लगा रहे हैं","Pi로 로그인하면 랭킹에 이름이 올라가요":"रैंकिंग में नाम के लिए Pi से लॉग इन करें","개근상을 탄 친구들에게 학용품을 드립니다!":"पूरी हाज़िरी का इनाम जीतने वाले दोस्तों को स्कूल का सामान मिलेगा!","한 달 동안 하루도 빠짐없이 출석하면 개근상이에요. 학용품 선물은 Pi 정책에 따라 바뀌거나 빠질 수 있어요.":"पूरे महीने हर दिन हाज़िरी लगाओ तो पूरी हाज़िरी का इनाम। स्कूल सामान का तोहफ़ा Pi नीति के अनुसार बदल या बंद हो सकता है।","일":"रवि","월":"सोम","화":"मंगल","수":"बुध","목":"गुरु","금":"शुक्र","토":"शनि",
 "취소":"रद्द करें","이 아이 프로필 지우기":"इस बच्चे की प्रोफ़ाइल हटाएँ","아이는 {0}명까지 넣을 수 있어요":"ज़्यादा से ज़्यादा {0} बच्चे जोड़ सकते हैं","{0} 프로필을 지울까요?":"{0} की प्रोफ़ाइल हटाएँ?","도장판, 친구 키우기, 일기 등 이 아이의 기록이 모두 지워져요.":"इस बच्चे के सारे रिकॉर्ड (स्टैम्प, दोस्त, डायरी) हट जाएँगे।","지우기":"हटाएँ",
 "생일":"जन्मदिन","선택 · 생일날 깜짝 선물이 있어요":"वैकल्पिक · जन्मदिन पर सरप्राइज़","생일 축하합니다":"जन्मदिन मुबारक हो","사랑하는 {0}의":"प्यारे {0} को जन्मदिन मुबारक","오늘은 {0}의 {1}번째 생일!":"आज {0} का {1}वाँ जन्मदिन है!","오늘은 {0}의 생일!":"आज {0} का जन्मदिन है!","생일 노래 듣기":"जन्मदिन गीत सुनें","생일 선물은 이미 받았어요":"जन्मदिन का तोहफ़ा मिल चुका है","생일 선물로 햇살 ☀️ {0}개를 줄게!":"जन्मदिन का तोहफ़ा: {0} ☀️ धूप!","선물 받기!":"तोहफ़ा खोलो!","에헴~ 생일 축하하구먼! 한 살 더 멋져졌네!":"अहम~ जन्मदिन मुबारक! एक साल बड़े और भी शानदार!","햇살 {0}개를 받았어요! 나의 친구에게 써 보세요":"{0} धूप मिली! अपने दोस्त के लिए इस्तेमाल करो","이 폰에서는 소리를 낼 수 없어요":"यह फ़ोन आवाज़ नहीं चला सकता","한 번 더 부르기":"फिर से गाओ","오늘은 {0}의 생일이에요!":"आज {0} का जन्मदिन है!","노래 듣기":"गीत सुनें",
 "이 폰에서는 앱 마이크가 안 돼요":"इस फ़ोन पर ऐप का माइक नहीं चलता","대신 이렇게 해 보세요!":"इसकी जगह ऐसे करो!","일기 쓰는 칸을 눌러요":"डायरी लिखने वाले खाने को दबाओ","키보드에 있는 <b>🎤 마이크 버튼</b>을 눌러요":"कीबोर्ड का <b>🎤 माइक बटन</b> दबाओ","말하면 글씨로 써져요!":"बोलो और लिखा जाएगा!","잘 안 들렸어요. 다시 눌러 말해 보세요":"ठीक से सुनाई नहीं दिया। फिर से दबाकर बोलो",
@@ -740,6 +754,7 @@ CT.hi.DW=["पापा", "मम्मी", "दादी", "दादाजी
 /* All 바르게 — Bahasa Indonesia */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.id={
+"출석 체크":"Absen","이번 달 {0}일":"{0} hari bulan ini","연속 {0}일":"Beruntun {0} hari","개근 중":"masih penuh","출석 완료":"Sudah absen","출석하기":"Absen","랭킹":"Peringkat","아직 순위가 없어요. 첫 번째 주인공이 되어 보세요!":"Belum ada peringkat. Jadilah yang pertama!","개근":"Penuh","{0}일":"{0} hari","에헴~ 오늘도 출석했구먼! 옳지옳지~":"Ehem~ hari ini absen lagi! Hebat~","에헴! 오늘 출석 도장 찍으러 왔니?":"Ehem! Datang untuk stempel absen hari ini?","하루도 안 빠지면 개근상이야!":"Jangan bolos sehari pun untuk dapat penghargaan absen penuh!","이번 달 출석":"Bulan ini","연속 출석":"Beruntun","오늘 출석 완료!":"Sudah absen hari ini!","7일 연속 출석하면 햇살 +5 보너스!":"Absen 7 hari berturut-turut dapat bonus +5 sinar!","{0}월 출석 랭킹":"Peringkat absen bulan {0}","나의 순위":"Peringkatku","{0}위":"Ke-{0}","친구 {0}명이 함께 출석하고 있어요":"{0} teman absen bersama","Pi로 로그인하면 랭킹에 이름이 올라가요":"Masuk dengan Pi agar namamu ada di peringkat","개근상을 탄 친구들에게 학용품을 드립니다!":"Teman yang dapat penghargaan absen penuh akan mendapat alat tulis!","한 달 동안 하루도 빠짐없이 출석하면 개근상이에요. 학용품 선물은 Pi 정책에 따라 바뀌거나 빠질 수 있어요.":"Absen setiap hari selama sebulan penuh untuk dapat penghargaan absen penuh. Hadiah alat tulis bisa berubah atau dihentikan sesuai kebijakan Pi.","일":"Min","월":"Sen","화":"Sel","수":"Rab","목":"Kam","금":"Jum","토":"Sab",
 "취소":"Batal","이 아이 프로필 지우기":"Hapus profil anak ini","아이는 {0}명까지 넣을 수 있어요":"Bisa menambah hingga {0} anak","{0} 프로필을 지울까요?":"Hapus profil {0}?","도장판, 친구 키우기, 일기 등 이 아이의 기록이 모두 지워져요.":"Semua catatan anak ini (papan stempel, teman peliharaan, buku harian) akan terhapus.","지우기":"Hapus",
 "생일":"Ulang tahun","선택 · 생일날 깜짝 선물이 있어요":"opsional · ada kejutan di hari ulang tahun","생일 축하합니다":"Selamat ulang tahun","사랑하는 {0}의":"Selamat ulang tahun {0} sayang","오늘은 {0}의 {1}번째 생일!":"Hari ini ulang tahun {0} yang ke-{1}!","오늘은 {0}의 생일!":"Hari ini ulang tahun {0}!","생일 노래 듣기":"Dengar lagu ulang tahun","생일 선물은 이미 받았어요":"Kado ulang tahun sudah diterima","생일 선물로 햇살 ☀️ {0}개를 줄게!":"Kado ulang tahun: {0} ☀️ sinar matahari!","선물 받기!":"Buka kado!","에헴~ 생일 축하하구먼! 한 살 더 멋져졌네!":"Ehem~ selamat ulang tahun! Tambah umur makin keren!","햇살 {0}개를 받았어요! 나의 친구에게 써 보세요":"Dapat {0} sinar matahari! Pakai untuk temanmu","이 폰에서는 소리를 낼 수 없어요":"Ponsel ini tidak bisa memutar suara","한 번 더 부르기":"Nyanyi lagi","오늘은 {0}의 생일이에요!":"Hari ini ulang tahun {0}!","노래 듣기":"Dengar lagu",
 "이 폰에서는 앱 마이크가 안 돼요":"Mikrofon aplikasi tidak bisa di ponsel ini","대신 이렇게 해 보세요!":"Coba cara ini!","일기 쓰는 칸을 눌러요":"Tekan kotak tulisan buku harian","키보드에 있는 <b>🎤 마이크 버튼</b>을 눌러요":"Tekan <b>tombol 🎤 mikrofon</b> di keyboard","말하면 글씨로 써져요!":"Bicara jadi tulisan!","잘 안 들렸어요. 다시 눌러 말해 보세요":"Tidak terdengar jelas. Tekan dan coba lagi",
@@ -867,6 +882,7 @@ CT.id.DW=["ayah", "ibu", "nenek", "kakek", "bayi", "aku", "teman", "kakak laki-l
 /* All 바르게 — 日本語 */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.ja={
+"출석 체크":"しゅっせき","이번 달 {0}일":"こんげつ {0}にち","연속 {0}일":"れんぞく {0}にち","개근 중":"かいきん ちゅう","출석 완료":"しゅっせき ずみ","출석하기":"しゅっせきする","랭킹":"ランキング","아직 순위가 없어요. 첫 번째 주인공이 되어 보세요!":"まだ ランキングが ないよ。いちばんに なろう!","개근":"かいきん","{0}일":"{0}にち","에헴~ 오늘도 출석했구먼! 옳지옳지~":"えっへん~ きょうも しゅっせきしたね! よしよし~","에헴! 오늘 출석 도장 찍으러 왔니?":"えっへん! きょうの しゅっせきスタンプを おしにきたの?","하루도 안 빠지면 개근상이야!":"いちにちも やすまなければ かいきんしょう!","이번 달 출석":"こんげつ","연속 출석":"れんぞく","오늘 출석 완료!":"きょうは しゅっせき ずみ!","7일 연속 출석하면 햇살 +5 보너스!":"7にち れんぞくで おひさま +5 ボーナス!","{0}월 출석 랭킹":"{0}がつ しゅっせき ランキング","나의 순위":"わたしの じゅんい","{0}위":"{0}い","친구 {0}명이 함께 출석하고 있어요":"ともだち {0}にんが いっしょに しゅっせき ちゅう","Pi로 로그인하면 랭킹에 이름이 올라가요":"Piで ログインすると ランキングに のるよ","개근상을 탄 친구들에게 학용품을 드립니다!":"かいきんしょうの ともだちには ぶんぼうぐを プレゼント!","한 달 동안 하루도 빠짐없이 출석하면 개근상이에요. 학용품 선물은 Pi 정책에 따라 바뀌거나 빠질 수 있어요.":"1かげつ まいにち しゅっせきすると かいきんしょう。ぶんぼうぐの プレゼントは Piの ルールで かわったり なくなったり することが あります。","일":"にち","월":"げつ","화":"か","수":"すい","목":"もく","금":"きん","토":"ど",
 "취소":"キャンセル","이 아이 프로필 지우기":"この子の プロフィールを けす","아이는 {0}명까지 넣을 수 있어요":"こどもは {0}にんまで ついかできます","{0} 프로필을 지울까요?":"{0}の プロフィールを けしますか?","도장판, 친구 키우기, 일기 등 이 아이의 기록이 모두 지워져요.":"スタンプ・そだてる ともだち・にっきなど、この子の きろくが すべて けされます。","지우기":"けす",
 "생일":"たんじょうび","선택 · 생일날 깜짝 선물이 있어요":"にゅうりょくは じゆう · たんじょうびに サプライズが あるよ","생일 축하합니다":"ハッピーバースデー トゥーユー","사랑하는 {0}의":"ハッピーバースデー ディア {0}","오늘은 {0}의 {1}번째 생일!":"きょうは {0}の {1}さいの たんじょうび!","오늘은 {0}의 생일!":"きょうは {0}の たんじょうび!","생일 노래 듣기":"たんじょうびの うたを きく","생일 선물은 이미 받았어요":"たんじょうびプレゼントは もう もらったよ","생일 선물로 햇살 ☀️ {0}개를 줄게!":"たんじょうびプレゼント: ☀️おひさま {0}こ!","선물 받기!":"プレゼントを もらう!","에헴~ 생일 축하하구먼! 한 살 더 멋져졌네!":"えっへん~ おたんじょうび おめでとう! ひとつ おおきく なったね!","햇살 {0}개를 받았어요! 나의 친구에게 써 보세요":"おひさま {0}こ もらったよ! おともだちに つかってね","이 폰에서는 소리를 낼 수 없어요":"この スマホでは おとが でません","한 번 더 부르기":"もういちど うたう","오늘은 {0}의 생일이에요!":"きょうは {0}の たんじょうび!","노래 듣기":"うたを きく",
 "이 폰에서는 앱 마이크가 안 돼요":"この スマホでは アプリの マイクが つかえません","대신 이렇게 해 보세요!":"かわりに こうしてみてね!","일기 쓰는 칸을 눌러요":"にっきを かく ところを おす","키보드에 있는 <b>🎤 마이크 버튼</b>을 눌러요":"キーボードの <b>🎤 マイクボタン</b>を おす","말하면 글씨로 써져요!":"はなすと じに なるよ!","잘 안 들렸어요. 다시 눌러 말해 보세요":"よく きこえなかったよ。もういちど おして はなしてね",
@@ -994,6 +1010,7 @@ CT.ja.DW=["パパ", "ママ", "おばあちゃん", "おじいちゃん", "あ�
 /* All 바르게 — Tiếng Việt */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.vi={
+"출석 체크":"Điểm danh","이번 달 {0}일":"{0} ngày tháng này","연속 {0}일":"Liên tiếp {0} ngày","개근 중":"đang chuyên cần","출석 완료":"Đã điểm danh","출석하기":"Điểm danh","랭킹":"Xếp hạng","아직 순위가 없어요. 첫 번째 주인공이 되어 보세요!":"Chưa có xếp hạng. Hãy là người đầu tiên!","개근":"Chuyên cần","{0}일":"{0} ngày","에헴~ 오늘도 출석했구먼! 옳지옳지~":"E hèm~ hôm nay lại điểm danh rồi! Giỏi lắm~","에헴! 오늘 출석 도장 찍으러 왔니?":"E hèm! Đến đóng dấu điểm danh hôm nay à?","하루도 안 빠지면 개근상이야!":"Không nghỉ ngày nào là được giải chuyên cần!","이번 달 출석":"Tháng này","연속 출석":"Liên tiếp","오늘 출석 완료!":"Đã điểm danh hôm nay!","7일 연속 출석하면 햇살 +5 보너스!":"Điểm danh 7 ngày liên tiếp được thưởng +5 nắng!","{0}월 출석 랭킹":"Xếp hạng điểm danh tháng {0}","나의 순위":"Hạng của em","{0}위":"Hạng {0}","친구 {0}명이 함께 출석하고 있어요":"{0} bạn đang cùng điểm danh","Pi로 로그인하면 랭킹에 이름이 올라가요":"Đăng nhập Pi để có tên trên bảng xếp hạng","개근상을 탄 친구들에게 학용품을 드립니다!":"Bạn nào đạt giải chuyên cần sẽ được tặng đồ dùng học tập!","한 달 동안 하루도 빠짐없이 출석하면 개근상이에요. 학용품 선물은 Pi 정책에 따라 바뀌거나 빠질 수 있어요.":"Điểm danh mỗi ngày suốt một tháng là đạt giải chuyên cần. Quà đồ dùng học tập có thể thay đổi hoặc dừng theo chính sách của Pi.","일":"CN","월":"T2","화":"T3","수":"T4","목":"T5","금":"T6","토":"T7",
 "취소":"Hủy","이 아이 프로필 지우기":"Xóa hồ sơ của bé này","아이는 {0}명까지 넣을 수 있어요":"Có thể thêm tối đa {0} bé","{0} 프로필을 지울까요?":"Xóa hồ sơ của {0}?","도장판, 친구 키우기, 일기 등 이 아이의 기록이 모두 지워져요.":"Mọi ghi chép của bé (bảng tem, nuôi bạn, nhật ký…) sẽ bị xóa.","지우기":"Xóa",
 "생일":"Sinh nhật","선택 · 생일날 깜짝 선물이 있어요":"không bắt buộc · có quà bất ngờ vào sinh nhật","생일 축하합니다":"Chúc mừng sinh nhật","사랑하는 {0}의":"Chúc mừng sinh nhật {0} yêu quý","오늘은 {0}의 {1}번째 생일!":"Hôm nay là sinh nhật lần thứ {1} của {0}!","오늘은 {0}의 생일!":"Hôm nay là sinh nhật của {0}!","생일 노래 듣기":"Nghe bài hát sinh nhật","생일 선물은 이미 받았어요":"Đã nhận quà sinh nhật rồi","생일 선물로 햇살 ☀️ {0}개를 줄게!":"Quà sinh nhật: {0} ☀️ nắng!","선물 받기!":"Nhận quà!","에헴~ 생일 축하하구먼! 한 살 더 멋져졌네!":"E hèm~ chúc mừng sinh nhật! Thêm một tuổi càng giỏi!","햇살 {0}개를 받았어요! 나의 친구에게 써 보세요":"Đã nhận {0} nắng! Dùng cho bạn của con nhé","이 폰에서는 소리를 낼 수 없어요":"Máy này không phát được âm thanh","한 번 더 부르기":"Hát lại lần nữa","오늘은 {0}의 생일이에요!":"Hôm nay là sinh nhật của {0}!","노래 듣기":"Nghe hát",
 "이 폰에서는 앱 마이크가 안 돼요":"Micro của ứng dụng không dùng được trên máy này","대신 이렇게 해 보세요!":"Hãy làm thế này nhé!","일기 쓰는 칸을 눌러요":"Bấm vào ô viết nhật ký","키보드에 있는 <b>🎤 마이크 버튼</b>을 눌러요":"Nhấn <b>nút 🎤 micro</b> trên bàn phím","말하면 글씨로 써져요!":"Nói là thành chữ!","잘 안 들렸어요. 다시 눌러 말해 보세요":"Chưa nghe rõ. Bấm và nói lại nhé",
@@ -1121,6 +1138,7 @@ CT.vi.DW=["bố", "mẹ", "bà", "ông", "em bé", "con", "bạn", "anh trai", "
 /* All 바르게 — 中文 */
 var TR=window.TR||{};var CT=window.CT||{};
 TR.zh={
+"출석 체크":"签到","이번 달 {0}일":"本月{0}天","연속 {0}일":"连续{0}天","개근 중":"全勤中","출석 완료":"已签到","출석하기":"签到","랭킹":"排行榜","아직 순위가 없어요. 첫 번째 주인공이 되어 보세요!":"还没有排名，来当第一名吧！","개근":"全勤","{0}일":"{0}天","에헴~ 오늘도 출석했구먼! 옳지옳지~":"嗯哼~ 今天也签到了！真棒~","에헴! 오늘 출석 도장 찍으러 왔니?":"嗯哼！来盖今天的签到章吗？","하루도 안 빠지면 개근상이야!":"一天都不缺就是全勤奖！","이번 달 출석":"本月签到","연속 출석":"连续签到","오늘 출석 완료!":"今天已签到！","7일 연속 출석하면 햇살 +5 보너스!":"连续签到7天，阳光+5奖励！","{0}월 출석 랭킹":"{0}月签到排行榜","나의 순위":"我的排名","{0}위":"第{0}名","친구 {0}명이 함께 출석하고 있어요":"{0}位小朋友一起签到中","Pi로 로그인하면 랭킹에 이름이 올라가요":"用Pi登录就能上排行榜","개근상을 탄 친구들에게 학용품을 드립니다!":"获得全勤奖的小朋友将获赠文具！","한 달 동안 하루도 빠짐없이 출석하면 개근상이에요. 학용품 선물은 Pi 정책에 따라 바뀌거나 빠질 수 있어요.":"一个月每天都签到就是全勤奖。文具礼物可能根据Pi政策变更或取消。","일":"日","월":"一","화":"二","수":"三","목":"四","금":"五","토":"六",
 "취소":"取消","이 아이 프로필 지우기":"删除这个孩子的资料","아이는 {0}명까지 넣을 수 있어요":"最多可以添加{0}个孩子","{0} 프로필을 지울까요?":"要删除{0}的资料吗？","도장판, 친구 키우기, 일기 등 이 아이의 기록이 모두 지워져요.":"这个孩子的印章板、养成小伙伴、日记等记录都会被删除。","지우기":"删除",
 "생일":"生日","선택 · 생일날 깜짝 선물이 있어요":"选填 · 生日当天有惊喜","생일 축하합니다":"祝你生日快乐","사랑하는 {0}의":"祝亲爱的{0}生日快乐","오늘은 {0}의 {1}번째 생일!":"今天是{0}的{1}岁生日！","오늘은 {0}의 생일!":"今天是{0}的生日！","생일 노래 듣기":"听生日歌","생일 선물은 이미 받았어요":"已经领过生日礼物了","생일 선물로 햇살 ☀️ {0}개를 줄게!":"生日礼物：{0}个☀️阳光！","선물 받기!":"领取礼物！","에헴~ 생일 축하하구먼! 한 살 더 멋져졌네!":"嗯哼~ 生日快乐！长大一岁更棒啦！","햇살 {0}개를 받았어요! 나의 친구에게 써 보세요":"收到{0}个阳光！给你的小伙伴用吧","이 폰에서는 소리를 낼 수 없어요":"这部手机不能播放声音","한 번 더 부르기":"再唱一次","오늘은 {0}의 생일이에요!":"今天是{0}的生日！","노래 듣기":"听歌",
 "이 폰에서는 앱 마이크가 안 돼요":"这部手机不能使用应用里的麦克风","대신 이렇게 해 보세요!":"试试这样做！","일기 쓰는 칸을 눌러요":"点一下写日记的格子","키보드에 있는 <b>🎤 마이크 버튼</b>을 눌러요":"按键盘上的<b>🎤麦克风按钮</b>","말하면 글씨로 써져요!":"说话就能变成字！","잘 안 들렸어요. 다시 눌러 말해 보세요":"没听清楚，再按一次说说看",
@@ -1341,7 +1359,7 @@ var AV=['🐣','🐰','🐻','🦊','🐼','🐯','🦄','🐬','🐶','🐱','�
 function render(){var h='';
   if(!KID&&VIEW!=='kid'&&VIEW!=='cover')VIEW='kid';
   if(VIEW==='cover')h=coverView();else if(VIEW==='kid')h=kidView();else if(VIEW==='home')h=homeView();else if(VIEW==='stamp')h=stampView();
-  else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();else if(VIEW==='diary')h=diaryView();else if(VIEW==='math')h=mathView();
+  else if(VIEW==='story')h=storyView();else if(VIEW==='toon')h=toonView();else if(VIEW==='draw')h=drawView();else if(VIEW==='manner')h=mannerView();else if(VIEW==='grow')h=growView();else if(VIEW==='diary')h=diaryView();else if(VIEW==='att')h=attView();else if(VIEW==='math')h=mathView();
   $('#app').innerHTML=h;if(VIEW==='draw'&&SUB.step==='time')tick();if(window.bdCheck)bdCheck();}
 function logo(center){return '<div class="logo"'+(center?' style="justify-content:center;margin:18px 0 6px"':'')+'>'+twinsLogo()+'<div><h1>all <span>'+t('바르게')+'</span></h1><small>'+t('꼰둥이와 함께 자라는 바른 습관')+'</small></div>'+(center?'':'<div style="margin-left:auto">'+langSel()+'</div>')+'</div>'}
 
@@ -1387,7 +1405,7 @@ function saveKid(){var n=$('#kn').value.trim().replace(/[<>{}\[\]]/g,'');if(!n){
 /* ---------- 홈 ---------- */
 function homeView(){var s=SB,cnt=s?s.stamps.length:0,goal=s?s.goal:10,ti=todayToonIdx();
   return logo()+greet(t('에헴~ {0}, 오늘도 바르게!',esc(voc(KID.name))),t('잘하면 내가 "옳지옳지~" 해 줄게!'))+
-  '<div class="kid"><div class="av">'+avHTML()+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed ad" onclick="kidAdd()">➕ '+t('추가')+'</button><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+kidTabs()+
+  '<div class="kid"><div class="av">'+avHTML()+'</div><div><div class="nm">'+esc(KID.name)+'</div><div class="sub">'+t('오늘도 바르게, 즐겁게!')+' ✨</div></div><button class="ed ad" onclick="kidAdd()">➕ '+t('추가')+'</button><button class="ed" onclick="go(\'kid\')">✏️ '+t('고치기')+'</button></div>'+kidTabs()+attCard()+
   bdBanner()+'<button class="card wide" onclick="go(\'manner\')"><div class="wl"><div class="icrow"><span class="ic">🐣</span><span class="icsay">'+t('에헴! 라떼는 말야~')+'</span></div><h3>'+t('아름다운 어린이 되기')+'</h3><p>'+t('꼰둥이 배지 {0}개',ls('mq')||0)+'</p></div><img src="'+IMG.ks_f+'" alt=""><img src="'+IMG.kd_f+'" alt=""></button>'+
   growCard()+'<div class="grid">'+
    '<button class="card g" onclick="go(\'stamp\')"><div class="ic"><span class="seal"><b>'+t('참 잘')+'</b><b>'+t('했어요')+'</b></span></div><h3>'+t('칭찬 도장판')+'</h3><p>'+t('약속을 지키면 도장 쾅!')+'<br>'+t('다 모으면 상장 카드')+'</p></button>'+
@@ -1673,9 +1691,10 @@ function grTok(){return GR?GR.tok:(ls('gtok')||0)}
 function earn(k){var d=today(),e=ls('gearn')||{};if(e.d!==d)e={d:d};if(e[k])return 0;e[k]=1;ls('gearn',e);var n=EARN[k]||1;
   if(GR){GR.tok+=n;grSave()}else ls('gtok',(ls('gtok')||0)+n);
   setTimeout(function(){toast('☀️ '+GU(33,n))},900);return n}
-function streak(){var ck=(GR&&GR.ck)||ls('gck')||{},n=0,d=new Date(today());while(ck[d.toISOString().slice(0,10)]){n++;d.setDate(d.getDate()-1)}return n}
-function checkIn(){var d=today();if(!GR)return;GR.ck=GR.ck||{};if(GR.ck[d])return;GR.ck[d]=1;var e=ls('gearn')||{};if(e.d!==d)e={d:d};e.ck=1;ls('gearn',e);
-  var b=EARN.ck,s=streak();if(s>0&&s%7===0)b+=5;GR.tok+=b;grSave();buzz();confetti(18);toast('☀️ '+GU(33,b)+(b>3?' 🎉 '+GU(10):''));render()}
+function streak(){var ck=(GR&&GR.ck)||ls('gck')||{},n=0,d=new Date(today());if(!ck[today()])d.setDate(d.getDate()-1);while(ck[d.toISOString().slice(0,10)]){n++;d.setDate(d.getDate()-1)}return n}
+function ckMap(){return GR?(GR.ck=GR.ck||{}):(ls('gck')||{})}
+function checkIn(){var d=today(),ck=ckMap();if(ck[d])return;ck[d]=1;if(!GR)ls('gck',ck);var e=ls('gearn')||{};if(e.d!==d)e={d:d};e.ck=1;ls('gearn',e);
+  var b=EARN.ck,s=streak();if(s>0&&s%7===0)b+=5;if(GR){GR.tok+=b;grSave()}else ls('gtok',(ls('gtok')||0)+b);buzz();confetti(18);toast('☀️ '+GU(33,b)+(b>3?' 🎉 '+GU(10):''));render()}
 function care(k){var d=today();GR.care=GR.care||{};var c=GR.care[d]||{};if(c[k])return;if(GR.tok<1){toast(GU(16));return}
   GR.tok--;c[k]=1;GR.care[d]=c;var done=c.w&&c.s&&c.l;if(done){GR.days++;GR.last=d}grSave();buzz();
   GR._fx=k;render();setTimeout(function(){GR._fx=null},900);
@@ -1715,7 +1734,7 @@ function growView(){
   (GR.album&&GR.album.length?'<div class="box"><h2>📸 '+GU(47)+'</h2><div class="gshop">'+GR.album.map(function(a){return '<div class="own"><span>'+a.e+'</span>'+esc(a.n)+'<i>'+a.d+'</i></div>'}).join('')+'</div></div>':'')+
   (GR.days>=365?'<button class="btn s" onclick="go(\'grow\',{pick:1})">🌱 '+GU(32)+'</button>':'')}
 function startGrow(){if(!_gp||!petOpen(_gp)){toast(GU(2));return}if(GRS[_gp]){var k=_gp;_gp=null;grSwitch(k);return}var nm=($('#gname').value||'').trim().replace(/[<>{}\[\]]/g,'')||PNm(_gp);
-  var tok=GR?GR.tok:(ls('gtok')||0),ck=GR?GR.ck:{};GR={pet:_gp,name:nm,start:today(),days:0,tok:tok,ck:ck,care:{},own:[],wear:{},lv:0,album:[]};ls('gtok',0);grSave();_gp=null;confetti(30);go('grow')}
+  var tok=GR?GR.tok:(ls('gtok')||0),ck=GR?GR.ck:(ls('gck')||{});GR={pet:_gp,name:nm,start:today(),days:0,tok:tok,ck:ck,care:{},own:[],wear:{},lv:0,album:[]};ls('gtok',0);grSave();_gp=null;confetti(30);go('grow')}
 /* 활동하면 햇살 */
 (function(){var w=function(n,k,cond){var f=window[n];window[n]=function(){var r=f.apply(this,arguments);if(!cond||cond())earn(k);return r}};
  w('stamp','stamp');w('makeStory','story');w('mannerNext','manner',function(){return MQ&&MQ.i>=MQ.q.length});
@@ -1901,6 +1920,33 @@ function kidAvOf(id){var k=lsOf('kid',id),p=lsOf('photo',id);return (k&&k.av==='
 function kidTabs(){var ids=kidIds();if(ids.length<2)return '';
   return '<div class="ktabs">'+ids.map(function(id){var k=lsOf('kid',id);if(!k)return '';return '<button class="'+(id===KSFX?'on':'')+'" onclick="kidSwitch(\''+id+'\')"><span class="kav">'+kidAvOf(id)+'</span>'+esc(k.name)+'</button>'}).join('')+'</div>'}
 
+/* ---------- 출석 체크 + 이번 달 출석 순위 (개근상) ---------- */
+var AR=null,ART=0;
+function attSend(){var tk=piTok&&piTok();if(!tk||!KID)return;api('/att',{token:tk,kid:KSFX,nm:KID.name,av:KID.av}).then(function(){ART=0;if(VIEW==='att')attLoad()})}
+function attLoad(){if(Date.now()-ART<20000&&AR)return;ART=Date.now();api('/attrank',{token:(window.piTok&&piTok())||'',kid:KSFX}).then(function(r){if(r&&r.ok){AR=r;if(VIEW==='att')render()}})}
+function attMonth(){var ck=ckMap(),ym=today().slice(0,7),n=0;Object.keys(ck).forEach(function(k){if(k.slice(0,7)===ym)n++});return n}
+function attFull(){return attMonth()>=+today().slice(8,10)}
+function attCard(){var d=today(),ok=!!ckMap()[d],n=attMonth(),s=streak();
+  return '<div class="attc"><button class="attl" onclick="go(\'att\')"><span class="attic">📅</span><span><b>'+t('출석 체크')+'</b><small>'+t('이번 달 {0}일',n)+' · '+t('연속 {0}일',s)+(attFull()&&n>2?' · 🏅 '+t('개근 중'):'')+'</small></span></button>'+
+  '<button class="attb'+(ok?' done':'')+'" onclick="'+(ok?'go(\'att\')':'checkIn()')+'">'+(ok?'✅ '+t('출석 완료'):'👆 '+t('출석하기'))+'</button>'+
+  '<button class="attr" onclick="go(\'att\')">🏆 '+t('랭킹')+'</button></div>'}
+function attView(){attLoad();var d=today(),ck=ckMap(),ok=!!ck[d],n=attMonth(),s=streak();
+  var t0=new Date(d),y=t0.getFullYear(),m=t0.getMonth(),first=new Date(y,m,1).getDay(),dn=new Date(y,m+1,0).getDate(),cal='';
+  for(var i=0;i<first;i++)cal+='<i></i>';
+  for(var k=1;k<=dn;k++){var ds=y+'-'+String(m+1).padStart(2,'0')+'-'+String(k).padStart(2,'0');cal+='<i class="'+(ck[ds]?'on':'')+(ds===d?' td':'')+(ds>d?' fu':'')+'">'+(ck[ds]?'<span class="ckst">✓</span>':k)+'</i>'}
+  var rk='';if(!AR)rk='<p class="mut" style="text-align:center">…</p>';else{
+    if(!AR.top.length)rk='<p class="mut" style="text-align:center">'+t('아직 순위가 없어요. 첫 번째 주인공이 되어 보세요!')+'</p>';
+    AR.top.slice(0,20).forEach(function(x,i){rk+='<div class="rkr'+(x.me?' me':'')+'"><span class="rkn">'+(i<3?['🥇','🥈','🥉'][i]:(i+1))+'</span><span class="rka">'+esc(x.a)+'</span><span class="rku">'+esc(x.n)+(x.full?' <em>🏅 '+t('개근')+'</em>':'')+'</span><b>'+t('{0}일',x.s)+'</b></div>'})}
+  return hdr('📅 '+t('출석 체크'))+greet(ok?t('에헴~ 오늘도 출석했구먼! 옳지옳지~'):t('에헴! 오늘 출석 도장 찍으러 왔니?'),t('하루도 안 빠지면 개근상이야!'))+
+  '<div class="box"><div class="attst"><div><b>'+n+'</b><small>'+t('이번 달 출석')+'</small></div><div><b>'+s+'</b><small>'+t('연속 출석')+'</small></div><div><b>'+(attFull()&&n>0?'🏅':'—')+'</b><small>'+t('개근')+'</small></div></div>'+
+  '<div class="attcal">'+['일','월','화','수','목','금','토'].map(function(w){return '<u>'+t(w)+'</u>'}).join('')+cal+'</div>'+
+  '<button class="btn '+(ok?'w':'y')+'" '+(ok?'disabled':'')+' onclick="checkIn()">'+(ok?'✅ '+t('오늘 출석 완료!'):'📅 '+t('출석하기')+' (+3 ☀️)')+'</button>'+
+  '<p class="mut" style="text-align:center;font-size:12px;margin:8px 0 0">'+t('7일 연속 출석하면 햇살 +5 보너스!')+'</p></div>'+
+  '<div class="box"><div style="display:flex;align-items:center"><h2 style="margin:0">🏆 '+t('{0}월 출석 랭킹',m+1)+'</h2>'+(AR&&AR.me?'<span class="chip s on" style="margin-left:auto;padding:4px 10px;font-size:12px">'+t('나의 순위')+' '+t('{0}위',AR.me.r)+'</span>':'')+'</div>'+
+  (AR&&AR.n?'<p class="mut" style="font-size:12px;margin:4px 0 8px">'+t('친구 {0}명이 함께 출석하고 있어요',AR.n)+'</p>':'')+'<div class="rk">'+rk+'</div>'+
+  (window.piTok&&piTok()?'':'<p class="mut" style="font-size:12px;text-align:center">'+t('Pi로 로그인하면 랭킹에 이름이 올라가요')+'</p>')+
+  '<div class="attnote">🎁 <b>'+t('개근상을 탄 친구들에게 학용품을 드립니다!')+'</b><br>'+t('한 달 동안 하루도 빠짐없이 출석하면 개근상이에요. 학용품 선물은 Pi 정책에 따라 바뀌거나 빠질 수 있어요.')+'</div></div>'}
+
 /* ---------- Pi 로그인 · 클라우드 저장 · Pi 결제 ---------- */
 var SYNC_KEYS=['kid','sb','grow','grows','gcur','gearn','mq','gtok','gprem','gdeco','story','gp_plants','gp_animals','gp_sea','gp_space','math','bday'];
 function piTok(){return window.PI_SESSION&&window.PI_SESSION.token}
@@ -1933,7 +1979,7 @@ payPi=function(i){var it=PAY[i];gate(async function(){
     onReadyForServerCompletion:function(id,tx){api('/pay/complete',{token:tk,paymentId:id,txid:tx}).then(function(r){if(r&&r.ok){claim().then(function(){confetti(40);toast(it.e+' '+GU(59))})}else toast(LU(15))})},
     onCancel:function(){toast(LU(16))},onError:function(){toast(LU(15))}})}catch(e){toast(LU(15))}})};
 /* 출석은 통계에 세기 */
-(function(){var c=window.checkIn;window.checkIn=function(){var had=GR&&GR.ck&&GR.ck[today()];var r=c.apply(this,arguments);if(!had&&piTok())api('/ev',{token:piTok(),e:'ck'});return r}})();
+(function(){var c=window.checkIn;window.checkIn=function(){var had=!!ckMap()[today()];var r=c.apply(this,arguments);if(!had&&piTok()){api('/ev',{token:piTok(),e:'ck'});attSend()}return r}})();
 /* 방문 기기 수 (이름 없음) */
 (function(){try{var d=ls('dev');if(!d){d=Math.random().toString(36).slice(2,12);ls('dev',d)}fetch('/hit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({d:d,l:LANG})}).catch(function(){})}catch(e){}})();
 /* 파이 브라우저가 아니면 열어 달라고 안내 (샌드박스·미리보기 iframe 안에서는 안 띄워요) */

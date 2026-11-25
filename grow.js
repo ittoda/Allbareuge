@@ -67,9 +67,10 @@ function grTok(){return GR?GR.tok:(ls('gtok')||0)}
 function earn(k){var d=today(),e=ls('gearn')||{};if(e.d!==d)e={d:d};if(e[k])return 0;e[k]=1;ls('gearn',e);var n=EARN[k]||1;
   if(GR){GR.tok+=n;grSave()}else ls('gtok',(ls('gtok')||0)+n);
   setTimeout(function(){toast('☀️ '+GU(33,n))},900);return n}
-function streak(){var ck=(GR&&GR.ck)||ls('gck')||{},n=0,d=new Date(today());while(ck[d.toISOString().slice(0,10)]){n++;d.setDate(d.getDate()-1)}return n}
-function checkIn(){var d=today();if(!GR)return;GR.ck=GR.ck||{};if(GR.ck[d])return;GR.ck[d]=1;var e=ls('gearn')||{};if(e.d!==d)e={d:d};e.ck=1;ls('gearn',e);
-  var b=EARN.ck,s=streak();if(s>0&&s%7===0)b+=5;GR.tok+=b;grSave();buzz();confetti(18);toast('☀️ '+GU(33,b)+(b>3?' 🎉 '+GU(10):''));render()}
+function streak(){var ck=(GR&&GR.ck)||ls('gck')||{},n=0,d=new Date(today());if(!ck[today()])d.setDate(d.getDate()-1);while(ck[d.toISOString().slice(0,10)]){n++;d.setDate(d.getDate()-1)}return n}
+function ckMap(){return GR?(GR.ck=GR.ck||{}):(ls('gck')||{})}
+function checkIn(){var d=today(),ck=ckMap();if(ck[d])return;ck[d]=1;if(!GR)ls('gck',ck);var e=ls('gearn')||{};if(e.d!==d)e={d:d};e.ck=1;ls('gearn',e);
+  var b=EARN.ck,s=streak();if(s>0&&s%7===0)b+=5;if(GR){GR.tok+=b;grSave()}else ls('gtok',(ls('gtok')||0)+b);buzz();confetti(18);toast('☀️ '+GU(33,b)+(b>3?' 🎉 '+GU(10):''));render()}
 function care(k){var d=today();GR.care=GR.care||{};var c=GR.care[d]||{};if(c[k])return;if(GR.tok<1){toast(GU(16));return}
   GR.tok--;c[k]=1;GR.care[d]=c;var done=c.w&&c.s&&c.l;if(done){GR.days++;GR.last=d}grSave();buzz();
   GR._fx=k;render();setTimeout(function(){GR._fx=null},900);
@@ -109,7 +110,7 @@ function growView(){
   (GR.album&&GR.album.length?'<div class="box"><h2>📸 '+GU(47)+'</h2><div class="gshop">'+GR.album.map(function(a){return '<div class="own"><span>'+a.e+'</span>'+esc(a.n)+'<i>'+a.d+'</i></div>'}).join('')+'</div></div>':'')+
   (GR.days>=365?'<button class="btn s" onclick="go(\'grow\',{pick:1})">🌱 '+GU(32)+'</button>':'')}
 function startGrow(){if(!_gp||!petOpen(_gp)){toast(GU(2));return}if(GRS[_gp]){var k=_gp;_gp=null;grSwitch(k);return}var nm=($('#gname').value||'').trim().replace(/[<>{}\[\]]/g,'')||PNm(_gp);
-  var tok=GR?GR.tok:(ls('gtok')||0),ck=GR?GR.ck:{};GR={pet:_gp,name:nm,start:today(),days:0,tok:tok,ck:ck,care:{},own:[],wear:{},lv:0,album:[]};ls('gtok',0);grSave();_gp=null;confetti(30);go('grow')}
+  var tok=GR?GR.tok:(ls('gtok')||0),ck=GR?GR.ck:(ls('gck')||{});GR={pet:_gp,name:nm,start:today(),days:0,tok:tok,ck:ck,care:{},own:[],wear:{},lv:0,album:[]};ls('gtok',0);grSave();_gp=null;confetti(30);go('grow')}
 /* 활동하면 햇살 */
 (function(){var w=function(n,k,cond){var f=window[n];window[n]=function(){var r=f.apply(this,arguments);if(!cond||cond())earn(k);return r}};
  w('stamp','stamp');w('makeStory','story');w('mannerNext','manner',function(){return MQ&&MQ.i>=MQ.q.length});
