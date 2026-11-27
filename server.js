@@ -113,7 +113,8 @@ http.createServer(async (req, res) => {
       top.forEach((x, i) => { let o = {}; try { o = JSON.parse(nm[i] || '{}') } catch (e) {} x.n = mask(o.n); x.a = o.a || '🐣'; x.me = ids[i] === mem; x.full = x.s >= today });
       let me = null; if (mem) { const rk = await redis(['ZREVRANK', Z, mem]); const sc = await redis(['ZSCORE', Z, mem]); if (rk !== null && rk !== undefined) me = { r: +rk + 1, s: +sc } }
       const n = Number(await redis(['ZCARD', Z]) || 0);
-      return J(res, 200, { ok: true, top, me, n, day: today, ym });
+      const days = mem ? (await redis(['SMEMBERS', P + 'attd:' + ym + ':' + mem]).catch(() => []) || []) : []; // 이 아이가 이번 달 출석한 날짜 (기기가 바뀌어도 출석 표시 유지)
+      return J(res, 200, { ok: true, top, me, n, day: today, ym, days });
     }
     if (url === '/claim') { // 결제로 받은 햇살·특별친구·꾸미기 받아 가기
       const q = await body(req); const uid = await uidOf(q.token); if (!uid) return J(res, 401, { ok: false });

@@ -1955,7 +1955,7 @@ function kidIds(){var a=ls('kids');return Array.isArray(a)&&a.length?a:['']}
 function kidLoad(){KID=ls('kid')||null;SB=ls('sb')||null;STORY=ls('story')||null;if(STORY&&STORY.lang&&STORY.lang!==LANG)STORY=null;
   GRS=ls('grows')||{};if(!Object.keys(GRS).length){var o=ls('grow');if(o&&o.pet)GRS[o.pet]=o}var c=ls('gcur');GR=(c&&GRS[c])||GRS[Object.keys(GRS)[0]]||null;
   DY=null;MG=null;MQ=null;DR.topic=null;_bdShown=false;_av=null;_kn=null;_kb=null}
-function kidSwitch(id){if(id===KSFX)return;KSFX=id;ls('kcur',id);kidLoad();buzz();go(KID?'home':'kid')}
+function kidSwitch(id){if(id===KSFX)return;KSFX=id;ls('kcur',id);kidLoad();buzz();go(KID?'home':'kid');if(window.attLoad&&window.piTok&&piTok()){ART=0;attLoad()}}
 function kidAdd(){var ids=kidIds();if(ids.length>=KMAX){toast(t('아이는 {0}명까지 넣을 수 있어요',KMAX));return}
   var id='_k'+Date.now().toString(36).slice(-5);ids.push(id);ls('kids',ids);window._kprev=KSFX;KSFX=id;ls('kcur',id);kidLoad();go('kid')}
 function kidCancel(){var ids=kidIds().filter(function(x){return x!==KSFX});ls('kids',ids);var p=window._kprev;KSFX=ids.indexOf(p)>=0?p:ids[0];ls('kcur',KSFX);kidLoad();go(KID?'home':'kid')}
@@ -1969,7 +1969,9 @@ function kidTabs(){var ids=kidIds();if(ids.length<2)return '';
 /* ---------- 출석 체크 + 이번 달 출석 순위 (개근상) ---------- */
 var AR=null,ART=0;
 function attSend(){var tk=piTok&&piTok();if(!tk||!KID)return;api('/att',{token:tk,kid:KSFX,nm:KID.name,av:KID.av}).then(function(){ART=0;if(VIEW==='att')attLoad()})}
-function attLoad(){if(Date.now()-ART<20000&&AR)return;ART=Date.now();api('/attrank',{token:(window.piTok&&piTok())||'',kid:KSFX}).then(function(r){if(r&&r.ok){AR=r;if(VIEW==='att')render()}})}
+function attLoad(){if(Date.now()-ART<20000&&AR)return;ART=Date.now();var kf=KSFX;api('/attrank',{token:(window.piTok&&piTok())||'',kid:kf}).then(function(r){if(r&&r.ok){AR=r;if(kf===KSFX&&attMerge(r.days))render();else if(VIEW==='att')render()}})}
+/* 서버에 남은 출석 날짜를 이 기기에도 표시 (햇살은 다시 주지 않아요) */
+function attMerge(days){if(!days||!days.length)return false;var ck=ckMap(),ch=false;days.forEach(function(d){if(/^\d{4}-\d{2}-\d{2}$/.test(d)&&!ck[d]){ck[d]=1;ch=true}});if(!ch)return false;if(GR)grSave();else ls('gck',ck);var d=today();if(ck[d]){var e=ls('gearn')||{};if(e.d!==d)e={d:d};if(!e.ck){e.ck=1;ls('gearn',e)}}return true}
 function attMonth(){var ck=ckMap(),ym=today().slice(0,7),n=0;Object.keys(ck).forEach(function(k){if(k.slice(0,7)===ym)n++});return n}
 function attFull(){return attMonth()>=+today().slice(8,10)}
 function attCard(){var d=today(),ok=!!ckMap()[d],n=attMonth(),s=streak();
@@ -1994,7 +1996,7 @@ function attView(){attLoad();var d=today(),ck=ckMap(),ok=!!ck[d],n=attMonth(),s=
   '<div class="attnote">🎁 <b>'+t('개근상을 탄 친구들에게 학용품을 드립니다!')+'</b><br>'+t('한 달 동안 하루도 빠짐없이 출석하면 개근상이에요. 학용품 선물은 Pi 정책에 따라 바뀌거나 빠질 수 있어요.')+'</div></div>'}
 
 /* ---------- Pi 로그인 · 클라우드 저장 · Pi 결제 ---------- */
-var SYNC_KEYS=['kid','sb','grow','grows','gcur','gearn','mq','gtok','gprem','gdeco','story','gp_plants','gp_animals','gp_sea','gp_space','math','bday'];
+var SYNC_KEYS=['kid','sb','grow','grows','gcur','gearn','mq','gtok','gprem','gdeco','story','gp_plants','gp_animals','gp_sea','gp_space','math','bday','gck'];
 function piTok(){return window.PI_SESSION&&window.PI_SESSION.token}
 function api(u,d){return fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d||{})}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
 var _cdT=null,_pulling=false;
@@ -2012,7 +2014,7 @@ document.addEventListener('visibilitychange',function(){if(document.hidden&&_cdT
 function withTimeout(p,ms){return Promise.race([p,new Promise(function(r){setTimeout(function(){r(null)},ms)})])}
 var _logging=false;
 async function piStart(){if(_logging)return;_logging=true;var b=$('#piStart');if(b){b.disabled=true;b.textContent=LU(12)}
-  try{var inPi=/PiBrowser/i.test(navigator.userAgent)||window.top!==window.self;var s=(inPi&&window.piLogin)?await withTimeout(window.piLogin(),12000):null;if(s){api('/ev',{token:s.token,e:'login'});await cloudPull()}}catch(e){}
+  try{var inPi=/PiBrowser/i.test(navigator.userAgent)||window.top!==window.self;var s=(inPi&&window.piLogin)?await withTimeout(window.piLogin(),12000):null;if(s){api('/ev',{token:s.token,e:'login'});await cloudPull();ART=0;attLoad()}}catch(e){}
   _logging=false;go(KID?'home':'kid')}
 function acctLine(){var s=window.PI_SESSION;return s&&s.username?'<p class="mut" style="text-align:center;margin:8px 0 0">'+esc(LU(14,s.username))+'</p>':''}
 /* 실제 Pi 결제 (부모님 확인 뒤) */

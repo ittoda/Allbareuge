@@ -4,7 +4,7 @@ function kidIds(){var a=ls('kids');return Array.isArray(a)&&a.length?a:['']}
 function kidLoad(){KID=ls('kid')||null;SB=ls('sb')||null;STORY=ls('story')||null;if(STORY&&STORY.lang&&STORY.lang!==LANG)STORY=null;
   GRS=ls('grows')||{};if(!Object.keys(GRS).length){var o=ls('grow');if(o&&o.pet)GRS[o.pet]=o}var c=ls('gcur');GR=(c&&GRS[c])||GRS[Object.keys(GRS)[0]]||null;
   DY=null;MG=null;MQ=null;DR.topic=null;_bdShown=false;_av=null;_kn=null;_kb=null}
-function kidSwitch(id){if(id===KSFX)return;KSFX=id;ls('kcur',id);kidLoad();buzz();go(KID?'home':'kid')}
+function kidSwitch(id){if(id===KSFX)return;KSFX=id;ls('kcur',id);kidLoad();buzz();go(KID?'home':'kid');if(window.attLoad&&window.piTok&&piTok()){ART=0;attLoad()}}
 function kidAdd(){var ids=kidIds();if(ids.length>=KMAX){toast(t('아이는 {0}명까지 넣을 수 있어요',KMAX));return}
   var id='_k'+Date.now().toString(36).slice(-5);ids.push(id);ls('kids',ids);window._kprev=KSFX;KSFX=id;ls('kcur',id);kidLoad();go('kid')}
 function kidCancel(){var ids=kidIds().filter(function(x){return x!==KSFX});ls('kids',ids);var p=window._kprev;KSFX=ids.indexOf(p)>=0?p:ids[0];ls('kcur',KSFX);kidLoad();go(KID?'home':'kid')}

@@ -1,5 +1,5 @@
 /* ---------- Pi 로그인 · 클라우드 저장 · Pi 결제 ---------- */
-var SYNC_KEYS=['kid','sb','grow','grows','gcur','gearn','mq','gtok','gprem','gdeco','story','gp_plants','gp_animals','gp_sea','gp_space','math','bday'];
+var SYNC_KEYS=['kid','sb','grow','grows','gcur','gearn','mq','gtok','gprem','gdeco','story','gp_plants','gp_animals','gp_sea','gp_space','math','bday','gck'];
 function piTok(){return window.PI_SESSION&&window.PI_SESSION.token}
 function api(u,d){return fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d||{})}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
 var _cdT=null,_pulling=false;
@@ -17,7 +17,7 @@ document.addEventListener('visibilitychange',function(){if(document.hidden&&_cdT
 function withTimeout(p,ms){return Promise.race([p,new Promise(function(r){setTimeout(function(){r(null)},ms)})])}
 var _logging=false;
 async function piStart(){if(_logging)return;_logging=true;var b=$('#piStart');if(b){b.disabled=true;b.textContent=LU(12)}
-  try{var inPi=/PiBrowser/i.test(navigator.userAgent)||window.top!==window.self;var s=(inPi&&window.piLogin)?await withTimeout(window.piLogin(),12000):null;if(s){api('/ev',{token:s.token,e:'login'});await cloudPull()}}catch(e){}
+  try{var inPi=/PiBrowser/i.test(navigator.userAgent)||window.top!==window.self;var s=(inPi&&window.piLogin)?await withTimeout(window.piLogin(),12000):null;if(s){api('/ev',{token:s.token,e:'login'});await cloudPull();ART=0;attLoad()}}catch(e){}
   _logging=false;go(KID?'home':'kid')}
 function acctLine(){var s=window.PI_SESSION;return s&&s.username?'<p class="mut" style="text-align:center;margin:8px 0 0">'+esc(LU(14,s.username))+'</p>':''}
 /* 실제 Pi 결제 (부모님 확인 뒤) */

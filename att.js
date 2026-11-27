@@ -1,7 +1,9 @@
 /* ---------- 출석 체크 + 이번 달 출석 순위 (개근상) ---------- */
 var AR=null,ART=0;
 function attSend(){var tk=piTok&&piTok();if(!tk||!KID)return;api('/att',{token:tk,kid:KSFX,nm:KID.name,av:KID.av}).then(function(){ART=0;if(VIEW==='att')attLoad()})}
-function attLoad(){if(Date.now()-ART<20000&&AR)return;ART=Date.now();api('/attrank',{token:(window.piTok&&piTok())||'',kid:KSFX}).then(function(r){if(r&&r.ok){AR=r;if(VIEW==='att')render()}})}
+function attLoad(){if(Date.now()-ART<20000&&AR)return;ART=Date.now();var kf=KSFX;api('/attrank',{token:(window.piTok&&piTok())||'',kid:kf}).then(function(r){if(r&&r.ok){AR=r;if(kf===KSFX&&attMerge(r.days))render();else if(VIEW==='att')render()}})}
+/* 서버에 남은 출석 날짜를 이 기기에도 표시 (햇살은 다시 주지 않아요) */
+function attMerge(days){if(!days||!days.length)return false;var ck=ckMap(),ch=false;days.forEach(function(d){if(/^\d{4}-\d{2}-\d{2}$/.test(d)&&!ck[d]){ck[d]=1;ch=true}});if(!ch)return false;if(GR)grSave();else ls('gck',ck);var d=today();if(ck[d]){var e=ls('gearn')||{};if(e.d!==d)e={d:d};if(!e.ck){e.ck=1;ls('gearn',e)}}return true}
 function attMonth(){var ck=ckMap(),ym=today().slice(0,7),n=0;Object.keys(ck).forEach(function(k){if(k.slice(0,7)===ym)n++});return n}
 function attFull(){return attMonth()>=+today().slice(8,10)}
 function attCard(){var d=today(),ok=!!ckMap()[d],n=attMonth(),s=streak();
